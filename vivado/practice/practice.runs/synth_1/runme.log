@@ -1,0 +1,460 @@
+
+*** Running vivado
+    with args -log lab6_multiplier.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab6_multiplier.tcl
+
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source lab6_multiplier.tcl -notrace
+Command: synth_design -top lab6_multiplier -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 26392 
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1055.555 ; gain = 125.086 ; free physical = 820 ; free virtual = 11275
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'lab6_multiplier' [/media/ad/Area51/workspace/col215_prac/practice.vhd:632]
+INFO: [Synth 8-3491] module 'carry_prop_8' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:21' bound to instance 'carry_prop' of component 'carry_prop_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:671]
+INFO: [Synth 8-638] synthesizing module 'carry_prop_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:31]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'full_adder' (1#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:10]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l_last' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:90]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'carry_prop_8' (2#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:31]
+INFO: [Synth 8-3491] module 'carry_save_8' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:178' bound to instance 'carry_save' of component 'carry_save_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:674]
+INFO: [Synth 8-638] synthesizing module 'carry_save_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:185]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l_unit1' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:267]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l_unit_last' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:273]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:280]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:290]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:300]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:309]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:318]
+INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:321]
+INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-256] done synthesizing module 'carry_save_8' (3#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'cla_adder_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:417]
+INFO: [Synth 8-638] synthesizing module 'cla_adder_4' [/media/ad/Area51/workspace/col215_prac/practice.vhd:367]
+INFO: [Synth 8-256] done synthesizing module 'cla_adder_4' (4#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:367]
+INFO: [Synth 8-256] done synthesizing module 'cla_adder_8' (5#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:417]
+INFO: [Synth 8-638] synthesizing module 'lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2520]
+INFO: [Synth 8-638] synthesizing module 'anode_clock_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2397]
+INFO: [Synth 8-638] synthesizing module 'AND2' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14]
+INFO: [Synth 8-256] done synthesizing module 'AND2' (6#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14]
+INFO: [Synth 8-638] synthesizing module 'dpacket_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2176]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-638] synthesizing module 'FD' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:3723]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'FD' (7#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:3723]
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-638] synthesizing module 'INV' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:17255]
+INFO: [Synth 8-256] done synthesizing module 'INV' (8#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:17255]
+INFO: [Synth 8-256] done synthesizing module 'dpacket_MUSER_lab4_seven_segment_display' (9#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2176]
+INFO: [Synth 8-638] synthesizing module 'OR2' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25502]
+INFO: [Synth 8-256] done synthesizing module 'OR2' (10#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25502]
+INFO: [Synth 8-638] synthesizing module 'D2_4E_HXILINX_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:755]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac/practice.vhd:765]
+INFO: [Synth 8-256] done synthesizing module 'D2_4E_HXILINX_lab4_seven_segment_display' (11#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:755]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-638] synthesizing module 'FTC_HXILINX_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:717]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'FTC_HXILINX_lab4_seven_segment_display' (12#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:717]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'anode_clock_MUSER_lab4_seven_segment_display' (13#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2397]
+INFO: [Synth 8-638] synthesizing module 'cathode_selector_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2012]
+INFO: [Synth 8-638] synthesizing module 'a_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1888]
+INFO: [Synth 8-638] synthesizing module 'OR4' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25596]
+INFO: [Synth 8-256] done synthesizing module 'OR4' (14#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25596]
+INFO: [Synth 8-638] synthesizing module 'AND4' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:108]
+INFO: [Synth 8-256] done synthesizing module 'AND4' (15#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:108]
+INFO: [Synth 8-256] done synthesizing module 'a_MUSER_lab4_seven_segment_display' (16#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1888]
+INFO: [Synth 8-638] synthesizing module 'b_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1703]
+INFO: [Synth 8-638] synthesizing module 'AND6_HXILINX_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:800]
+INFO: [Synth 8-256] done synthesizing module 'AND6_HXILINX_lab4_seven_segment_display' (17#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:800]
+INFO: [Synth 8-256] done synthesizing module 'b_MUSER_lab4_seven_segment_display' (18#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1703]
+INFO: [Synth 8-638] synthesizing module 'c_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1569]
+INFO: [Synth 8-256] done synthesizing module 'c_MUSER_lab4_seven_segment_display' (19#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1569]
+INFO: [Synth 8-638] synthesizing module 'd_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1420]
+INFO: [Synth 8-638] synthesizing module 'AND5' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:173]
+INFO: [Synth 8-256] done synthesizing module 'AND5' (20#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:173]
+INFO: [Synth 8-256] done synthesizing module 'd_MUSER_lab4_seven_segment_display' (21#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1420]
+INFO: [Synth 8-638] synthesizing module 'e_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1260]
+INFO: [Synth 8-256] done synthesizing module 'e_MUSER_lab4_seven_segment_display' (22#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1260]
+INFO: [Synth 8-638] synthesizing module 'f_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1116]
+INFO: [Synth 8-256] done synthesizing module 'f_MUSER_lab4_seven_segment_display' (23#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1116]
+INFO: [Synth 8-638] synthesizing module 'g_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1002]
+INFO: [Synth 8-256] done synthesizing module 'g_MUSER_lab4_seven_segment_display' (24#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1002]
+INFO: [Synth 8-256] done synthesizing module 'cathode_selector_MUSER_lab4_seven_segment_display' (25#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2012]
+INFO: [Synth 8-638] synthesizing module 'select4_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:872]
+INFO: [Synth 8-638] synthesizing module 'enableswitchmux_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:823]
+INFO: [Synth 8-256] done synthesizing module 'enableswitchmux_MUSER_lab4_seven_segment_display' (26#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:823]
+INFO: [Synth 8-256] done synthesizing module 'select4_MUSER_lab4_seven_segment_display' (27#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:872]
+INFO: [Synth 8-256] done synthesizing module 'lab4_seven_segment_display' (28#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2520]
+INFO: [Synth 8-256] done synthesizing module 'lab6_multiplier' (29#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:632]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1097.023 ; gain = 166.555 ; free physical = 776 ; free virtual = 11233
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1097.023 ; gain = 166.555 ; free physical = 775 ; free virtual = 11233
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1105.027 ; gain = 174.559 ; free physical = 775 ; free virtual = 11233
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1113.035 ; gain = 182.566 ; free physical = 767 ; free virtual = 11226
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 168   
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module lab6_multiplier 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+Module full_adder 
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 1     
+Module D2_4E_HXILINX_lab4_seven_segment_display 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+Module FTC_HXILINX_lab4_seven_segment_display 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 619 ; free virtual = 11082
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 619 ; free virtual = 11082
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |AND2 |    18|
+|2     |AND4 |     3|
+|3     |AND5 |     2|
+|4     |BUFG |     1|
+|5     |INV  |    33|
+|6     |LUT1 |     1|
+|7     |LUT2 |    43|
+|8     |LUT3 |     3|
+|9     |LUT4 |    38|
+|10    |LUT5 |    17|
+|11    |LUT6 |   117|
+|12    |OR2  |     1|
+|13    |OR4  |    38|
+|14    |FD   |    17|
+|15    |FDRE |     2|
+|16    |IBUF |    20|
+|17    |OBUF |    27|
++------+-----+------+
+
+Report Instance Areas: 
++------+----------------+---------------------------------------------------+------+
+|      |Instance        |Module                                             |Cells |
++------+----------------+---------------------------------------------------+------+
+|1     |top             |                                                   |   381|
+|2     |  seven_seg     |lab4_seven_segment_display                         |   333|
+|3     |    XLXI_10     |select4_MUSER_lab4_seven_segment_display           |   231|
+|4     |      XLXI_1    |enableswitchmux_MUSER_lab4_seven_segment_display   |    12|
+|5     |      XLXI_2    |enableswitchmux_MUSER_lab4_seven_segment_display_2 |    28|
+|6     |      XLXI_3    |enableswitchmux_MUSER_lab4_seven_segment_display_3 |    63|
+|7     |      XLXI_4    |enableswitchmux_MUSER_lab4_seven_segment_display_4 |   124|
+|8     |    XLXI_3      |anode_clock_MUSER_lab4_seven_segment_display       |    46|
+|9     |      XLXI_16   |D2_4E_HXILINX_lab4_seven_segment_display           |     2|
+|10    |      XLXI_22   |FTC_HXILINX_lab4_seven_segment_display             |     4|
+|11    |      XLXI_23   |FTC_HXILINX_lab4_seven_segment_display_1           |     2|
+|12    |      XLXI_3    |dpacket_MUSER_lab4_seven_segment_display           |    34|
+|13    |    XLXI_4      |cathode_selector_MUSER_lab4_seven_segment_display  |    52|
+|14    |      XLXI_1    |a_MUSER_lab4_seven_segment_display                 |     5|
+|15    |      XLXI_2    |b_MUSER_lab4_seven_segment_display                 |     7|
+|16    |        XLXI_25 |AND6_HXILINX_lab4_seven_segment_display_0          |     1|
+|17    |      XLXI_3    |c_MUSER_lab4_seven_segment_display                 |     5|
+|18    |      XLXI_4    |d_MUSER_lab4_seven_segment_display                 |     6|
+|19    |      XLXI_5    |e_MUSER_lab4_seven_segment_display                 |    11|
+|20    |        XLXI_23 |AND6_HXILINX_lab4_seven_segment_display            |     1|
+|21    |      XLXI_6    |f_MUSER_lab4_seven_segment_display                 |     6|
+|22    |      XLXI_7    |g_MUSER_lab4_seven_segment_display                 |     5|
++------+----------------+---------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1259.152 ; gain = 248.594 ; free physical = 620 ; free virtual = 11083
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.160 ; gain = 328.691 ; free physical = 620 ; free virtual = 11083
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 132 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 112 instances were transformed.
+  AND2 => LUT2: 18 instances
+  AND4 => LUT4: 3 instances
+  AND5 => LUT5: 2 instances
+  FD => FDRE: 17 instances
+  INV => LUT1: 33 instances
+  OR2 => LUT2: 1 instances
+  OR4 => LUT4: 38 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+170 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1329.164 ; gain = 331.191 ; free physical = 577 ; free virtual = 11040
+INFO: [Common 17-1381] The checkpoint '/media/ad/TheLibrary/col215_lab/vivado/practice/practice.runs/synth_1/lab6_multiplier.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1353.176 ; gain = 0.000 ; free physical = 575 ; free virtual = 11038
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 14 00:17:08 2017...

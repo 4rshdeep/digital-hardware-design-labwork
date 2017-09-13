@@ -1,0 +1,153 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Sep 14 00:38:38 2017
+# Process ID: 28536
+# Current directory: /media/ad/Area51/workspace/col215_prac_lab
+# Command line: vivado
+# Log file: /media/ad/Area51/workspace/col215_prac_lab/vivado.log
+# Journal file: /media/ad/Area51/workspace/col215_prac_lab/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project lab5 /media/ad/Area51/workspace/col215_prac_lab/vivado/lab5 -part xc7a35tcpg236-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'.
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 5890.234 ; gain = 63.082 ; free physical = 1517 ; free virtual = 11994
+add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier.vhd
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab6_multiplier_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab6_multiplier_tb_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity full_adder
+INFO: [VRFC 10-307] analyzing entity carry_prop_8
+INFO: [VRFC 10-307] analyzing entity carry_save_8
+INFO: [VRFC 10-307] analyzing entity cla_adder_4
+INFO: [VRFC 10-307] analyzing entity cla_adder_8
+INFO: [VRFC 10-307] analyzing entity lab6_multiplier
+INFO: [VRFC 10-307] analyzing entity FTC_HXILINX_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity D2_4E_HXILINX_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity AND6_HXILINX_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity enableswitchmux_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity select4_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity g_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity f_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity e_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity d_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity c_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity b_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity a_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity cathode_selector_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity dpacket_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity anode_clock_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity lab4_seven_segment_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab6_multiplier_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 621bb911ea7a4adeaee2ca77d597feb6 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab6_multiplier_tb_behav xil_defaultlib.lab6_multiplier_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture adder_arch of entity xil_defaultlib.full_adder [full_adder_default]
+Compiling architecture carry_prop_8_arc of entity xil_defaultlib.carry_prop_8 [carry_prop_8_default]
+Compiling architecture carry_save_8_arc of entity xil_defaultlib.carry_save_8 [carry_save_8_default]
+Compiling architecture cla_adder_4_arc of entity xil_defaultlib.cla_adder_4 [cla_adder_4_default]
+Compiling architecture cla_adder_8_arc of entity xil_defaultlib.cla_adder_8 [cla_adder_8_default]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1000")(0,3)\]
+Compiling architecture and2_v of entity unisim.AND2 [and2_default]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fd_v of entity unisim.FD [fd_default]
+Compiling architecture inv_v of entity unisim.INV [inv_default]
+Compiling architecture behavioral of entity xil_defaultlib.dpacket_MUSER_lab4_seven_segment_display [dpacket_muser_lab4_seven_segment...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1110")(0,3)\]
+Compiling architecture or2_v of entity unisim.OR2 [or2_default]
+Compiling architecture d2_4e_hxilinx_lab4_seven_segment_display_v of entity xil_defaultlib.D2_4E_HXILINX_lab4_seven_segment_display [d2_4e_hxilinx_lab4_seven_segment...]
+Compiling architecture behavioral of entity xil_defaultlib.FTC_HXILINX_lab4_seven_segment_display [ftc_hxilinx_lab4_seven_segment_d...]
+Compiling architecture behavioral of entity xil_defaultlib.anode_clock_MUSER_lab4_seven_segment_display [anode_clock_muser_lab4_seven_seg...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111111110")(0...]
+Compiling architecture or4_v of entity unisim.OR4 [or4_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1000000000000000")(0...]
+Compiling architecture and4_v of entity unisim.AND4 [and4_default]
+Compiling architecture behavioral of entity xil_defaultlib.a_MUSER_lab4_seven_segment_display [a_muser_lab4_seven_segment_displ...]
+Compiling architecture and6_hxilinx_lab4_seven_segment_display_v of entity xil_defaultlib.AND6_HXILINX_lab4_seven_segment_display [and6_hxilinx_lab4_seven_segment_...]
+Compiling architecture behavioral of entity xil_defaultlib.b_MUSER_lab4_seven_segment_display [b_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.c_MUSER_lab4_seven_segment_display [c_muser_lab4_seven_segment_displ...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10000000000000000000...]
+Compiling architecture and5_v of entity unisim.AND5 [and5_default]
+Compiling architecture behavioral of entity xil_defaultlib.d_MUSER_lab4_seven_segment_display [d_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.e_MUSER_lab4_seven_segment_display [e_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.f_MUSER_lab4_seven_segment_display [f_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.g_MUSER_lab4_seven_segment_display [g_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.cathode_selector_MUSER_lab4_seven_segment_display [cathode_selector_muser_lab4_seve...]
+Compiling architecture behavioral of entity xil_defaultlib.enableswitchmux_MUSER_lab4_seven_segment_display [enableswitchmux_muser_lab4_seven...]
+Compiling architecture behavioral of entity xil_defaultlib.select4_MUSER_lab4_seven_segment_display [select4_muser_lab4_seven_segment...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_seven_segment_display [lab4_seven_segment_display_defau...]
+Compiling architecture lab6_multiplier_arc of entity xil_defaultlib.lab6_multiplier [lab6_multiplier_default]
+Compiling architecture behavior of entity xil_defaultlib.lab6_multiplier_tb
+Built simulation snapshot lab6_multiplier_tb_behav
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav/xsim.dir/lab6_multiplier_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Sep 14 00:40:47 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab6_multiplier_tb_behav -key {Behavioral:sim_1:Functional:lab6_multiplier_tb} -tclbatch {lab6_multiplier_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source lab6_multiplier_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Note: Testbench of Lab 6 completed successfully!
+Time: 50 ns  Iteration: 0  Process: /lab6_multiplier_tb/stim_proc  File: /media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab6_multiplier_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 5963.352 ; gain = 54.137 ; free physical = 1494 ; free virtual = 11989
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 5972.738 ; gain = 8.004 ; free physical = 1448 ; free virtual = 11985
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 14 00:41:08 2017...

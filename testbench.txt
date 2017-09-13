@@ -1,0 +1,7 @@
+Guidelines for testbench creation
+1. The sample testbench provided for lab6 contains one testcase. You can study the testbench and create more cases.
+2. One method for testing your design is to test it for all the possible combinations by running a loop to iterate through all the inputs or using automatic test pattern generator.
+3. Since this would be cumbersome, you should test your design for corner cases or typical cases to be sure of its working.
+4. The ideal method would be to test your design for all the corner cases and 5-6 normal random cases. 
+5. The testbench provided on moodle contains one normal case. You need to create further cases to test your design. Also you need to think of the corner cases for your design.
+6. Once you are familiar with this aspect of testing relevant testcases, we would switch to providing no testbench for further labs so that you are able to write complete testbench on your own.

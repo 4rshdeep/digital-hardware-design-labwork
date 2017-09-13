@@ -1,0 +1,54 @@
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 621bb911ea7a4adeaee2ca77d597feb6 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab6_multiplier_tb_behav xil_defaultlib.lab6_multiplier_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture adder_arch of entity xil_defaultlib.full_adder [full_adder_default]
+Compiling architecture carry_prop_8_arc of entity xil_defaultlib.carry_prop_8 [carry_prop_8_default]
+Compiling architecture carry_save_8_arc of entity xil_defaultlib.carry_save_8 [carry_save_8_default]
+Compiling architecture cla_adder_4_arc of entity xil_defaultlib.cla_adder_4 [cla_adder_4_default]
+Compiling architecture cla_adder_8_arc of entity xil_defaultlib.cla_adder_8 [cla_adder_8_default]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1000")(0,3)\]
+Compiling architecture and2_v of entity unisim.AND2 [and2_default]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fd_v of entity unisim.FD [fd_default]
+Compiling architecture inv_v of entity unisim.INV [inv_default]
+Compiling architecture behavioral of entity xil_defaultlib.dpacket_MUSER_lab4_seven_segment_display [dpacket_muser_lab4_seven_segment...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1110")(0,3)\]
+Compiling architecture or2_v of entity unisim.OR2 [or2_default]
+Compiling architecture d2_4e_hxilinx_lab4_seven_segment_display_v of entity xil_defaultlib.D2_4E_HXILINX_lab4_seven_segment_display [d2_4e_hxilinx_lab4_seven_segment...]
+Compiling architecture behavioral of entity xil_defaultlib.FTC_HXILINX_lab4_seven_segment_display [ftc_hxilinx_lab4_seven_segment_d...]
+Compiling architecture behavioral of entity xil_defaultlib.anode_clock_MUSER_lab4_seven_segment_display [anode_clock_muser_lab4_seven_seg...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111111110")(0...]
+Compiling architecture or4_v of entity unisim.OR4 [or4_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1000000000000000")(0...]
+Compiling architecture and4_v of entity unisim.AND4 [and4_default]
+Compiling architecture behavioral of entity xil_defaultlib.a_MUSER_lab4_seven_segment_display [a_muser_lab4_seven_segment_displ...]
+Compiling architecture and6_hxilinx_lab4_seven_segment_display_v of entity xil_defaultlib.AND6_HXILINX_lab4_seven_segment_display [and6_hxilinx_lab4_seven_segment_...]
+Compiling architecture behavioral of entity xil_defaultlib.b_MUSER_lab4_seven_segment_display [b_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.c_MUSER_lab4_seven_segment_display [c_muser_lab4_seven_segment_displ...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10000000000000000000...]
+Compiling architecture and5_v of entity unisim.AND5 [and5_default]
+Compiling architecture behavioral of entity xil_defaultlib.d_MUSER_lab4_seven_segment_display [d_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.e_MUSER_lab4_seven_segment_display [e_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.f_MUSER_lab4_seven_segment_display [f_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.g_MUSER_lab4_seven_segment_display [g_muser_lab4_seven_segment_displ...]
+Compiling architecture behavioral of entity xil_defaultlib.cathode_selector_MUSER_lab4_seven_segment_display [cathode_selector_muser_lab4_seve...]
+Compiling architecture behavioral of entity xil_defaultlib.enableswitchmux_MUSER_lab4_seven_segment_display [enableswitchmux_muser_lab4_seven...]
+Compiling architecture behavioral of entity xil_defaultlib.select4_MUSER_lab4_seven_segment_display [select4_muser_lab4_seven_segment...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_seven_segment_display [lab4_seven_segment_display_defau...]
+Compiling architecture lab6_multiplier_arc of entity xil_defaultlib.lab6_multiplier [lab6_multiplier_default]
+Compiling architecture behavior of entity xil_defaultlib.lab6_multiplier_tb
+Built simulation snapshot lab6_multiplier_tb_behav
