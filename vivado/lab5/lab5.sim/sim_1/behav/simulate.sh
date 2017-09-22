@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xsim lab6_multiplier_tb_behav -key {Behavioral:sim_1:Functional:lab6_multiplier_tb} -tclbatch lab6_multiplier_tb.tcl -log simulate.log
+ExecStep $xv_path/bin/xsim lab5_gcd_tb_behav -key {Behavioral:sim_1:Functional:lab5_gcd_tb} -tclbatch lab5_gcd_tb.tcl -log simulate.log
