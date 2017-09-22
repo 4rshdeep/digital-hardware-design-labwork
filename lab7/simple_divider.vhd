@@ -12,7 +12,7 @@ entity div is
     );
     port(
         clk, reset: in std_logic;
-        start: in std_logic;
+        --start: in std_logic;
         dvsr, dvnd: in std_logic_vector(W-1 downto 0);
         ready, done_tick: out std_logic;
         quo, rmd: out std_logic_vector(W-1 downto 0)
@@ -27,7 +27,7 @@ architecture arch of div is
    signal rh_tmp: unsigned(W-1 downto 0);
    signal d_reg, d_next: unsigned(W-1 downto 0);
    signal n_reg, n_next: unsigned(CBIT-1 downto 0);
-   signal q_bit: std_logic;
+   signal q_bit, start: std_logic;
 begin
    -- fsmd state and data registers
    process(clk,reset)
@@ -38,6 +38,7 @@ begin
          rl_reg <= (others=>'0');
          d_reg <= (others=>'0');
          n_reg <= (others=>'0');
+         start <= '1';
       elsif (clk'event and clk='1' and state_reg/=done) then
          state_reg <= state_next;
          rh_reg <= rh_next;
@@ -49,7 +50,7 @@ begin
 
    -- fsmd next-state logic and data path logic
    process(state_reg,n_reg,rh_reg,rl_reg,d_reg,
-           start,dvsr,dvnd,q_bit,rh_tmp,n_next)
+           start,dvsr,dvnd,q_bit,rh_tmp,n_next, reset)
    begin
       ready <='0';
       done_tick <= '0';
@@ -61,7 +62,7 @@ begin
       case state_reg is
          when idle =>
             ready <= '1';
-            if start='1' then
+            if start='1' and reset /= '1' then
                rh_next <= (others=>'0');
                rl_next <= dvnd;                  -- dividend
                d_next <= unsigned(dvsr);         -- divisor
@@ -132,7 +133,7 @@ architecture lab7_divider_arc of lab7_divider is
     port (
       clk   : in std_logic;
       reset : in std_logic;
-      start : in std_logic;
+     -- start : in std_logic;
       dvsr  : in std_logic_vector(W-1 downto 0);
       dvnd  : in std_logic_vector(W-1 downto 0);
       ready : out std_logic;
@@ -151,18 +152,18 @@ architecture lab7_divider_arc of lab7_divider is
       cathode    : out   std_logic_vector (6 downto 0)
     );
   end component;
-signal start, ready : std_logic;
+signal start, ready, reset : std_logic;
 signal quotient, remainder : std_logic_vector(7 downto 0);
 signal quonrem : std_logic_vector(15 downto 0);
 begin
 
     process(load_inputs)
     begin
-        start <= '1';
+        reset <= load_inputs;
     end process;
-
+    
   divider : div
-    port map (clk, load_inputs, start, divisor, dividend, ready, output_valid, quotient, remainder);
+    port map (clk, load_inputs, divisor, dividend, ready, output_valid, quotient, remainder);
 
     quonrem <= quotient & remainder;
 
