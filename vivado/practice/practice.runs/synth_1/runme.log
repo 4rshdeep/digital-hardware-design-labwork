@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log lab6_multiplier.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab6_multiplier.tcl
+    with args -log lab8_elevator_control.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab8_elevator_control.tcl
 
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 
@@ -9,214 +9,199 @@ awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
   **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source lab6_multiplier.tcl -notrace
-Command: synth_design -top lab6_multiplier -part xc7a35tcpg236-1
+source lab8_elevator_control.tcl -notrace
+Command: synth_design -top lab8_elevator_control -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26392 
+INFO: Helper process launched with PID 8397 
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1055.555 ; gain = 125.086 ; free physical = 820 ; free virtual = 11275
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1057.570 ; gain = 127.098 ; free physical = 1136 ; free virtual = 11340
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'lab6_multiplier' [/media/ad/Area51/workspace/col215_prac/practice.vhd:632]
-INFO: [Synth 8-3491] module 'carry_prop_8' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:21' bound to instance 'carry_prop' of component 'carry_prop_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:671]
-INFO: [Synth 8-638] synthesizing module 'carry_prop_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:31]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'full_adder' (1#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:10]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:86]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l_last' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:90]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:102]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:114]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:125]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:136]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:147]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'seventh_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:158]
-INFO: [Synth 8-256] done synthesizing module 'carry_prop_8' (2#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:31]
-INFO: [Synth 8-3491] module 'carry_save_8' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:178' bound to instance 'carry_save' of component 'carry_save_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:674]
-INFO: [Synth 8-638] synthesizing module 'carry_save_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:185]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l_unit1' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:267]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:270]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'first_l_unit_last' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:273]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:280]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'second_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:283]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:290]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'third_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:293]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:300]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fourth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:303]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:309]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'fifth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:312]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l_first' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:318]
-INFO: [Synth 8-3491] module 'full_adder' declared at '/media/ad/Area51/workspace/col215_prac/practice.vhd:3' bound to instance 'sixth_l' of component 'full_adder' [/media/ad/Area51/workspace/col215_prac/practice.vhd:321]
-INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-256] done synthesizing module 'carry_save_8' (3#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:185]
-INFO: [Synth 8-638] synthesizing module 'cla_adder_8' [/media/ad/Area51/workspace/col215_prac/practice.vhd:417]
-INFO: [Synth 8-638] synthesizing module 'cla_adder_4' [/media/ad/Area51/workspace/col215_prac/practice.vhd:367]
-INFO: [Synth 8-256] done synthesizing module 'cla_adder_4' (4#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:367]
-INFO: [Synth 8-256] done synthesizing module 'cla_adder_8' (5#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:417]
-INFO: [Synth 8-638] synthesizing module 'lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2520]
-INFO: [Synth 8-638] synthesizing module 'anode_clock_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2397]
-INFO: [Synth 8-638] synthesizing module 'AND2' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14]
-INFO: [Synth 8-256] done synthesizing module 'AND2' (6#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14]
-INFO: [Synth 8-638] synthesizing module 'dpacket_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2176]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-638] synthesizing module 'FD' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:3723]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'FD' (7#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:3723]
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-638] synthesizing module 'INV' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:17255]
-INFO: [Synth 8-256] done synthesizing module 'INV' (8#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:17255]
-INFO: [Synth 8-256] done synthesizing module 'dpacket_MUSER_lab4_seven_segment_display' (9#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2176]
-INFO: [Synth 8-638] synthesizing module 'OR2' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25502]
-INFO: [Synth 8-256] done synthesizing module 'OR2' (10#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25502]
-INFO: [Synth 8-638] synthesizing module 'D2_4E_HXILINX_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:755]
-INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac/practice.vhd:765]
-INFO: [Synth 8-256] done synthesizing module 'D2_4E_HXILINX_lab4_seven_segment_display' (11#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:755]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-638] synthesizing module 'FTC_HXILINX_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:717]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'FTC_HXILINX_lab4_seven_segment_display' (12#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:717]
-	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'anode_clock_MUSER_lab4_seven_segment_display' (13#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2397]
-INFO: [Synth 8-638] synthesizing module 'cathode_selector_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:2012]
-INFO: [Synth 8-638] synthesizing module 'a_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1888]
-INFO: [Synth 8-638] synthesizing module 'OR4' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25596]
-INFO: [Synth 8-256] done synthesizing module 'OR4' (14#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:25596]
-INFO: [Synth 8-638] synthesizing module 'AND4' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:108]
-INFO: [Synth 8-256] done synthesizing module 'AND4' (15#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:108]
-INFO: [Synth 8-256] done synthesizing module 'a_MUSER_lab4_seven_segment_display' (16#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1888]
-INFO: [Synth 8-638] synthesizing module 'b_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1703]
-INFO: [Synth 8-638] synthesizing module 'AND6_HXILINX_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:800]
-INFO: [Synth 8-256] done synthesizing module 'AND6_HXILINX_lab4_seven_segment_display' (17#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:800]
-INFO: [Synth 8-256] done synthesizing module 'b_MUSER_lab4_seven_segment_display' (18#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1703]
-INFO: [Synth 8-638] synthesizing module 'c_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1569]
-INFO: [Synth 8-256] done synthesizing module 'c_MUSER_lab4_seven_segment_display' (19#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1569]
-INFO: [Synth 8-638] synthesizing module 'd_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1420]
-INFO: [Synth 8-638] synthesizing module 'AND5' [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:173]
-INFO: [Synth 8-256] done synthesizing module 'AND5' (20#1) [/opt/Xilinx/Vivado/2016.4/scripts/rt/data/unisim_comp.v:173]
-INFO: [Synth 8-256] done synthesizing module 'd_MUSER_lab4_seven_segment_display' (21#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1420]
-INFO: [Synth 8-638] synthesizing module 'e_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1260]
-INFO: [Synth 8-256] done synthesizing module 'e_MUSER_lab4_seven_segment_display' (22#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1260]
-INFO: [Synth 8-638] synthesizing module 'f_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1116]
-INFO: [Synth 8-256] done synthesizing module 'f_MUSER_lab4_seven_segment_display' (23#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1116]
-INFO: [Synth 8-638] synthesizing module 'g_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:1002]
-INFO: [Synth 8-256] done synthesizing module 'g_MUSER_lab4_seven_segment_display' (24#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:1002]
-INFO: [Synth 8-256] done synthesizing module 'cathode_selector_MUSER_lab4_seven_segment_display' (25#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2012]
-INFO: [Synth 8-638] synthesizing module 'select4_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:872]
-INFO: [Synth 8-638] synthesizing module 'enableswitchmux_MUSER_lab4_seven_segment_display' [/media/ad/Area51/workspace/col215_prac/practice.vhd:823]
-INFO: [Synth 8-256] done synthesizing module 'enableswitchmux_MUSER_lab4_seven_segment_display' (26#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:823]
-INFO: [Synth 8-256] done synthesizing module 'select4_MUSER_lab4_seven_segment_display' (27#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:872]
-INFO: [Synth 8-256] done synthesizing module 'lab4_seven_segment_display' (28#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:2520]
-INFO: [Synth 8-256] done synthesizing module 'lab6_multiplier' (29#1) [/media/ad/Area51/workspace/col215_prac/practice.vhd:632]
+INFO: [Synth 8-638] synthesizing module 'lab8_elevator_control' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:38]
+INFO: [Synth 8-3491] module 'seven_segment_display' declared at '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1199' bound to instance 'display' of component 'seven_segment_display' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'seven_segment_display' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1216]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1225]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1231]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1237]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1243]
+INFO: [Synth 8-256] done synthesizing module 'seven_segment_display' (1#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1216]
+INFO: [Synth 8-3491] module 'request_handler' declared at '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:122' bound to instance 'req_handle' of component 'request_handler' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'request_handler' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:140]
+WARNING: [Synth 8-614] signal 'up_request_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'down_request_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'up_request' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'down_request' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'l1_request_status' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'upReqUp1' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'downReqDown1' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'l2_request_status' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'upReqUp2' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'downReqDown2' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'upReqDown2' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'downReqUp2' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'upReqDown1' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-614] signal 'downReqUp1' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:152]
+WARNING: [Synth 8-5787] Register now_up_request_reg in module request_handler is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:160]
+WARNING: [Synth 8-5787] Register now_up_request_reg in module request_handler is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:160]
+WARNING: [Synth 8-5787] Register now_up_request_reg in module request_handler is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:160]
+WARNING: [Synth 8-5787] Register now_down_request_reg in module request_handler is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:161]
+WARNING: [Synth 8-5787] Register now_down_request_reg in module request_handler is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:161]
+WARNING: [Synth 8-5787] Register now_down_request_reg in module request_handler is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:161]
+INFO: [Synth 8-256] done synthesizing module 'request_handler' (2#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:140]
+INFO: [Synth 8-3491] module 'lift1_controller' declared at '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:353' bound to instance 'l1_control' of component 'lift1_controller' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'lift1_controller' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:375]
+WARNING: [Synth 8-614] signal 'currentfloor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'lift_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'start2sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'clear_counter' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'start0_5sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'start1sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'start0_1sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'door_close' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'status' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'door_open' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'next_status' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'prev_reset' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'combined_requests' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'direction' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'next_target_floor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:421]
+WARNING: [Synth 8-614] signal 'received_request' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:732]
+WARNING: [Synth 8-614] signal 'lift_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:732]
+WARNING: [Synth 8-614] signal 'currentfloor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:732]
+WARNING: [Synth 8-3848] Net prev_reset in module/entity lift1_controller does not have driver. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:398]
+INFO: [Synth 8-256] done synthesizing module 'lift1_controller' (3#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:375]
+INFO: [Synth 8-3491] module 'lift2_controller' declared at '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:778' bound to instance 'l2_control' of component 'lift2_controller' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'lift2_controller' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:799]
+WARNING: [Synth 8-614] signal 'prev_reset' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'currentfloor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'lift_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'start2sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'clear_counter' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'start0_5sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'start1sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'start0_1sec' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'door_close' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'status' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'door_open' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'next_status' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'combined_requests' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'direction' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'next_target_floor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:843]
+WARNING: [Synth 8-614] signal 'received_request' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1151]
+WARNING: [Synth 8-614] signal 'lift_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1151]
+WARNING: [Synth 8-614] signal 'currentfloor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1151]
+WARNING: [Synth 8-5787] Register lift_register_reg in module lift2_controller is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:863]
+WARNING: [Synth 8-5787] Register lift_register_reg in module lift2_controller is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:863]
+WARNING: [Synth 8-5787] Register lift_register_reg in module lift2_controller is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:851]
+WARNING: [Synth 8-3848] Net prev_reset in module/entity lift2_controller does not have driver. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:822]
+INFO: [Synth 8-256] done synthesizing module 'lift2_controller' (4#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:799]
+INFO: [Synth 8-256] done synthesizing module 'lab8_elevator_control' (5#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:38]
+WARNING: [Synth 8-3331] design request_handler has unconnected port clock
+WARNING: [Synth 8-3331] design request_handler has unconnected port up_request[3]
+WARNING: [Synth 8-3331] design request_handler has unconnected port down_request[0]
+WARNING: [Synth 8-3331] design lab8_elevator_control has unconnected port sim_mode
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1097.023 ; gain = 166.555 ; free physical = 776 ; free virtual = 11233
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1103.039 ; gain = 172.566 ; free physical = 1087 ; free virtual = 11294
 ---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1097.023 ; gain = 166.555 ; free physical = 775 ; free virtual = 11233
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1103.039 ; gain = 172.566 ; free physical = 1084 ; free virtual = 11294
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc]
+WARNING: [Vivado 12-507] No nets matched 'up_request_indicator_OBUF[0]_inst_i_1'. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'door_closed[0]'. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'door_closed[0]'. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'door_closed[1]'. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'door_closed[1]'. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab8_elevator_control_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lab8_elevator_control_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1401.688 ; gain = 0.000 ; free physical = 909 ; free virtual = 11124
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 906 ; free virtual = 11123
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1105.027 ; gain = 174.559 ; free physical = 775 ; free virtual = 11233
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 906 ; free virtual = 11123
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1113.035 ; gain = 182.566 ; free physical = 767 ; free virtual = 11226
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 906 ; free virtual = 11123
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "l1_status" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_status" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "l2_status" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lift_register_reg0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lift_register_reg0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lift_register_reg0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_status" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'send1_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:189]
+WARNING: [Synth 8-327] inferring latch for variable 'send2_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:190]
+WARNING: [Synth 8-327] inferring latch for variable 'downReqUp1_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:293]
+WARNING: [Synth 8-327] inferring latch for variable 'downReqDown1_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:294]
+WARNING: [Synth 8-327] inferring latch for variable 'upReqDown1_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:292]
+WARNING: [Synth 8-327] inferring latch for variable 'upReqUp1_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:291]
+WARNING: [Synth 8-327] inferring latch for variable 'downReqDown2_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:320]
+WARNING: [Synth 8-327] inferring latch for variable 'upReqUp2_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:317]
+WARNING: [Synth 8-327] inferring latch for variable 'downReqUp2_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:319]
+WARNING: [Synth 8-327] inferring latch for variable 'upReqDown2_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:318]
+WARNING: [Synth 8-327] inferring latch for variable 'lift_register_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:419]
+WARNING: [Synth 8-327] inferring latch for variable 'l1_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:409]
+WARNING: [Synth 8-327] inferring latch for variable 'currentfloor_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:403]
+WARNING: [Synth 8-327] inferring latch for variable 'lift_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:404]
+WARNING: [Synth 8-327] inferring latch for variable 'status' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:536]
+WARNING: [Synth 8-327] inferring latch for variable 'next_target_floor_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:558]
+WARNING: [Synth 8-327] inferring latch for variable 'clear_counter_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:459]
+WARNING: [Synth 8-327] inferring latch for variable 'start2sec' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:536]
+WARNING: [Synth 8-327] inferring latch for variable 'direction_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:434]
+WARNING: [Synth 8-327] inferring latch for variable 'next_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:428]
+WARNING: [Synth 8-327] inferring latch for variable 'lift2_floor_indicator_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:847]
+WARNING: [Synth 8-327] inferring latch for variable 'l2_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:833]
+WARNING: [Synth 8-327] inferring latch for variable 'currentfloor_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:827]
+WARNING: [Synth 8-327] inferring latch for variable 'lift_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:828]
+WARNING: [Synth 8-327] inferring latch for variable 'status' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:957]
+WARNING: [Synth 8-327] inferring latch for variable 'next_target_floor_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:979]
+WARNING: [Synth 8-327] inferring latch for variable 'clear_counter_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:880]
+WARNING: [Synth 8-327] inferring latch for variable 'lift_register' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:957]
+WARNING: [Synth 8-327] inferring latch for variable 'start2sec' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:957]
+WARNING: [Synth 8-327] inferring latch for variable 'direction_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:855]
+WARNING: [Synth 8-327] inferring latch for variable 'next_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:849]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 891 ; free virtual = 11108
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -224,18 +209,39 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---XORs : 
-	   3 Input      1 Bit         XORs := 168   
++---Adders : 
+	   2 Input     27 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 4     
 +---Registers : 
-	                1 Bit    Registers := 2     
+	               28 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 67    
+	   4 Input      4 Bit        Muxes := 4     
+	   3 Input      4 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 30    
+	   4 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 64    
+	   3 Input      2 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 2     
+	   7 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 229   
+	   3 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -243,22 +249,72 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module lab6_multiplier 
+Module seven_segment_display 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-Module full_adder 
-Detailed RTL Component Info : 
-+---XORs : 
-	   3 Input      1 Bit         XORs := 1     
-Module D2_4E_HXILINX_lab4_seven_segment_display 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      4 Bit        Muxes := 1     
-Module FTC_HXILINX_lab4_seven_segment_display 
-Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      7 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module request_handler 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 31    
+	   4 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 15    
+Module lift1_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               28 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 17    
+	   3 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 15    
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 32    
+	   3 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 110   
+	   3 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+Module lift2_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               28 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 19    
+	   3 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 15    
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 32    
+	   3 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 104   
+	   3 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -271,12 +327,278 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design lab8_elevator_control has unconnected port up_request[3]
+WARNING: [Synth 8-3331] design lab8_elevator_control has unconnected port down_request[0]
+WARNING: [Synth 8-3331] design lab8_elevator_control has unconnected port sim_mode
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\req_handle/now_up_request_reg[0]__1 )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\req_handle/now_down_request_reg[1]__1 )
+INFO: [Synth 8-3886] merging instance 'req_handle/upReqDown1_reg[0]' (LD) to 'req_handle/upReqUp1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\req_handle/upReqUp1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\l1_control/counter0_1sec_reg[27] )
+INFO: [Synth 8-3886] merging instance 'req_handle/upReqDown2_reg[0]' (LD) to 'req_handle/upReqUp2_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\req_handle/upReqUp2_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\l2_control/counter0_1sec_reg[27] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\req_handle/now_up_request_reg[1]__0 )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\req_handle/now_down_request_reg[2]__0 )
+INFO: [Synth 8-3886] merging instance 'l2_control/lift2_floor_indicator_reg[0]' (LD) to 'l2_control/lift2_floor_indicator_reg[1]'
+INFO: [Synth 8-3886] merging instance 'l2_control/lift2_floor_indicator_reg[1]' (LD) to 'l2_control/lift2_floor_indicator_reg[2]'
+INFO: [Synth 8-3886] merging instance 'l2_control/lift2_floor_indicator_reg[2]' (LD) to 'l2_control/lift2_floor_indicator_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\l2_control/lift2_floor_indicator_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\req_handle/now_up_request_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\req_handle/now_down_request_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_66/\l2_control/counter2sec_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_64/\l2_control/counter0_5sec_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_65/\l2_control/counter1sec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_65/\l2_control/counter1sec_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_65/\l2_control/counter1sec_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_35/\l1_control/counter2sec_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_33/\l1_control/counter0_5sec_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_34/\l1_control/counter1sec_reg[13] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'req_handle/now_up_request_reg[0]' (FD_1) to 'req_handle/now_up_request_reg[1]'
+INFO: [Synth 8-3886] merging instance 'req_handle/now_down_request_reg[1]' (FD_1) to 'req_handle/now_down_request_reg[2]'
+WARNING: [Synth 8-264] enable of latch \l1_control/next_target_floor_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l1_control/next_target_floor_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l1_control/next_target_floor_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l1_control/next_target_floor_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l2_control/next_target_floor_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l2_control/next_target_floor_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l2_control/next_target_floor_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \l2_control/next_target_floor_reg[1]  is always disabled
+INFO: [Synth 8-3886] merging instance 'l1_control/direction_reg[1]' (LDC) to 'l1_control/direction_reg[0]'
+INFO: [Synth 8-3886] merging instance 'l2_control/direction_reg[1]' (LDC) to 'l2_control/direction_reg[0]'
+INFO: [Synth 8-3886] merging instance 'l1_control/currentfloor_reg[1]' (LD) to 'l1_control/currentfloor_reg[0]'
+INFO: [Synth 8-3886] merging instance 'l2_control/lift2_floor_indicator_reg[3]' (LD) to 'l1_control/currentfloor_reg[0]'
+INFO: [Synth 8-3886] merging instance 'l1_control/currentfloor_reg[0]' (LD) to 'l2_control/currentfloor_reg[0]'
+INFO: [Synth 8-3886] merging instance 'l2_control/currentfloor_reg[1]' (LD) to 'l2_control/currentfloor_reg[0]'
+INFO: [Synth 8-3886] merging instance 'l2_control/currentfloor_reg[0]' (LD) to 'l1_control/lift_register_reg[0]'
+INFO: [Synth 8-3886] merging instance 'display/cath_reg[1]' (FDE) to 'display/cath_reg[6]'
+INFO: [Synth 8-3886] merging instance 'display/cath_reg[2]' (FDE) to 'display/cath_reg[4]'
+INFO: [Synth 8-3886] merging instance 'display/cath_reg[3]' (FDE) to 'display/cath_reg[4]'
+INFO: [Synth 8-3886] merging instance 'display/cath_reg[5]' (FDE) to 'display/cath_reg[6]'
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send1_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send1_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send1_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send1_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send2_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send2_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send2_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/send2_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[2]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[1]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[0]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[3]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[2]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[1]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp1_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp1_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp1_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp1_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown1_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown1_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown1_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown1_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqDown1_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqDown1_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqDown1_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqUp1_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqUp1_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqUp1_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown2_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown2_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown2_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqDown2_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqUp2_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqUp2_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqUp2_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp2_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp2_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp2_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/downReqUp2_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqDown2_reg[3]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqDown2_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/upReqDown2_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[2]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[1]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_up_request_reg[0]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[3]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[2]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (req_handle/now_down_request_reg[1]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/start0_5sec_reg) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l1_control/start0_5sec_reg/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:432]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:432]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:432]
+WARNING: [Synth 8-3332] Sequential element (l1_control/start1sec_reg) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l1_control/start1sec_reg/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:433]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:433]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:433]
+WARNING: [Synth 8-3332] Sequential element (l1_control/l1_status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/l1_status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/lift_status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/lift_status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[2]) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l1_control/status_reg[2]/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l1_control/status_reg[1]/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'VCC' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l1_control/status_reg[0]/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'VCC' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:427]
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[2]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[1]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[0]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[2]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[1]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[0]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[2]__2) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[1]__2) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/status_reg[0]__2) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/next_target_floor_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/next_target_floor_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/clear_counter_reg) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/start2sec) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/start2sec_reg) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l1_control/start2sec_reg/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:431]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:431]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:431]
+WARNING: [Synth 8-3332] Sequential element (l1_control/direction_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/next_status_reg[2]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/next_status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l1_control/next_status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/l2_status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/l2_status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/start0_5sec_reg) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l2_control/start0_5sec_reg/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:853]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:853]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:853]
+WARNING: [Synth 8-3332] Sequential element (l2_control/start1sec_reg) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l2_control/start1sec_reg/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:854]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:854]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:854]
+WARNING: [Synth 8-3332] Sequential element (l2_control/lift_status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/lift_status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[2]) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l2_control/status_reg[2]/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[1]) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l2_control/status_reg[1]/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'VCC' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[0]) is unused and will be removed from module lab8_elevator_control.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l2_control/status_reg[0]/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'VCC' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:848]
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[2]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[1]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[0]__0) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[2]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[1]__1) is unused and will be removed from module lab8_elevator_control.
+WARNING: [Synth 8-3332] Sequential element (l2_control/status_reg[0]__1) is unused and will be removed from module lab8_elevator_control.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'l2_control/start2sec_reg/Q' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:852]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:852]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:852]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 619 ; free virtual = 11082
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 874 ; free virtual = 11091
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -287,9 +609,14 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 619 ; free virtual = 11082
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 854 ; free virtual = 11071
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 844 ; free virtual = 11062
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -300,8 +627,28 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+Found timing loop:
+     0: \req_handle/up_request_register1 /O (GATE_2_7_NAND)
+     1: \req_handle/up_request_register1 /I0 (GATE_2_7_NAND)
+     2: i_48/O (GATE_2_2)
+     3: i_48/I0 (GATE_2_2)
+     4: i_46/O (GATE_2_1_NOR)
+     5: i_46/I0 (GATE_2_1_NOR)
+     6: \req_handle/up_request_register1__0 /O (GATE_2_1_NOR)
+     7: \req_handle/up_request_register1__0 /I1 (GATE_2_1_NOR)
+     8: \req_handle/up_request_register1 /O (GATE_2_7_NAND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:23]
+Inferred a: "set_disable_timing -from I0 -to O \req_handle/up_request_register1 "
+Found timing loop:
+     0: i_12/O (LUT2)
+     1: i_12/I0 (LUT2)
+     2: i_16/O (LUT2)
+     3: i_16/I0 (LUT2)
+     4: i_12/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:23]
+Inferred a: "set_disable_timing -from I0 -to O i_12"
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -325,7 +672,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -338,7 +685,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -350,25 +697,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -381,80 +728,50 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |AND2 |    18|
-|2     |AND4 |     3|
-|3     |AND5 |     2|
-|4     |BUFG |     1|
-|5     |INV  |    33|
-|6     |LUT1 |     1|
-|7     |LUT2 |    43|
-|8     |LUT3 |     3|
-|9     |LUT4 |    38|
-|10    |LUT5 |    17|
-|11    |LUT6 |   117|
-|12    |OR2  |     1|
-|13    |OR4  |    38|
-|14    |FD   |    17|
-|15    |FDRE |     2|
-|16    |IBUF |    20|
-|17    |OBUF |    27|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     4|
+|3     |LUT1   |     3|
+|4     |LUT2   |     9|
+|5     |LUT3   |     6|
+|6     |LUT4   |    13|
+|7     |LUT5   |     1|
+|8     |LUT6   |     5|
+|9     |FDRE   |    24|
+|10    |LD     |     3|
+|11    |IBUF   |     5|
+|12    |OBUF   |    27|
++------+-------+------+
 
 Report Instance Areas: 
-+------+----------------+---------------------------------------------------+------+
-|      |Instance        |Module                                             |Cells |
-+------+----------------+---------------------------------------------------+------+
-|1     |top             |                                                   |   381|
-|2     |  seven_seg     |lab4_seven_segment_display                         |   333|
-|3     |    XLXI_10     |select4_MUSER_lab4_seven_segment_display           |   231|
-|4     |      XLXI_1    |enableswitchmux_MUSER_lab4_seven_segment_display   |    12|
-|5     |      XLXI_2    |enableswitchmux_MUSER_lab4_seven_segment_display_2 |    28|
-|6     |      XLXI_3    |enableswitchmux_MUSER_lab4_seven_segment_display_3 |    63|
-|7     |      XLXI_4    |enableswitchmux_MUSER_lab4_seven_segment_display_4 |   124|
-|8     |    XLXI_3      |anode_clock_MUSER_lab4_seven_segment_display       |    46|
-|9     |      XLXI_16   |D2_4E_HXILINX_lab4_seven_segment_display           |     2|
-|10    |      XLXI_22   |FTC_HXILINX_lab4_seven_segment_display             |     4|
-|11    |      XLXI_23   |FTC_HXILINX_lab4_seven_segment_display_1           |     2|
-|12    |      XLXI_3    |dpacket_MUSER_lab4_seven_segment_display           |    34|
-|13    |    XLXI_4      |cathode_selector_MUSER_lab4_seven_segment_display  |    52|
-|14    |      XLXI_1    |a_MUSER_lab4_seven_segment_display                 |     5|
-|15    |      XLXI_2    |b_MUSER_lab4_seven_segment_display                 |     7|
-|16    |        XLXI_25 |AND6_HXILINX_lab4_seven_segment_display_0          |     1|
-|17    |      XLXI_3    |c_MUSER_lab4_seven_segment_display                 |     5|
-|18    |      XLXI_4    |d_MUSER_lab4_seven_segment_display                 |     6|
-|19    |      XLXI_5    |e_MUSER_lab4_seven_segment_display                 |    11|
-|20    |        XLXI_23 |AND6_HXILINX_lab4_seven_segment_display            |     1|
-|21    |      XLXI_6    |f_MUSER_lab4_seven_segment_display                 |     6|
-|22    |      XLXI_7    |g_MUSER_lab4_seven_segment_display                 |     5|
-+------+----------------+---------------------------------------------------+------+
++------+-------------+----------------------+------+
+|      |Instance     |Module                |Cells |
++------+-------------+----------------------+------+
+|1     |top          |                      |   101|
+|2     |  display    |seven_segment_display |    57|
+|3     |  l1_control |lift1_controller      |     9|
++------+-------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.152 ; gain = 328.684 ; free physical = 620 ; free virtual = 11083
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.688 ; gain = 471.215 ; free physical = 836 ; free virtual = 11053
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1259.152 ; gain = 248.594 ; free physical = 620 ; free virtual = 11083
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1259.160 ; gain = 328.691 ; free physical = 620 ; free virtual = 11083
+Synthesis finished with 0 errors, 38 critical warnings and 406 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1401.688 ; gain = 90.465 ; free physical = 836 ; free virtual = 11053
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.695 ; gain = 471.223 ; free physical = 836 ; free virtual = 11053
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 132 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 112 instances were transformed.
-  AND2 => LUT2: 18 instances
-  AND4 => LUT4: 3 instances
-  AND5 => LUT5: 2 instances
-  FD => FDRE: 17 instances
-  INV => LUT1: 33 instances
-  OR2 => LUT2: 1 instances
-  OR4 => LUT4: 38 instances
+  A total of 3 instances were transformed.
+  LD => LDCE: 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-170 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+158 Infos, 212 Warnings, 43 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1329.164 ; gain = 331.191 ; free physical = 577 ; free virtual = 11040
-INFO: [Common 17-1381] The checkpoint '/media/ad/TheLibrary/col215_lab/vivado/practice/practice.runs/synth_1/lab6_multiplier.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1353.176 ; gain = 0.000 ; free physical = 575 ; free virtual = 11038
-INFO: [Common 17-206] Exiting Vivado at Thu Sep 14 00:17:08 2017...
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1401.695 ; gain = 401.707 ; free physical = 837 ; free virtual = 11055
+INFO: [Common 17-1381] The checkpoint '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.runs/synth_1/lab8_elevator_control.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1425.699 ; gain = 0.000 ; free physical = 837 ; free virtual = 11055
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 13 17:12:24 2017...

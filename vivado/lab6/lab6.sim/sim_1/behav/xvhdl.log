@@ -1,0 +1,25 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab6/submission/lab6_multiplier.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity full_adder
+INFO: [VRFC 10-307] analyzing entity carry_prop_8
+INFO: [VRFC 10-307] analyzing entity carry_save_8
+INFO: [VRFC 10-307] analyzing entity cla_adder_4
+INFO: [VRFC 10-307] analyzing entity cla_adder_8
+INFO: [VRFC 10-307] analyzing entity lab6_multiplier
+INFO: [VRFC 10-307] analyzing entity FTC_HXILINX_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity D2_4E_HXILINX_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity AND6_HXILINX_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity enableswitchmux_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity select4_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity g_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity f_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity e_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity d_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity c_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity b_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity a_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity cathode_selector_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity dpacket_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity anode_clock_MUSER_lab4_seven_segment_display
+INFO: [VRFC 10-307] analyzing entity lab4_seven_segment_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab6_multiplier_tb

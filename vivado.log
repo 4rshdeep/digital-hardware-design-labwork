@@ -2,63 +2,83 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Thu Sep 14 00:38:38 2017
-# Process ID: 28536
+# Start of session at: Tue Oct 10 23:49:27 2017
+# Process ID: 2938
 # Current directory: /media/ad/Area51/workspace/col215_prac_lab
 # Command line: vivado
 # Log file: /media/ad/Area51/workspace/col215_prac_lab/vivado.log
 # Journal file: /media/ad/Area51/workspace/col215_prac_lab/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project lab5 /media/ad/Area51/workspace/col215_prac_lab/vivado/lab5 -part xc7a35tcpg236-1
+open_project /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'.
+INFO: [IP_Flow 19-2338] Canceling the changes to the IP catalog. Reverting the catalog back to its previous state.
+INFO: [IP_Flow 19-2340] The IP catalog has been returned to its previous state.
+INFO: [Common 17-344] 'open_project' was cancelled
+add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd
+close_project
+open_project /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.xpr
+Scanning sources...
+Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'.
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 5890.234 ; gain = 63.082 ; free physical = 1517 ; free virtual = 11994
-add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier.vhd
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/lab7/simple_divider.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+import_files
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.srcs/sources_1/imports/lab7/lab7_divider.vhd
+update_compile_order -fileset sources_1
+remove_files  -fileset sim_1 /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.srcs/sim_1/imports/lab7/lab7_divider_tb.vhd
+update_compile_order -fileset sim_1
+add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
 launch_simulation
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'lab6_multiplier_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-37] Inspecting design source files for 'seven_segment_display' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav'
-xvhdl -m64 --relax -prj lab6_multiplier_tb_vhdl.prj
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj seven_segment_display_vhdl.prj
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity full_adder
-INFO: [VRFC 10-307] analyzing entity carry_prop_8
-INFO: [VRFC 10-307] analyzing entity carry_save_8
-INFO: [VRFC 10-307] analyzing entity cla_adder_4
-INFO: [VRFC 10-307] analyzing entity cla_adder_8
-INFO: [VRFC 10-307] analyzing entity lab6_multiplier
-INFO: [VRFC 10-307] analyzing entity FTC_HXILINX_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity D2_4E_HXILINX_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity AND6_HXILINX_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity enableswitchmux_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity select4_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity g_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity f_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity e_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity d_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity c_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity b_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity a_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity cathode_selector_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity dpacket_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity anode_clock_MUSER_lab4_seven_segment_display
-INFO: [VRFC 10-307] analyzing entity lab4_seven_segment_display
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab6_multiplier_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+ERROR: [VRFC 10-1412] syntax error near process [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd:57]
+ERROR: [VRFC 10-1504] unit ssd ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd:23]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd ignored due to errors
 INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'seven_segment_display' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj seven_segment_display_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 Vivado Simulator 2016.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 621bb911ea7a4adeaee2ca77d597feb6 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab6_multiplier_tb_behav xil_defaultlib.lab6_multiplier_tb -log elaborate.log 
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot seven_segment_display_behav xil_defaultlib.seven_segment_display -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -68,48 +88,11 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
 Compiling package ieee.numeric_std
-Compiling package unisim.vcomponents
-Compiling package ieee.vital_timing
-Compiling package ieee.vital_primitives
-Compiling package unisim.vpkg
-Compiling architecture adder_arch of entity xil_defaultlib.full_adder [full_adder_default]
-Compiling architecture carry_prop_8_arc of entity xil_defaultlib.carry_prop_8 [carry_prop_8_default]
-Compiling architecture carry_save_8_arc of entity xil_defaultlib.carry_save_8 [carry_save_8_default]
-Compiling architecture cla_adder_4_arc of entity xil_defaultlib.cla_adder_4 [cla_adder_4_default]
-Compiling architecture cla_adder_8_arc of entity xil_defaultlib.cla_adder_8 [cla_adder_8_default]
-Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1000")(0,3)\]
-Compiling architecture and2_v of entity unisim.AND2 [and2_default]
-Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
-Compiling architecture fd_v of entity unisim.FD [fd_default]
-Compiling architecture inv_v of entity unisim.INV [inv_default]
-Compiling architecture behavioral of entity xil_defaultlib.dpacket_MUSER_lab4_seven_segment_display [dpacket_muser_lab4_seven_segment...]
-Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1110")(0,3)\]
-Compiling architecture or2_v of entity unisim.OR2 [or2_default]
-Compiling architecture d2_4e_hxilinx_lab4_seven_segment_display_v of entity xil_defaultlib.D2_4E_HXILINX_lab4_seven_segment_display [d2_4e_hxilinx_lab4_seven_segment...]
-Compiling architecture behavioral of entity xil_defaultlib.FTC_HXILINX_lab4_seven_segment_display [ftc_hxilinx_lab4_seven_segment_d...]
-Compiling architecture behavioral of entity xil_defaultlib.anode_clock_MUSER_lab4_seven_segment_display [anode_clock_muser_lab4_seven_seg...]
-Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111111110")(0...]
-Compiling architecture or4_v of entity unisim.OR4 [or4_default]
-Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1000000000000000")(0...]
-Compiling architecture and4_v of entity unisim.AND4 [and4_default]
-Compiling architecture behavioral of entity xil_defaultlib.a_MUSER_lab4_seven_segment_display [a_muser_lab4_seven_segment_displ...]
-Compiling architecture and6_hxilinx_lab4_seven_segment_display_v of entity xil_defaultlib.AND6_HXILINX_lab4_seven_segment_display [and6_hxilinx_lab4_seven_segment_...]
-Compiling architecture behavioral of entity xil_defaultlib.b_MUSER_lab4_seven_segment_display [b_muser_lab4_seven_segment_displ...]
-Compiling architecture behavioral of entity xil_defaultlib.c_MUSER_lab4_seven_segment_display [c_muser_lab4_seven_segment_displ...]
-Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10000000000000000000...]
-Compiling architecture and5_v of entity unisim.AND5 [and5_default]
-Compiling architecture behavioral of entity xil_defaultlib.d_MUSER_lab4_seven_segment_display [d_muser_lab4_seven_segment_displ...]
-Compiling architecture behavioral of entity xil_defaultlib.e_MUSER_lab4_seven_segment_display [e_muser_lab4_seven_segment_displ...]
-Compiling architecture behavioral of entity xil_defaultlib.f_MUSER_lab4_seven_segment_display [f_muser_lab4_seven_segment_displ...]
-Compiling architecture behavioral of entity xil_defaultlib.g_MUSER_lab4_seven_segment_display [g_muser_lab4_seven_segment_displ...]
-Compiling architecture behavioral of entity xil_defaultlib.cathode_selector_MUSER_lab4_seven_segment_display [cathode_selector_muser_lab4_seve...]
-Compiling architecture behavioral of entity xil_defaultlib.enableswitchmux_MUSER_lab4_seven_segment_display [enableswitchmux_muser_lab4_seven...]
-Compiling architecture behavioral of entity xil_defaultlib.select4_MUSER_lab4_seven_segment_display [select4_muser_lab4_seven_segment...]
-Compiling architecture behavioral of entity xil_defaultlib.lab4_seven_segment_display [lab4_seven_segment_display_defau...]
-Compiling architecture lab6_multiplier_arc of entity xil_defaultlib.lab6_multiplier [lab6_multiplier_default]
-Compiling architecture behavior of entity xil_defaultlib.lab6_multiplier_tb
-Built simulation snapshot lab6_multiplier_tb_behav
+Compiling architecture ssd of entity xil_defaultlib.seven_segment_display
+Built simulation snapshot seven_segment_display_behav
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 
 ****** Webtalk v2016.4 (64-bit)
@@ -117,17 +100,18 @@ awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
   **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source /media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav/xsim.dir/lab6_multiplier_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Thu Sep 14 00:40:47 2017...
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+source /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xsim.dir/seven_segment_display_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct 10 23:55:37 2017...
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5946.449 ; gain = 0.000 ; free physical = 3106 ; free virtual = 13061
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/lab5/lab5.sim/sim_1/behav'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "lab6_multiplier_tb_behav -key {Behavioral:sim_1:Functional:lab6_multiplier_tb} -tclbatch {lab6_multiplier_tb.tcl} -log {simulate.log}"
+   with args "seven_segment_display_behav -key {Behavioral:sim_1:Functional:seven_segment_display} -tclbatch {seven_segment_display.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2016.4
 Time resolution is 1 ps
-source lab6_multiplier_tb.tcl
+source seven_segment_display.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -138,16 +122,627 @@ source lab6_multiplier_tb.tcl
 #   }
 # }
 # run 1000ns
-Note: Testbench of Lab 6 completed successfully!
-Time: 50 ns  Iteration: 0  Process: /lab6_multiplier_tb/stim_proc  File: /media/ad/Area51/workspace/col215_prac_lab/lab6/lab6_multiplier_tb.vhd
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab6_multiplier_tb_behav' loaded.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'seven_segment_display_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 5963.352 ; gain = 54.137 ; free physical = 1494 ; free virtual = 11989
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 5977.379 ; gain = 30.930 ; free physical = 3014 ; free virtual = 13008
+add_force {/seven_segment_display/l1_status} -radix hex {00 0ns}
+add_force {/seven_segment_display/l1_floor} -radix hex {00 0ns}
+run 10 us
+add_force {/seven_segment_display/l2_status} -radix hex {00 0ns}
+add_force {/seven_segment_display/l2_floor} -radix hex {00 0ns}
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'seven_segment_display' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj seven_segment_display_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot seven_segment_display_behav xil_defaultlib.seven_segment_display -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling architecture ssd of entity xil_defaultlib.seven_segment_display
+Built simulation snapshot seven_segment_display_behav
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xsim.dir/seven_segment_display_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 11 00:00:09 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "seven_segment_display_behav -key {Behavioral:sim_1:Functional:seven_segment_display} -tclbatch {seven_segment_display.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source seven_segment_display.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'seven_segment_display_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+add_force {/seven_segment_display/l1_status} -radix hex {00 0ns}
+add_force {/seven_segment_display/l1_floor} -radix hex {00 0ns}
+add_force {/seven_segment_display/l2_status} -radix hex {00 0ns}
+add_force {/seven_segment_display/l2_floor} -radix hex {00 0ns}
+run 10 us
+add_force {/seven_segment_display/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
 run all
 INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 5972.738 ; gain = 8.004 ; free physical = 1448 ; free virtual = 11985
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 5995.527 ; gain = 8.004 ; free physical = 2367 ; free virtual = 12791
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/lab8/test/seven_seg.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <l1_status> does not exist in entity <request_handler>.  Please compare the definition of block <request_handler> to its component declaration and its instantion to detect the mismatch. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:37]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit lab8_elevator_control in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <l1_status> does not exist in entity <request_handler>.  Please compare the definition of block <request_handler> to its component declaration and its instantion to detect the mismatch. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:37]
+ERROR: [VRFC 10-718] formal port <l2_status> does not exist in entity <request_handler>.  Please compare the definition of block <request_handler> to its component declaration and its instantion to detect the mismatch. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:39]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit lab8_elevator_control in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <l1_status> does not exist in entity <lift1_controller>.  Please compare the definition of block <lift1_controller> to its component declaration and its instantion to detect the mismatch. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:56]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit lab8_elevator_control in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+ERROR: [VRFC 10-91] lift1_status is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:147]
+ERROR: [VRFC 10-1504] unit lift1_controller_arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:137]
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+ERROR: [VRFC 10-1504] unit lift2_controller ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:158]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+ERROR: [VRFC 10-91] lift1_status is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:147]
+ERROR: [VRFC 10-1504] unit lift1_controller_arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:137]
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+ERROR: [VRFC 10-1504] unit lift2_controller ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:158]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <l2_status> does not exist in entity <lift2_controller>.  Please compare the definition of block <lift2_controller> to its component declaration and its instantion to detect the mismatch. [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:69]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit lab8_elevator_control in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+ERROR: [XSIM 43-3274] No architecture found for entity lift2_controller. The architecture may be invalidated by recompile of dependent package
+INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling architecture request_handler_arc of entity xil_defaultlib.request_handler [request_handler_default]
+Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller [lift1_controller_default]
+Compiling architecture lift2_controller_arc of entity xil_defaultlib.lift2_controller [lift2_controller_default]
+Compiling architecture arc of entity xil_defaultlib.lab8_elevator_control
+Built simulation snapshot lab8_elevator_control_behav
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xsim.dir/lab8_elevator_control_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 11 00:58:38 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab8_elevator_control_behav -key {Behavioral:sim_1:Functional:lab8_elevator_control} -tclbatch {lab8_elevator_control.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source lab8_elevator_control.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab8_elevator_control_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+ERROR: [VRFC 10-91] seven_segment_display is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:83]
+ERROR: [VRFC 10-1504] unit arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:21]
+INFO: [VRFC 10-307] analyzing entity request_handler
+ERROR: [VRFC 10-1504] unit request_handler ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:100]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+ERROR: [VRFC 10-91] seven_segment_display is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:83]
+ERROR: [VRFC 10-1504] unit arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:21]
+INFO: [VRFC 10-307] analyzing entity request_handler
+ERROR: [VRFC 10-1504] unit request_handler ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:100]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+ERROR: [VRFC 10-91] seven_segment_display is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:83]
+ERROR: [VRFC 10-1504] unit arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:21]
+INFO: [VRFC 10-307] analyzing entity request_handler
+ERROR: [VRFC 10-1504] unit request_handler ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:100]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 2 [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:84]
+WARNING: [VRFC 10-122] seven_segment_diplay remains a black-box since it has no binding entity [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:83]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit lab8_elevator_control in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-122] seven_segment_diplay remains a black-box since it has no binding entity [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:83]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling architecture request_handler_arc of entity xil_defaultlib.request_handler [request_handler_default]
+Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller [lift1_controller_default]
+Compiling architecture lift2_controller_arc of entity xil_defaultlib.lift2_controller [lift2_controller_default]
+Compiling architecture arc of entity xil_defaultlib.lab8_elevator_control
+Built simulation snapshot lab8_elevator_control_behav
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xsim.dir/lab8_elevator_control_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 11 01:10:43 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab8_elevator_control_behav -key {Behavioral:sim_1:Functional:lab8_elevator_control} -tclbatch {lab8_elevator_control.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source lab8_elevator_control.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab8_elevator_control_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
+run 10 us
+add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
+run 10 us
+run all
+run 10 us
+add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
+run 10 us
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lab8_elevator_control' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lab8_elevator_control_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 6d5b8dacf7fb42d9b4e998341f34289a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab8_elevator_control_behav xil_defaultlib.lab8_elevator_control -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-122] seven_segment_diplay remains a black-box since it has no binding entity [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:83]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling architecture request_handler_arc of entity xil_defaultlib.request_handler [request_handler_default]
+Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller [lift1_controller_default]
+Compiling architecture lift2_controller_arc of entity xil_defaultlib.lift2_controller [lift2_controller_default]
+Compiling architecture arc of entity xil_defaultlib.lab8_elevator_control
+Built simulation snapshot lab8_elevator_control_behav
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav/xsim.dir/lab8_elevator_control_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 11 01:20:58 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab8_elevator_control_behav -key {Behavioral:sim_1:Functional:lab8_elevator_control} -tclbatch {lab8_elevator_control.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source lab8_elevator_control.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab8_elevator_control_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 10 us
+run 10 us
+add_force {/lab8_elevator_control/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 5995.527 ; gain = 0.000 ; free physical = 1091 ; free virtual = 11840
 INFO: [Common 17-344] 'run' was cancelled
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Sep 14 00:41:08 2017...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 11 01:24:39 2017...

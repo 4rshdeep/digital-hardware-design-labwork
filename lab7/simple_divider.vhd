@@ -2,8 +2,8 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-
+use ieee.std_logic_unsigned.all;        -- for addition & counting
+use ieee.numeric_std.all;               -- for type conversions
 
 entity div is
     generic(
@@ -15,8 +15,17 @@ entity div is
         --start: in std_logic;
         dvsr, dvnd: in std_logic_vector(W-1 downto 0);
         ready, done_tick: out std_logic;
-        quo, rmd: out std_logic_vector(W-1 downto 0)
+        quo, rmd: out std_logic_vector(W-1 downto 0);
+        in_inval : out std_logic
     );
+
+    function twos_complement (X : std_logic_vector) return std_logic_vector is
+    variable temp : std_logic_vector(7 downto 0);
+    begin
+       temp := not X;
+      return std_logic_vector(unsigned(temp + 1));
+    end twos_complement;
+
 end div;
 
 architecture arch of div is
@@ -27,18 +36,54 @@ architecture arch of div is
    signal rh_tmp: unsigned(W-1 downto 0);
    signal d_reg, d_next: unsigned(W-1 downto 0);
    signal n_reg, n_next: unsigned(CBIT-1 downto 0);
-   signal q_bit, start: std_logic;
+   signal q_bit, start, checked: std_logic;
+   signal dvnd_sig, dvsr_sig : std_logic_vector(W-1 downto 0);
+   signal qsign, rsign : std_logic;
+   signal done_signal : std_logic;
 begin
    -- fsmd state and data registers
    process(clk,reset)
    begin
-      if reset='1' then   -- reset is like load_inputs button -- start starts the division
+      if reset='1' and reset'event then   -- reset is like load_inputs button -- start starts the division
          state_reg <= idle;
          rh_reg <= (others=>'0');
          rl_reg <= (others=>'0');
          d_reg <= (others=>'0');
          n_reg <= (others=>'0');
-         start <= '1';
+         if (dvsr="00000000") then
+             in_inval <= '1';
+             start <= '0';
+         else
+             in_inval <= '0';
+             start <= '1';
+         end if;
+         
+--------------------------------------------------------------------------------
+    -- check for cases where dvnd and dvsr are negative
+    -- and assign rsign and qsign = '1' if they are needed to be inverted later
+
+        if (dvnd(7)='1') then
+           dvnd_sig <= twos_complement(dvnd);
+           rsign <= '1';
+        else
+           dvnd_sig <= dvnd;
+           rsign <= '0';
+        end if;
+
+
+        if dvsr(7)='1' then
+            dvsr_sig <= twos_complement(dvsr);
+        else
+            dvsr_sig <= dvsr;
+        end if;
+
+        if (dvsr(7) XOR dvnd(7))='1' then
+            qsign <='1';
+        else
+            qsign <= '0';
+        end if;
+      
+--------------------------------------------------------------------------------
       elsif (clk'event and clk='1' and state_reg/=done) then
          state_reg <= state_next;
          rh_reg <= rh_next;
@@ -54,6 +99,7 @@ begin
    begin
       ready <='0';
       done_tick <= '0';
+      done_signal <= '0';
       state_next <= state_reg;
       rh_next <= rh_reg;
       rl_next <= rl_reg;
@@ -62,9 +108,9 @@ begin
       case state_reg is
          when idle =>
             ready <= '1';
-            if start='1' and reset /= '1' then
+            if start='1'then   --removed reset from here since it should keep working even when load inputs is pressed
                rh_next <= (others=>'0');
-               rl_next <= dvnd;                  -- dividend
+               rl_next <= dvnd_sig;                  -- dividend
                d_next <= unsigned(dvsr);         -- divisor
                n_next <= to_unsigned(W+1, CBIT); -- index
                state_next <= op;
@@ -84,7 +130,8 @@ begin
             state_next <= done;
          when done =>
             state_next <= idle;
-            done_tick <= '1'; -- done_tick corresponds to output valid
+            done_tick <= '1';
+            done_signal <='1'; -- done_tick corresponds to output valid
       end case;
    end process;
 
@@ -101,8 +148,24 @@ begin
    end process;
 
    -- output
-   quo <= rl_reg;
-   rmd <= std_logic_vector(rh_reg);
+   process(done_signal, rh_reg, rl_reg)
+   begin
+  --  if (done_signal='1') then
+        if (qsign='1') then
+            quo <= twos_complement(rl_reg);
+        else
+            quo <= rl_reg;
+        end if;
+
+        if (rsign='1') then
+           rmd <= twos_complement(std_logic_vector(rh_reg));
+        else
+            rmd <= std_logic_vector(rh_reg);
+        end if;
+        
+  -- end if;   
+   end process;
+   
 end arch;
 
 
@@ -139,7 +202,8 @@ architecture lab7_divider_arc of lab7_divider is
       ready : out std_logic;
       done_tick : out std_logic;
       quo   : out std_logic_vector(W-1 downto 0);
-      rmd   : out std_logic_vector(W-1 downto 0)
+      rmd   : out std_logic_vector(W-1 downto 0);
+      in_inval : out std_logic
     );
   end component;
 
@@ -163,14 +227,14 @@ begin
     end process;
     
   divider : div
-    port map (clk, load_inputs, divisor, dividend, ready, output_valid, quotient, remainder);
+    port map (clk, load_inputs, divisor, dividend, ready, output_valid, quotient, remainder, input_invalid);
 
     quonrem <= quotient & remainder;
 
   seven_seg : lab4_seven_segment_display
     port map(quonrem, clk, sim_mode, anode, cathode);
  
-    input_invalid <= '0';
+    
 end lab7_divider_arc;
 
 

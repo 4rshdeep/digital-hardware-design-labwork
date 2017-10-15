@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/media/ad/TheLibrary/col215_lab/vivado/practice/practice.runs/synth_1'
+HD_PWD='/media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log lab6_multiplier.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab6_multiplier.tcl
+EAStep vivado -log lab8_elevator_control.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab8_elevator_control.tcl
