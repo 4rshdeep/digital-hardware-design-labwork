@@ -1,7 +1,7 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
--- Date        : Sun Oct 15 19:14:12 2017
+-- Date        : Sun Oct 15 20:28:04 2017
 -- Host        : ad-ubuntu running 64-bit Ubuntu 16.04.3 LTS
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd

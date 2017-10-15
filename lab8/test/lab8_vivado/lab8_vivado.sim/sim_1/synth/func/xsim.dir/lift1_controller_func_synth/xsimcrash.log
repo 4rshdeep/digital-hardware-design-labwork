@@ -1,0 +1,14 @@
+Printing stacktrace...
+
+[0] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(+0x191951) [0x7f744bd23951]
+[1] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(+0x19956d) [0x7f744bd2b56d]
+[2] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(+0x199d85) [0x7f744bd2bd85]
+[3] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(ISIMK::GDBMIInputParser::force_create(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >&, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >&)+0x1e8) [0x7f744bc319c8]
+[4] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(ISIMK::GDBMIInputParser::action(std::vector<std::string, std::allocator<std::string> > const&)+0xf3) [0x7f744bc2bdd3]
+[5] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(ISIMK::GDBMIInputParser::processCommandLine(std::string const&)+0xcb) [0x7f744bc2d61b]
+[6] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(ISIMK::GDBMIInputParser::loop()+0x9d) [0x7f744bc2d75d]
+[7] /opt/Xilinx/Vivado/2016.4/lib/lnx64.o/librdi_simulator_kernel.so(iki_simulate_design+0x5f) [0x7f744bc5b09f]
+[8] xsim.dir/lift1_controller_func_synth/xsimk() [0x40a0df]
+[9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0) [0x7f744b563830]
+[10] xsim.dir/lift1_controller_func_synth/xsimk() [0x401269]
+Done

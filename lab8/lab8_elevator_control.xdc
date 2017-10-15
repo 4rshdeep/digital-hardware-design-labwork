@@ -28,9 +28,8 @@
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets up_request_IBUF[1]]
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets up_request_IBUF[2]]
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets up_request_IBUF[3]]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets up_request_indicator_OBUF[0]_inst_i_1]
-
-
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets up_request_indicator_OBUF[0]_inst_i_1]
+#
 #    set_property ALLOW_COMBINATORIAL_LOOPS TRUE [net_nets <myHier/myNet>]
 # Switches
 set_property PACKAGE_PIN R2 [get_ports lift1_floor[3]]

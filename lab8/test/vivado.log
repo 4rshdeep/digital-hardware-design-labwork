@@ -676,3 +676,196 @@ run 10 us
 run 10 us
 run 10 us
 run 10 us
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd
+INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func'
+xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+WARNING: [VRFC 10-1193] overwriting existing primary unit lab8_elevator_control [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:23]
+INFO: [VRFC 10-307] analyzing entity request_handler
+WARNING: [VRFC 10-1193] overwriting existing primary unit request_handler [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:122]
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+WARNING: [VRFC 10-1193] overwriting existing primary unit lift1_controller [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:353]
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+WARNING: [VRFC 10-1193] overwriting existing primary unit seven_segment_display [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:831]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lift1_controller_func_synth xil_defaultlib.lift1_controller -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package xil_defaultlib.enum_package
+Compiling package ieee.numeric_std
+Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
+Built simulation snapshot lift1_controller_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {2 0ns}
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd
+INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func'
+xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+WARNING: [VRFC 10-1193] overwriting existing primary unit lab8_elevator_control [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:23]
+INFO: [VRFC 10-307] analyzing entity request_handler
+WARNING: [VRFC 10-1193] overwriting existing primary unit request_handler [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:122]
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+WARNING: [VRFC 10-1193] overwriting existing primary unit lift1_controller [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:353]
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+WARNING: [VRFC 10-1193] overwriting existing primary unit seven_segment_display [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:831]
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lift1_controller_func_synth xil_defaultlib.lift1_controller -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package xil_defaultlib.enum_package
+Compiling package ieee.numeric_std
+Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
+Built simulation snapshot lift1_controller_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {2 0ns}
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor[2]} -radix hex {1 0ns}
+add_force {/lift1_controller/lift1_floor[3]} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+FATAL_ERROR: Vivado Simulator kernel has discovered an exceptional condition from which it cannot recover. Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+Time: 621 us  Iteration: 2
+ERROR: unknown error occurred
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}

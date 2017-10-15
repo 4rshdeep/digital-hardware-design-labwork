@@ -1,0 +1,7 @@
+Running: xsim.dir/lift2_controller_func_impl/xsimk -simmode gui -wdb lift2_controller_func_impl.wdb -simrunnum 0 -socket 55101
+Design successfully loaded
+Design Loading Memory Usage: 49604 KB (Peak: 49656 KB)
+Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 139540 KB (Peak: 196876 KB)
+Simulation CPU Usage: 160 ms

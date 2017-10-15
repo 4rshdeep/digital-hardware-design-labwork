@@ -2,4 +2,5 @@
 2016.4
 Jan 23 2017
 19:19:20
-/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd,1508075050,vhdl,,,,enum_package;lab8_elevator_control;lift1_controller;lift2_controller;request_handler;seven_segment_display,,,,,,,,
+/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd,1508079481,vhdl,,,,enum_package;lab8_elevator_control;lift1_controller;lift2_controller;request_handler;seven_segment_display,,,,,,,,
+/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/func/lift1_controller_func_synth.vhd,1508079485,vhdl,,,,,,,,,,,,

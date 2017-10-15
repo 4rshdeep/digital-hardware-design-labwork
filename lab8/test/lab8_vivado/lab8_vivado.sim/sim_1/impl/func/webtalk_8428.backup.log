@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sun Oct 15 22:16:02 2017
+# Process ID: 8428
+# Current directory: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func
+# Command line: wbtcv -mode batch -source /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/xsim.dir/lift2_controller_func_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/webtalk.log
+# Journal file: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/webtalk.jou
+#-----------------------------------------------------------
+source /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/xsim.dir/lift2_controller_func_impl/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Oct 15 22:16:02 2017...

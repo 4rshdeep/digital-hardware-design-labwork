@@ -150,53 +150,35 @@ architecture request_handler_arc of request_handler is
 begin
 
 	process( clock, reset, l1_status, l2_status, l1_currentfloor, l2_currentfloor )
-	variable now_up_request, now_down_request : std_logic_vector(3 downto 0);
 	begin
-	   	up_request_register(3)   <= '0';  
-       	down_request_register(0) <= '0';
-	 	
-
-	 	-- registering requests in a register
-		now_up_request   := up_request_register;
-		now_down_request := down_request_register;
-		
-		-- reset
-        if (up_request(0) = '0' and up_request(0)'event) then
-			now_up_request(0)      := '1';
-		end if;
-		if (up_request(1) = '0' and up_request(1)'event) then
-			now_up_request(1)      := '1';
-		end if;
-		if (up_request(2) = '0' and up_request(2)'event) then
-			now_up_request(2)      := '1';
-		end if;
-		if (down_request(1) = '0' and down_request(1)'event) then
-			now_down_request(1)      := '1';
-		end if;
-		if (down_request(2) = '0' and down_request(2)'event) then
-			now_down_request(2)      := '1';
-		end if;
-		if (down_request(3) = '0' and down_request(3)'event) then
-			now_down_request(3)      := '1';
-		end if;
-		
-		up_request_register <= now_up_request;
-		down_request_register <= now_down_request;
-		
+	   	
 		if (reset = '1') then
               up_request_register <= "0000";
               down_request_register <= "0000";
               send1 <= "0000";
               send2 <= "0000";
-        end if;
-		
-		--prev_down_request <= down_request_register;
-		--prev_up_request   <= up_request_register;
-
-
-		-- we should assign after register is done to be assigned
-		
-		if((down_request_register=now_down_request) and (up_request_register=now_up_request) and reset /= '1') then
+        else
+			if (up_request(0) = '1') then
+				up_request_register(0) <= '1';
+			end if;
+			if (up_request(1) = '1') then
+				up_request_register(1) <= '1';
+			end if;
+			if (up_request(2) = '1') then
+				up_request_register(2) <= '1';
+			end if;
+			if (down_request(1) = '1') then
+				down_request_register(1) <= '1';
+			end if;
+			if (down_request(2) = '1') then
+				down_request_register(2) <= '1';
+			end if;
+			if (down_request(3) = '1') then
+				down_request_register(3) <= '1';
+			end if;
+		end if;
+        
+		if((down_request(0)/='1') and (down_request(1)/='1') and (down_request(2)/='1') and (down_request(3)/='1') and up_request(0)/='1') and (up_request(1)/='1') and (up_request(2)/='1') and (up_request(3)/='1') and reset /= '1') then
 
 			if (l1_request_status = reqUp) then
 				send1 <= upReqUp1;
@@ -274,10 +256,7 @@ begin
 				up_request_register(3) <= '0';
 				down_request_register(3) <= '0';
 			end if;
-
 		end if;
-		
-		
 	end process ; -- reset_all
 
 	-- set indicators
@@ -377,7 +356,7 @@ architecture lift1_controller_arc of lift1_controller is
 	type state is (moving_up, moving_down, door_op, door_cl, door_opening, door_closing, forced_close, forced_open, do_not_update);
 	type direction_type is (none, up, down);
 	signal status, next_status : state;
-	signal currentfloor : std_logic_vector(1 downto 0);
+	signal currentfloor, next_floor : std_logic_vector(1 downto 0);
 	signal lift_register : std_logic_vector(3 downto 0);
 	signal combined_requests : std_logic_vector(3 downto 0);
 	signal lift_status : request_status;
@@ -389,11 +368,11 @@ architecture lift1_controller_arc of lift1_controller is
 	signal start0_5sec, start0_1sec : std_logic;
 	signal counter0_5sec, counter0_1sec : integer range 0 to 200000000; 
 	signal direction : direction_type;
-	signal prev_combined_request, prev_lift_register, prev_received_register: std_logic_vector(3 downto 0);
+--	signal prev_combined_request, prev_lift_register, prev_received_register: std_logic_vector(3 downto 0);
 	signal next_target_floor : std_logic_vector(1 downto 0);
 	signal clear_counter : std_logic;
-	signal update_status, update_open_status, update_close_status : std_logic;
-	signal wait_and_close : std_logic;
+	signal update_open_status, update_close_status : std_logic;
+	--signal update_status, wait_and_close : std_logic;
 begin
 
 	l1_currentfloor <= currentfloor;
@@ -407,7 +386,7 @@ begin
 			l1_status <= "01";
 		elsif (status = door_op) then
 			l1_status <= "11";
-		elsif (status = door_cl) then
+		elsif (status = door_cl)or(status = door_closing) then
 			l1_status <= "10";
 		end if;
 	end process ; -- status
@@ -423,8 +402,7 @@ begin
 			currentfloor 		  <= "00";
 			lift_register 		  <= "0000";
 			direction   		  <= none;
-			wait_and_close 		  <= '0';
-			update_status   	  <= '0';
+			--wait_and_close 		  <= '0';
 		else
 			if (lift1_floor(0)    = '1' and currentfloor /= "00") then
 				lift_register(0) <= '1';
@@ -449,11 +427,9 @@ begin
 				counter2sec   <= counter2sec + 1;
 				-- CHANGING COUNTER FOR SIMULATION 200000000
 				if (counter2sec >= 500) then
-					start2sec <='0';
-					if (update_status='1') then
-						status <= next_status;
-						update_status <= '0';
-					end if;
+					start2sec 	 <='0';
+					status 		 <= next_status;
+					currentfloor <= next_floor;
 				end if;
 			end if;
 			if (clear_counter = '1') then
@@ -470,10 +446,7 @@ begin
 				--50000000
 				if (counter0_5sec >= 500) then
 					start0_5sec <='0';
-					if (update_status='1') then
-						status <= next_status;
-						update_status <= '0';
-					end if;
+					status <= next_status;
 				end if;
 			end if;
 			if (clear_counter = '1') then
@@ -489,10 +462,7 @@ begin
 				counter1sec   <= counter1sec + 1;
 				if (counter1sec >= 500) then
 					start1sec <='0';
-					if (update_status='1') then
-						status <= next_status;
-						update_status <= '0';
-					end if;
+					status <= next_status;
 				end if;
 			end if;
 			if (clear_counter = '1') then
@@ -508,10 +478,7 @@ begin
 				counter0_1sec   <= counter1sec + 1;
 				if (counter0_1sec >= 500) then
 					start0_1sec <='0';
-					if (update_status='1') then
-						status <= next_status;
-						update_status <= '0';
-					end if;
+					status <= next_status;
 				end if;
 			end if;
 			if (clear_counter = '1') then
@@ -549,29 +516,54 @@ begin
 ------------------------------------------------------------------------------------------------------------------------------------------------------		
 
 		-- special case for wait after 1 sec
-		if (wait_and_close = '1' and start1sec = '0') then
-			start0_5sec 	<= '1';
-			wait_and_close  <= '0';
-			clear_counter 	<= '1';
-			update_status   <= '0'; -- already low since after 1 sec delay
+		--if (wait_and_close = '1' and start1sec = '0') then
+		--	start0_5sec 	<= '1';
+		--	wait_and_close  <= '0';
+		--	clear_counter 	<= '1';
+		--	update_status   <= '0'; -- already low since after 1 sec delay
+		--end if;
+		if (door_close = '1') then
+			if (status = door_op) then
+				start1sec <= '0';
+				status    <= door_closing;
+			end if;	
 		end if;
-		
+
+		if (door_open = '1') then
+			if (status = door_closing) then
+				start0_5sec <= '0';
+				start1sec   <= '0';
+				next_status <= door_op;
+				status 		<= door_op;
+			end if;
+		end if;
+
 
 		--after combined requests is changed
-		if((wait_and_close = '0') and(start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift1_floor(0)/='1' and lift1_floor(1)/='1' and lift1_floor(2)/='1' and lift1_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
-			
+		if((start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift1_floor(0)/='1' and lift1_floor(1)/='1' and lift1_floor(2)/='1' and lift1_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
 			if (status = door_op) then
 				if (combined_requests /= "0000") then
 				-- door has to be closed
-							start1sec 	<= '1';
-							clear_counter <= '1';
-							next_status <= door_cl;
-							update_status <= '1';
-							-- We have to close the door after 1 sec therefore after one second door closing should happen for 0.5 seconds
-							wait_and_close <= '1';
+					start1sec 	<= '1';
+					clear_counter <= '1';
+					next_status <= door_closing;
+				--	update_status <= '1';
+				--  We have to close the door after 1 sec therefore after one second door closing should happen for 0.5 seconds
+				--	wait_and_close <= '1';
 				else
 					direction <= none;
 				end if;
+			
+			elsif (status = door_closing) then
+				start0_5sec   <= '1';
+				clear_counter <= '1';
+				next_status   <= door_cl;
+
+			elsif (status = door_opening) then
+				start0_5sec   <= '1';
+				clear_counter <= '1';
+				next_status   <= door_op;
+
 			elsif (status = door_cl) then
 				if (currentfloor = "00") then
 				-- if there is a request from outside since the
@@ -592,10 +584,10 @@ begin
 						-- now I now I have to go up to nextfloor
 						
 						status		  <= moving_up;
-						update_status <= '0';
+						next_status   <= moving_up;
 						start2sec	  <= '1';
 						clear_counter <= '1';
-						currentfloor  <= currentfloor + 1;
+						next_floor 	  <= currentfloor + 1;
 						
 					-- no case of moving down	
 					end if;
@@ -613,30 +605,30 @@ begin
 						end if;
 						
 						status 		  <= moving_up;
-						update_status <= '0';
+						next_status   <= moving_up;
 						start2sec     <= '1';
 						clear_counter <= '1';
-						currentfloor  <= currentfloor + 1;
+						next_floor 	  <= currentfloor + 1;
 					
 					elsif (combined_requests(0) /='0') and (direction = none or direction = down) then
 						-- moving down
-						next_target_floor <= "00";
-						status <= moving_down;
-						start2sec <= '1';
-						clear_counter <= '1';
-						currentfloor <= currentfloor - 1;
-						update_status <= '0';
+						next_target_floor 	<= "00";
+						status 				<= moving_down;
+						start2sec 			<= '1';
+						clear_counter 		<= '1';
+						next_floor 			<= currentfloor - 1;
+						next_status  		<= moving_down;
 					end if;
 
 				
 				elsif (currentfloor="10") then
 					if (combined_requests(3) /= '0' and (direction=none or direction=up)) then
-						next_target_floor <= "11";
-						status 	  		  <= moving_up;
-						start2sec 		  <= '1';
-						clear_counter  	  <= '1';
-						currentfloor  <= currentfloor + 1;
-						update_status <= '0';
+						next_target_floor 	<= "11";
+						status 	  		  	<= moving_up;
+						start2sec 		  	<= '1';
+						clear_counter  	  	<= '1';
+						next_floor  		<= currentfloor + 1;
+						next_status			<= moving_up;
 					elsif (combined_requests(1 downto 0) /= "00" and (direction = none or direction = down)) then
 						if (combined_requests(0)='1') then
 							next_target_floor <= "00";
@@ -645,10 +637,11 @@ begin
 							next_target_floor <= "01";
 						end if;
 						--Executing a request where lift has to go up
+						status 			<= moving_down;
 						next_status 	<= moving_down;
 						start2sec   	<= '1';
 						clear_counter	<= '1';
-						currentfloor  <= currentfloor - 1;
+						next_floor  	<= currentfloor - 1;
 					
 					end if;
 
@@ -666,11 +659,11 @@ begin
 							next_target_floor <= "10";
 						end if;
 					end if;
-
+					status 		  <= moving_down;
 					next_status   <= moving_down;
 					start2sec 	  <= '1';
 					clear_counter <= '1';
-					currentfloor  <= currentfloor - 1;
+					next_floor 	  <= currentfloor - 1;
 						
 				end if;
 			
@@ -703,10 +696,8 @@ begin
 					next_status	  <= door_op;
 					start0_5sec   <= '1';
 					clear_counter <= '1';
-					update_status <= '1';
-
 				else
-					currentfloor  <= currentfloor + 1;
+					next_floor  <= currentfloor + 1;
 					start2sec 	  <= '1';
 					clear_counter <= '1';
 					direction     <= up;
@@ -736,53 +727,49 @@ begin
 					start0_5sec   <= '1';
 					clear_counter <= '1';
 				else
-					currentfloor  <= currentfloor - 1;
+					next_floor  <= currentfloor - 1;
 					start2sec 	  <= '1';
 					clear_counter <= '1';
 					direction 	  <= down;
-					next_status   <= moving_up;
+					next_status   <= moving_down;
 				end if;
 			end if;
 		end if;	
 
-			prev_combined_request 	<= combined_requests;
-			prev_lift_register 		<= lift_register;
-			prev_received_register  <= received_request;
-		
-		
 	end process;
 
 	
 	process(clock)
-	-- can be replaced by combined_requests TODO Later
-	variable reqORlift_requests : std_logic_vector(3 downto 0);
+
 	begin
-		reqORlift_requests := received_request or lift_register;
-		-- If a lift executes a req to go up
 		
 		if (currentfloor = "00") then
-			if (reqORlift_requests(3 downto 1) > "000") then
+			if (combined_requests(3 downto 1) > "000") then
 				lift_status <= reqUp;
 		else
 				lift_status <= reqDown;
 			end if;
 		elsif (currentfloor="01") then
-			if (reqORlift_requests(3 downto 2) > "00") then
+			if (combined_requests(3 downto 2) > "00") then
 				lift_status <= reqUp;
 			else
 				lift_status <= reqDown;
 			end if;
 		elsif (currentfloor="10") then
-			if (reqORlift_requests(3) > '0') then
+			if (combined_requests(3) > '0') then
 				lift_status <= reqUp;
 			else
+				lift_status <= reqDown;
+			end if;
+		elsif (currentfloor="11") then
+			if (combined_requests(2 downto 0) > "000") then
 				lift_status <= reqDown;
 			end if;
 		end if;
 		
 		-- if reset is pressed this overrides
 
-		if((reqORlift_requests = "0000") or (reset = '1')) then
+		if((combined_requests = "0000") or (reset = '1')) then
 			lift_status <= idle;
 		end if;		
 	end process;
@@ -819,8 +806,426 @@ use ieee.std_logic_unsigned.all;        -- for addition & counting
 
 architecture lift2_controller_arc of lift2_controller is
 	
+	type state is (moving_up, moving_down, door_op, door_cl, door_opening, door_closing, forced_close, forced_open, do_not_update);
+	type direction_type is (none, up, down);
+	signal status, next_status : state;
+	signal currentfloor, next_floor : std_logic_vector(1 downto 0);
+	signal lift_register : std_logic_vector(3 downto 0);
+	signal combined_requests : std_logic_vector(3 downto 0);
+	signal lift_status : request_status;
+	--signal upReqUp, upReqDown, downReqDown, downReqUp : std_logic_vector(3 downto 0);
+	signal start2sec : std_logic; 
+	signal counter2sec : integer range 0 to 200000000;
+	signal start1sec : std_logic; 
+	signal counter1sec : integer range 0 to 100000000; 
+	signal start0_5sec, start0_1sec : std_logic;
+	signal counter0_5sec, counter0_1sec : integer range 0 to 200000000; 
+	signal direction : direction_type;
+--	signal prev_combined_request, prev_lift_register, prev_received_register: std_logic_vector(3 downto 0);
+	signal next_target_floor : std_logic_vector(1 downto 0);
+	signal clear_counter : std_logic;
+	signal update_open_status, update_close_status : std_logic;
+	--signal update_status, wait_and_close : std_logic;
 begin
 
+	l2_currentfloor <= currentfloor;
+	r_status 		<= lift_status;
+
+	status_assigner : process( clock, status )
+	begin
+		if (status = moving_up) then
+			l2_status <= "00";
+		elsif (status = moving_down) then
+			l2_status <= "01";
+		elsif (status = door_op) then
+			l2_status <= "11";
+		elsif (status = door_cl)or(status = door_closing) then
+			l2_status <= "10";
+		end if;
+	end process ; -- status
+
+	lift2_floor_indicator <= lift_register;
+
+	process(clock, reset, lift2_floor, received_request)
+	begin
+	
+		if (reset ='1') then
+			status     			  <= door_op;
+			next_status 		  <= door_op;
+			currentfloor 		  <= "00";
+			lift_register 		  <= "0000";
+			direction   		  <= none;
+			--wait_and_close 		  <= '0';
+		else
+			if (lift2_floor(0)    = '1' and currentfloor /= "00") then
+				lift_register(0) <= '1';
+			end if;
+			if (lift2_floor(1)    = '1' and currentfloor /= "01") then
+				lift_register(1) <= '1';
+			end if;
+			if (lift2_floor(2)    = '1' and currentfloor /= "10") then
+				lift_register(2) <= '1';
+			end if;
+			if (lift2_floor(3)    = '1' and currentfloor /= "11") then
+				lift_register(3) <= '1';
+			end if;
+		end if;
+		
+		if (clock = '1') then
+			combined_requests <= (lift_register or received_request);	
+		end if;
+		
+		if (start2sec = '1') then
+			if (clock = '1' and clock'event and clear_counter/='1') then
+				counter2sec   <= counter2sec + 1;
+				-- CHANGING COUNTER FOR SIMULATION 200000000
+				if (counter2sec >= 500) then
+					start2sec 	 <='0';
+					status 		 <= next_status;
+					currentfloor <= next_floor;
+				end if;
+			end if;
+			if (clear_counter = '1') then
+				counter2sec <= 0;
+				clear_counter <= '0';
+			end if;
+		else
+			start2sec <= '0';
+		end if;
+
+		if (start0_5sec = '1') then
+			if (clock = '1' and clock'event and clear_counter/='1') then	
+				counter0_5sec   <= counter0_5sec + 1;
+				--50000000
+				if (counter0_5sec >= 500) then
+					start0_5sec <='0';
+					status <= next_status;
+				end if;
+			end if;
+			if (clear_counter = '1') then
+				counter0_5sec <= 0;
+				clear_counter <= '0';
+			end if;
+		else
+			start0_5sec <= '0';
+		end if;
+
+		if (start1sec = '1') then
+			if (clock = '1' and clock'event and clear_counter/='1') then
+				counter1sec   <= counter1sec + 1;
+				if (counter1sec >= 500) then
+					start1sec <='0';
+					status <= next_status;
+				end if;
+			end if;
+			if (clear_counter = '1') then
+				counter1sec <= 0;
+				clear_counter <= '0';
+			end if;
+		else
+			start1sec <= '0';
+		end if;
+
+		if (start0_1sec = '1') then
+			if (clock = '1' and clock'event and clear_counter/='1') then
+				counter0_1sec   <= counter1sec + 1;
+				if (counter0_1sec >= 500) then
+					start0_1sec <='0';
+					status <= next_status;
+				end if;
+			end if;
+			if (clear_counter = '1') then
+				counter0_1sec <= 0;
+				clear_counter <= '0';
+			end if;
+		else
+			start0_1sec <= '0';
+		end if;
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+		--todo door_open an door_close
+		--if (door_close='1' and start0_1sec = '0' and start1sec = '1' and start2sec = '0' and start0_5sec = '0') then
+		--	if (status = door_op) then
+		--		start1sec 	  <= '0';
+		--		start0_5sec   <= '1';
+		--		clear_counter <= '1';
+		--		status   	  <= door_cl;
+		--		update_status <= '0';
+		--	end if;
+		--end if;
+
+		--if (door_open = '1' and start0_1sec = '0' and start1sec = '0' and start2sec = '0' and start0_5sec = '0') then
+		--	start0_1sec   <= '1';
+		--	clear_counter <= '1';
+		--	next_status   <= door_op;
+		--	update_open_status <= '1';
+		--elsif(door_open = '0' and start0_1sec = '0' and start1sec = '0' and update_open_status='1' and start2sec = '0' and start0_5sec = '0') then
+		---- Problem Todo status gets assigned next status if door open is low
+		--	start0_1sec <= '0';
+		--	status      <= next_status;
+		--	update_open_status <= '0';
+		--end if;
+------------------------------------------------------------------------------------------------------------------------------------------------------		
+
+		-- special case for wait after 1 sec
+		--if (wait_and_close = '1' and start1sec = '0') then
+		--	start0_5sec 	<= '1';
+		--	wait_and_close  <= '0';
+		--	clear_counter 	<= '1';
+		--	update_status   <= '0'; -- already low since after 1 sec delay
+		--end if;
+		if (door_close = '1') then
+			if (status = door_op) then
+				start1sec <= '0';
+				status    <= door_closing;
+			end if;	
+		end if;
+
+		if (door_open = '1') then
+			if (status = door_closing) then
+				start0_5sec <= '0';
+				start1sec   <= '0';
+				next_status <= door_op;
+				status 		<= door_op;
+			end if;
+		end if;
+
+
+		--after combined requests is changed
+		if((start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift2_floor(0)/='1' and lift2_floor(1)/='1' and lift2_floor(2)/='1' and lift2_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
+			if (status = door_op) then
+				if (combined_requests /= "0000") then
+				-- door has to be closed
+					start1sec 	<= '1';
+					clear_counter <= '1';
+					next_status <= door_closing;
+				--	update_status <= '1';
+				--  We have to close the door after 1 sec therefore after one second door closing should happen for 0.5 seconds
+				--	wait_and_close <= '1';
+				else
+					direction <= none;
+				end if;
+			
+			elsif (status = door_closing) then
+				start0_5sec   <= '1';
+				clear_counter <= '1';
+				next_status   <= door_cl;
+
+			elsif (status = door_opening) then
+				start0_5sec   <= '1';
+				clear_counter <= '1';
+				next_status   <= door_op;
+
+			elsif (status = door_cl) then
+				if (currentfloor = "00") then
+				-- if there is a request from outside since the
+				-- door is open request handler clears that so now we do not need to handle that part
+					
+					if (combined_requests(3 downto 1) > "000") and (direction = none or direction = up) then
+						-- move up
+						--find nextfloor
+						if (combined_requests(3)='1') then
+							next_target_floor <= "11";
+						end if;
+						if (combined_requests(2)='1') then
+							next_target_floor <= "10";
+						end if;
+						if (combined_requests(1)='1') then
+							next_target_floor <= "01";
+						end if;
+						-- now I now I have to go up to nextfloor
+						
+						status		  <= moving_up;
+						next_status   <= moving_up;
+						start2sec	  <= '1';
+						clear_counter <= '1';
+						next_floor 	  <= currentfloor + 1;
+						
+					-- no case of moving down	
+					end if;
+				
+				elsif (currentfloor="01")  then
+					
+					if (combined_requests(3 downto 2) > "00") and (direction = none or direction = up) then
+						--move up
+						--find nextfloor
+						if (combined_requests(3)='1') then
+							next_target_floor <= "11";
+						end if;
+						if (combined_requests(2)='1') then
+							next_target_floor <= "10";
+						end if;
+						
+						status 		  <= moving_up;
+						next_status   <= moving_up;
+						start2sec     <= '1';
+						clear_counter <= '1';
+						next_floor 	  <= currentfloor + 1;
+					
+					elsif (combined_requests(0) /='0') and (direction = none or direction = down) then
+						-- moving down
+						next_target_floor 	<= "00";
+						status 				<= moving_down;
+						start2sec 			<= '1';
+						clear_counter 		<= '1';
+						next_floor 			<= currentfloor - 1;
+						next_status  		<= moving_down;
+					end if;
+
+				
+				elsif (currentfloor="10") then
+					if (combined_requests(3) /= '0' and (direction=none or direction=up)) then
+						next_target_floor 	<= "11";
+						status 	  		  	<= moving_up;
+						start2sec 		  	<= '1';
+						clear_counter  	  	<= '1';
+						next_floor  		<= currentfloor + 1;
+						next_status			<= moving_up;
+					elsif (combined_requests(1 downto 0) /= "00" and (direction = none or direction = down)) then
+						if (combined_requests(0)='1') then
+							next_target_floor <= "00";
+						end if;
+						if (combined_requests(1)='1') then
+							next_target_floor <= "01";
+						end if;
+						--Executing a request where lift has to go up
+						status 			<= moving_down;
+						next_status 	<= moving_down;
+						start2sec   	<= '1';
+						clear_counter	<= '1';
+						next_floor  	<= currentfloor - 1;
+					
+					end if;
+
+				
+				elsif (currentfloor="11") then
+					-- is se upar na ho payega
+					if (combined_requests(2 downto 0)/="000"  and (direction = none or direction = down)) then
+						if (combined_requests(0)='1') then
+							next_target_floor <= "00";
+						end if;
+						if (combined_requests(1)='1') then
+							next_target_floor <= "01";
+						end if;
+						if (combined_requests(2)='1') then
+							next_target_floor <= "10";
+						end if;
+					end if;
+					status 		  <= moving_down;
+					next_status   <= moving_down;
+					start2sec 	  <= '1';
+					clear_counter <= '1';
+					next_floor 	  <= currentfloor - 1;
+						
+				end if;
+			
+-------------------------------------------------------------------------------------------------------------------
+--DIRECTION SHOULD BE NONE IF WHEN IN MOVING UP AFTER THE FLOOR HAS BEEN REACHED AND THERE IS NO MORE REQUEST AT THE-- 
+--TOP OR IF WHILE MOVING DOWN AND AFTER REACHING THE REQUIRED FLOOR NO BELOW FLOOR HAS A REQUEST                  ---  
+----------------------------------------------------------------------------------------------------------------------
+			elsif (status = moving_up) then
+				if (currentfloor = next_target_floor) then
+					--Voila reached the floor
+					if (currentfloor = "01") then
+						lift_register(1) <= '0';
+						if (combined_requests(3 downto 2) = "00") then
+							direction <= none;
+						else
+							direction <= up;
+						end if;
+					elsif (currentfloor = "10") then
+						lift_register(2) <= '0';
+						if (combined_requests(3)='0') then
+							direction <= none;
+						else
+							direction <= up;
+						end if;
+					elsif (currentfloor = "11") then
+						lift_register(3) <= '0';
+						direction <= none;
+					end if;
+					status 		  <= door_cl;
+					next_status	  <= door_op;
+					start0_5sec   <= '1';
+					clear_counter <= '1';
+				else
+					next_floor  <= currentfloor + 1;
+					start2sec 	  <= '1';
+					clear_counter <= '1';
+					direction     <= up;
+					next_status   <= moving_up;
+				end if;
+			elsif (status = moving_down) then
+				--set direction and change if none
+				direction <= down;
+				if (currentfloor = next_target_floor) then
+					--Voila reached the floor
+					if (currentfloor = "00") then
+						lift_register(0) <= '0';
+						direction <= none;
+					elsif (currentfloor = "01") then
+						lift_register(1) <= '0';
+						if (combined_requests(0)='0') then
+							direction <= none;
+						end if;
+					elsif (currentfloor = "10") then
+						lift_register(2) <= '0';
+						if (combined_requests(1 downto 0)="00") then
+							direction <= none;
+						end if;
+					end if;
+					status        <= door_cl;
+					next_status   <= door_op;
+					start0_5sec   <= '1';
+					clear_counter <= '1';
+				else
+					next_floor  <= currentfloor - 1;
+					start2sec 	  <= '1';
+					clear_counter <= '1';
+					direction 	  <= down;
+					next_status   <= moving_down;
+				end if;
+			end if;
+		end if;	
+
+	end process;
+
+	
+	process(clock)
+
+	begin
+		
+		if (currentfloor = "00") then
+			if (combined_requests(3 downto 1) > "000") then
+				lift_status <= reqUp;
+		else
+				lift_status <= reqDown;
+			end if;
+		elsif (currentfloor="01") then
+			if (combined_requests(3 downto 2) > "00") then
+				lift_status <= reqUp;
+			else
+				lift_status <= reqDown;
+			end if;
+		elsif (currentfloor="10") then
+			if (combined_requests(3) > '0') then
+				lift_status <= reqUp;
+			else
+				lift_status <= reqDown;
+			end if;
+		elsif (currentfloor="11") then
+			if (combined_requests(2 downto 0) > "000") then
+				lift_status <= reqDown;
+			end if;
+		end if;
+		
+		-- if reset is pressed this overrides
+
+		if((combined_requests = "0000") or (reset = '1')) then
+			lift_status <= idle;
+		end if;		
+	end process;
 
 end lift2_controller_arc;
 

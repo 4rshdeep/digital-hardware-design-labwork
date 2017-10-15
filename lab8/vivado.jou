@@ -2,184 +2,536 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Wed Oct 11 12:40:28 2017
-# Process ID: 14014
+# Start of session at: Sun Oct 15 20:34:00 2017
+# Process ID: 30394
 # Current directory: /media/ad/Area51/workspace/col215_prac_lab/lab8
 # Command line: vivado
 # Log file: /media/ad/Area51/workspace/col215_prac_lab/lab8/vivado.log
 # Journal file: /media/ad/Area51/workspace/col215_prac_lab/lab8/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /media/ad/Area51/workspace/col215_prac_lab/vivado/practice/practice.xpr
-launch_simulation
-launch_simulation
-source lab8_elevator_control.tcl
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-close_sim
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top lift1_controller [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-launch_simulation
-source lab8_elevator_control.tcl
+open_project /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.xpr
+launch_simulation -mode post-synthesis -type timing
+source lift1_controller.tcl
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
 run 10 us
-close_sim
-launch_simulation
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
 run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
 run 10 us
-add_wave {{/lab8_elevator_control/l1_control/status}} 
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_wave {{/lab8_elevator_control/l1_control/status}} 
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/up_request} -radix hex {1111 0ns}
-add_force {/lab8_elevator_control/up_request} -radix bin {1111 0ns}
-run 10 us
-add_force {/lab8_elevator_control/up_request} -radix hex {0000 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-close_sim
-update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top lift1_controller [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-set_property source_mgmt_mode DisplayOnly [current_project]
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top request_handler [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode DisplayOnly [current_project]
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_wave {{/lab8_elevator_control/req_handle}} 
-add_wave {{/lab8_elevator_control/req_handle}} 
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/up_request} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/up_request} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/up_request[0]} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/up_request[0]} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/down_request} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/down_request[3]} -radix hex {1 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
 run 10 us
 run 10 us
-add_force {/lab8_elevator_control/down_request[3]} -radix hex {0 0ns}
 run 10 us
-add_force {/lab8_elevator_control/req_handle/l1_currentfloor} -radix bin {11 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
 run 10 us
 reset_run synth_1
-launch_runs impl_2 -to_step write_bitstream -jobs 2
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+relaunch_sim
+relaunch_sim
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {2 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {1 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/door_close} -radix hex {1 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {1 0ns}
+run 10 us
+run 10 us
+add_force {/lift1_controller/door_close} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
+run 10 us
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+add_force {/lift1_controller/lift1_floor[3]} -radix hex {1 0ns}
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+report_drivers {/lift1_controller/door_open}
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+close_sim
+close_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top lab8_elevator_control [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_2 -jobs 4
+wait_on_run impl_2
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+add_files -fileset constrs_1 -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
 wait_on_run impl_2
 reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+open_run impl_2
+close_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top lift2_controller [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation -mode post-implementation -type functional
+source lift2_controller.tcl
+add_force {/lift2_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/lift2_controller/reset} -radix hex {1 0ns}
+add_force {/lift2_controller/received_request} -radix hex {0 0ns}
+add_force {/lift2_controller/lift2_floor} -radix hex {c 0ns}
+add_force {/lift2_controller/door_open} -radix hex {0 0ns}
+run 10 us
+add_force {/lift2_controller/reset} -radix hex {0 0ns}
+run 10 us
+add_force {/lift2_controller/lift2_floor} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
 close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-close_sim
-launch_simulation
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-restart
-run all
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lab8_elevator_control/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/down_request[0]} -radix hex {0 0ns}
-close_sim
-launch_simulation
-source lab8_elevator_control.tcl
-add_force {/lab8_elevator_control/down_request[3]} -radix hex {0 0ns}
-run 10 us
-add_force {/lab8_elevator_control/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-run all
-run 10 us
-run all
-close_sim
+close_design
