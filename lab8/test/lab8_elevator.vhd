@@ -374,7 +374,7 @@ use ieee.numeric_std.all;               -- for type conversions
 
 architecture lift1_controller_arc of lift1_controller is
 
-	type state is (moving_up, moving_down, door_op, door_cl, forced_close, forced_open);
+	type state is (moving_up, moving_down, door_op, door_cl, door_opening, door_closing, forced_close, forced_open, do_not_update);
 	type direction_type is (none, up, down);
 	signal status, next_status : state;
 	signal currentfloor : std_logic_vector(1 downto 0);
@@ -392,8 +392,8 @@ architecture lift1_controller_arc of lift1_controller is
 	signal prev_combined_request, prev_lift_register, prev_received_register: std_logic_vector(3 downto 0);
 	signal next_target_floor : std_logic_vector(1 downto 0);
 	signal clear_counter : std_logic;
-	signal update_status : std_logic;
-	
+	signal update_status, update_open_status, update_close_status : std_logic;
+	signal wait_and_close : std_logic;
 begin
 
 	l1_currentfloor <= currentfloor;
@@ -422,11 +422,9 @@ begin
 			next_status 		  <= door_op;
 			currentfloor 		  <= "00";
 			lift_register 		  <= "0000";
-			--start2sec 			  <= '0';
-			--start0_5sec			  <= '0';
-			--start1sec			  <= '0';
-			--start0_1sec			  <= '0';
 			direction   		  <= none;
+			wait_and_close 		  <= '0';
+			update_status   	  <= '0';
 		else
 			if (lift1_floor(0)    = '1' and currentfloor /= "00") then
 				lift_register(0) <= '1';
@@ -450,10 +448,11 @@ begin
 			if (clock = '1' and clock'event and clear_counter/='1') then
 				counter2sec   <= counter2sec + 1;
 				-- CHANGING COUNTER FOR SIMULATION 200000000
-				if (counter2sec >= 2000) then
+				if (counter2sec >= 500) then
 					start2sec <='0';
 					if (update_status='1') then
 						status <= next_status;
+						update_status <= '0';
 					end if;
 				end if;
 			end if;
@@ -469,10 +468,11 @@ begin
 			if (clock = '1' and clock'event and clear_counter/='1') then	
 				counter0_5sec   <= counter0_5sec + 1;
 				--50000000
-				if (counter0_5sec >= 2000) then
+				if (counter0_5sec >= 500) then
 					start0_5sec <='0';
 					if (update_status='1') then
 						status <= next_status;
+						update_status <= '0';
 					end if;
 				end if;
 			end if;
@@ -487,10 +487,11 @@ begin
 		if (start1sec = '1') then
 			if (clock = '1' and clock'event and clear_counter/='1') then
 				counter1sec   <= counter1sec + 1;
-				if (counter1sec >= 1000) then
+				if (counter1sec >= 500) then
 					start1sec <='0';
 					if (update_status='1') then
 						status <= next_status;
+						update_status <= '0';
 					end if;
 				end if;
 			end if;
@@ -505,10 +506,11 @@ begin
 		if (start0_1sec = '1') then
 			if (clock = '1' and clock'event and clear_counter/='1') then
 				counter0_1sec   <= counter1sec + 1;
-				if (counter0_1sec >= 1000) then
+				if (counter0_1sec >= 500) then
 					start0_1sec <='0';
 					if (update_status='1') then
 						status <= next_status;
+						update_status <= '0';
 					end if;
 				end if;
 			end if;
@@ -520,36 +522,53 @@ begin
 			start0_1sec <= '0';
 		end if;
 
-		
-		if (door_close='1') then
-			if (status = door_op) then
-				start1sec 	  <= '0';
-				start0_5sec   <= '1';
-				clear_counter <= '1';
-				next_status   <= door_cl;
-			end if;
-		end if;
 
-		if (door_open = '1') then
-			start0_1sec   <= '1';
-			clear_counter <= '1';
-			next_status   <= door_op;
-		elsif(door_open = '0') then
-			start0_1sec <= '0';
-			status      <= next_status;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+		--todo door_open an door_close
+		--if (door_close='1' and start0_1sec = '0' and start1sec = '1' and start2sec = '0' and start0_5sec = '0') then
+		--	if (status = door_op) then
+		--		start1sec 	  <= '0';
+		--		start0_5sec   <= '1';
+		--		clear_counter <= '1';
+		--		status   	  <= door_cl;
+		--		update_status <= '0';
+		--	end if;
+		--end if;
+
+		--if (door_open = '1' and start0_1sec = '0' and start1sec = '0' and start2sec = '0' and start0_5sec = '0') then
+		--	start0_1sec   <= '1';
+		--	clear_counter <= '1';
+		--	next_status   <= door_op;
+		--	update_open_status <= '1';
+		--elsif(door_open = '0' and start0_1sec = '0' and start1sec = '0' and update_open_status='1' and start2sec = '0' and start0_5sec = '0') then
+		---- Problem Todo status gets assigned next status if door open is low
+		--	start0_1sec <= '0';
+		--	status      <= next_status;
+		--	update_open_status <= '0';
+		--end if;
+------------------------------------------------------------------------------------------------------------------------------------------------------		
+
+		-- special case for wait after 1 sec
+		if (wait_and_close = '1' and start1sec = '0') then
+			start0_5sec 	<= '1';
+			wait_and_close  <= '0';
+			clear_counter 	<= '1';
+			update_status   <= '0'; -- already low since after 1 sec delay
 		end if;
-		
 		
 
 		--after combined requests is changed
-		if((start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift1_floor(0)/='1' and lift1_floor(1)/='1' and lift1_floor(2)/='1' and lift1_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
+		if((wait_and_close = '0') and(start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift1_floor(0)/='1' and lift1_floor(1)/='1' and lift1_floor(2)/='1' and lift1_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
 			
 			if (status = door_op) then
 				if (combined_requests /= "0000") then
 				-- door has to be closed
-							start1sec <= '1';
+							start1sec 	<= '1';
 							clear_counter <= '1';
 							next_status <= door_cl;
+							update_status <= '1';
+							-- We have to close the door after 1 sec therefore after one second door closing should happen for 0.5 seconds
+							wait_and_close <= '1';
 				else
 					direction <= none;
 				end if;
@@ -577,7 +596,7 @@ begin
 						start2sec	  <= '1';
 						clear_counter <= '1';
 						currentfloor  <= currentfloor + 1;
-
+						
 					-- no case of moving down	
 					end if;
 				
@@ -593,7 +612,8 @@ begin
 							next_target_floor <= "10";
 						end if;
 						
-						next_status   <= moving_up;
+						status 		  <= moving_up;
+						update_status <= '0';
 						start2sec     <= '1';
 						clear_counter <= '1';
 						currentfloor  <= currentfloor + 1;
@@ -601,22 +621,22 @@ begin
 					elsif (combined_requests(0) /='0') and (direction = none or direction = down) then
 						-- moving down
 						next_target_floor <= "00";
-						next_status <= moving_down;
+						status <= moving_down;
 						start2sec <= '1';
 						clear_counter <= '1';
 						currentfloor <= currentfloor - 1;
-					
+						update_status <= '0';
 					end if;
 
 				
 				elsif (currentfloor="10") then
 					if (combined_requests(3) /= '0' and (direction=none or direction=up)) then
 						next_target_floor <= "11";
-						next_status 	  <= moving_up;
+						status 	  		  <= moving_up;
 						start2sec 		  <= '1';
 						clear_counter  	  <= '1';
 						currentfloor  <= currentfloor + 1;
-					
+						update_status <= '0';
 					elsif (combined_requests(1 downto 0) /= "00" and (direction = none or direction = down)) then
 						if (combined_requests(0)='1') then
 							next_target_floor <= "00";
@@ -683,6 +703,7 @@ begin
 					next_status	  <= door_op;
 					start0_5sec   <= '1';
 					clear_counter <= '1';
+					update_status <= '1';
 
 				else
 					currentfloor  <= currentfloor + 1;

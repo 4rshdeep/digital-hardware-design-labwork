@@ -1,0 +1,1 @@
+-wto "dde87aad71274ad1b636dcaaf18c0016" --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "lift1_controller_func_synth" "xil_defaultlib.lift1_controller" -log "elaborate.log" 

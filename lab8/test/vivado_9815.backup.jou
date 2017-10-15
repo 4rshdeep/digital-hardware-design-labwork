@@ -393,3 +393,65 @@ run 10 us
 close_sim
 launch_simulation
 source lift1_controller.tcl
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/received_request} -radix hex {2 0ns}
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {2 0ns}
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+run 10 us
+report_drivers {/lift1_controller/status}
+relaunch_sim
+relaunch_sim

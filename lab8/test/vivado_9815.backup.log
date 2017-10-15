@@ -1735,3 +1735,131 @@ source lift1_controller.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'lift1_controller_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/received_request} -radix hex {2 0ns}
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+add_force {/lift1_controller/door_open} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {2 0ns}
+add_force {/lift1_controller/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/lift1_controller/reset} -radix hex {0 0ns}
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
+run 10 us
+report_drivers {/lift1_controller/status}
+Drivers for /lift1_controller/status
+  door_cl : Net /lift1_controller/status
+    door_cl : Driver /lift1_controller/line__417 at /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:417
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+ERROR: [VRFC 10-1412] syntax error near else [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:551]
+ERROR: [VRFC 10-91] update is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:550]
+ERROR: [VRFC 10-1504] unit lift1_controller_arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:375]
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+ERROR: [VRFC 10-1504] unit lift2_controller ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:776]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/behav'
+xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
+INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-307] analyzing entity lift1_controller
+INFO: [VRFC 10-307] analyzing entity lift2_controller
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/behav'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lift1_controller_behav xil_defaultlib.lift1_controller -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package xil_defaultlib.enum_package
+Compiling package ieee.numeric_std
+Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
+Built simulation snapshot lift1_controller_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2016.4
