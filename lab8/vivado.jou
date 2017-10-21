@@ -207,3 +207,8 @@ refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 reset_run synth_1
 launch_runs impl_2 -to_step write_bitstream -jobs 4
 wait_on_run impl_2
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close_hw
+remove_files  -fileset constrs_1 /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc

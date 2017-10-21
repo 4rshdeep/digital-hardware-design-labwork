@@ -30,8 +30,8 @@ port(
 	l1_status : out std_logic_vector(1 downto 0); -- mo
 	l1_currentfloor : out std_logic_vector(1 downto 0);
 	requests : out std_logic_vector(3 downto 0);
-	test : out std_logic
-	--r_status : out request_status
+	test : out std_logic;
+	r_status : out request_status
 	);
 end entity;
 
@@ -82,7 +82,7 @@ begin
 			l1_status <= "10";
 		end if;
 	end process ; -- status
-
+-- todo lift1_floor_indicator
 	lift1_floor_indicator <= lift_register;
 	requests 			  <= received_request;
 

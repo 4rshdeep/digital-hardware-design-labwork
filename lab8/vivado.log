@@ -639,3 +639,8 @@ launch_runs impl_2 -to_step write_bitstream -jobs 4
 Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
 [Sat Oct 21 17:38:06 2017] Launched impl_2...
 Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close_hw
+remove_files  -fileset constrs_1 /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc
