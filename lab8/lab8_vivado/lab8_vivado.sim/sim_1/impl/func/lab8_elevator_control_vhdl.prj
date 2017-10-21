@@ -1,5 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  "lab8_elevator_control_func_impl.vhd"
-
-# Do not sort compile order
-nosort

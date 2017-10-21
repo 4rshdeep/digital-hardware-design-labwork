@@ -1,7 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl

@@ -1,5 +1,0 @@
-Vivado Simulator 2016.4
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto 9b11ca290c67412c8a43f8eca431b62e --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot shifter_behav xil_defaultlib.shifter -log elaborate.log 
-Using 8 slave threads.
-ERROR: [XSIM 43-3225] Cannot find design unit xil_defaultlib.shifter in library work located at xsim.dir/work.

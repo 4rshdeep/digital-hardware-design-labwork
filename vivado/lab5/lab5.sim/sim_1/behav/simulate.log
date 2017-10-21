@@ -1,8 +1,0 @@
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-Error: Incorrect cathode value
-Time: 920 ns  Iteration: 0  Process: /lab5_gcd_tb/stim_proc  File: /home/ad/Downloads/lab5_gcd_tb.vhd
-Error: Incorrect cathode value
-Time: 930 ns  Iteration: 0  Process: /lab5_gcd_tb/stim_proc  File: /home/ad/Downloads/lab5_gcd_tb.vhd
-Error: Something wrong, try again
-Time: 1180 ns  Iteration: 0  Process: /lab5_gcd_tb/stim_proc  File: /home/ad/Downloads/lab5_gcd_tb.vhd

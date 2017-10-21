@@ -1,7 +1,0 @@
-Running: xsim.dir/lab6_multiplier_tb_behav/xsimk -simmode gui -wdb lab6_multiplier_tb_behav.wdb -simrunnum 0 -socket 50549
-Design successfully loaded
-Design Loading Memory Usage: 50296 KB (Peak: 50468 KB)
-Design Loading CPU Usage: 10 ms
-Simulation completed
-Simulation Memory Usage: 140272 KB (Peak: 197568 KB)
-Simulation CPU Usage: 40 ms

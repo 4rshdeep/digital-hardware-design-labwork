@@ -1,7 +1,0 @@
-Running: xsim.dir/lab8_elevator_control_func_synth/xsimk -simmode gui -wdb lab8_elevator_control_func_synth.wdb -simrunnum 0 -socket 34323
-Design successfully loaded
-Design Loading Memory Usage: 50120 KB (Peak: 50336 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 139944 KB (Peak: 197392 KB)
-Simulation CPU Usage: 20 ms

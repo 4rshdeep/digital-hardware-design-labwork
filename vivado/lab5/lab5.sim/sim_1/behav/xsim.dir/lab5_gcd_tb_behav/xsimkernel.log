@@ -1,7 +1,0 @@
-Running: xsim.dir/lab5_gcd_tb_behav/xsimk -simmode gui -wdb lab5_gcd_tb_behav.wdb -simrunnum 0 -socket 53143
-Design successfully loaded
-Design Loading Memory Usage: 49964 KB (Peak: 50128 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 139816 KB (Peak: 197236 KB)
-Simulation CPU Usage: 60 ms

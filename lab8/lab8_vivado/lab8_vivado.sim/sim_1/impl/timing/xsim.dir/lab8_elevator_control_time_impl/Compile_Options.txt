@@ -1,1 +1,0 @@
--wto "dde87aad71274ad1b636dcaaf18c0016" --debug "typical" --relax --mt "8" --maxdelay -L "xil_defaultlib" -L "simprims_ver" -L "secureip" --snapshot "lab8_elevator_control_time_impl" -transport_int_delays -pulse_r "0" -pulse_int_r "0" -pulse_e "0" -pulse_int_e "0" "xil_defaultlib.lab8_elevator_control" "xil_defaultlib.glbl" -log "elaborate.log" 
