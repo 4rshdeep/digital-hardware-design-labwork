@@ -2,70 +2,180 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Sun Oct 15 20:34:00 2017
-# Process ID: 30394
+# Start of session at: Sat Oct 21 11:42:08 2017
+# Process ID: 3191
 # Current directory: /media/ad/Area51/workspace/col215_prac_lab/lab8
 # Command line: vivado
 # Log file: /media/ad/Area51/workspace/col215_prac_lab/lab8/vivado.log
 # Journal file: /media/ad/Area51/workspace/col215_prac_lab/lab8/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.xpr
+open_project /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.xpr
+INFO: [Project 1-313] Project file moved from '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'.
-launch_simulation -mode post-synthesis -type timing
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7a35tcpg236-1
-INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd
+remove_files  -fileset constrs_1 /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control_bb.xdc
+add_files -fileset constrs_1 -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-1061] Parsing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd" into library xil_defaultlib [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:1]
+[Sat Oct 21 12:01:51 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+launch_runs impl_2 -jobs 4
+[Sat Oct 21 12:02:32 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+open_run impl_2
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2016.4
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'lift2_controller' instantiated as 'l2_control' [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:109]
+Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-3191-ad-ubuntu/dcp/lift1_controller.xdc]
+Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-3191-ad-ubuntu/dcp/lift1_controller.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 6167.160 ; gain = 0.000 ; free physical = 862 ; free virtual = 11592
+Restored from archive | CPU: 0.040000 secs | Memory: -7.061646 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 6167.160 ; gain = 0.000 ; free physical = 862 ; free virtual = 11592
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 6235.500 ; gain = 341.617 ; free physical = 1283 ; free virtual = 10540
-INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
-INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v"
-write_verilog: Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 6308.102 ; gain = 69.711 ; free physical = 1137 ; free virtual = 10401
-INFO: [SIM-utils-27] Writing SDF file...
-INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v
-INFO: [SIM-utils-37] SDF generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf
+open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 6271.359 ; gain = 283.551 ; free physical = 731 ; free virtual = 11464
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 12:05:16 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 12:06:14 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 12:06:14 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+close_design
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2016.4
+  **** Build date : Jan 23 2017-19:28:34
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 12:13:11 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 12:13:11 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 12:21:37 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 12:21:37 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-xvlog -m64 --relax -prj lift1_controller_vlog.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.sim/sim_1/behav'
 xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-307] analyzing entity request_handler
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity lift1_controller
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
 INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.sim/sim_1/behav'
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 Vivado Simulator 2016.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot lift1_controller_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.lift1_controller xil_defaultlib.glbl -log elaborate.log 
+Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lift1_controller_behav xil_defaultlib.lift1_controller -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -79,9 +189,8 @@ Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling package xil_defaultlib.enum_package
 Compiling package ieee.numeric_std
-Compiling module xil_defaultlib.glbl
 Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
-Built simulation snapshot lift1_controller_time_synth
+Built simulation snapshot lift1_controller_behav
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 
 ****** Webtalk v2016.4 (64-bit)
@@ -89,13 +198,14 @@ awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
   **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/xsim.dir/lift1_controller_time_synth/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Sun Oct 15 20:35:21 2017...
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+source /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.sim/sim_1/behav/xsim.dir/lift1_controller_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Oct 21 12:23:39 2017...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 6644.242 ; gain = 0.000 ; free physical = 1260 ; free virtual = 10951
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.sim/sim_1/behav'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "lift1_controller_time_synth -key {Post-Synthesis:sim_1:Timing:lift1_controller} -tclbatch {lift1_controller.tcl} -log {simulate.log}"
+   with args "lift1_controller_behav -key {Behavioral:sim_1:Functional:lift1_controller} -tclbatch {lift1_controller.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2016.4
 Time resolution is 1 ps
@@ -110,19 +220,22 @@ source lift1_controller.tcl
 #   }
 # }
 # run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'lift1_controller_time_synth' loaded.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lift1_controller_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:48 ; elapsed = 00:00:25 . Memory (MB): peak = 6638.320 ; gain = 744.438 ; free physical = 795 ; free virtual = 10084
-add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 6685.430 ; gain = 41.188 ; free physical = 1239 ; free virtual = 10945
+add_force {/lift1_controller/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
 add_force {/lift1_controller/reset} -radix hex {1 0ns}
 run 10 us
 add_force {/lift1_controller/reset} -radix hex {0 0ns}
 run 10 us
 add_force {/lift1_controller/received_request} -radix hex {0 0ns}
+report_drivers {/lift1_controller/lift1_floor}
+Drivers for /lift1_controller/lift1_floor[3:0]
+WARNING: [Simtcl 6-138] /lift1_controller/lift1_floor[3:0] : has no driver.
 add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
 run 10 us
 add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
 run 10 us
 run 10 us
 run 10 us
@@ -151,859 +264,372 @@ run 10 us
 run 10 us
 run 10 us
 run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1]
-[Sun Oct 15 20:42:06 2017] Launched synth_1...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
-relaunch_sim
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
-INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
-INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v"
-INFO: [SIM-utils-27] Writing SDF file...
-INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v
-INFO: [SIM-utils-37] SDF generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf
-INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-xvlog -m64 --relax -prj lift1_controller_vlog.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl
-xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-307] analyzing entity request_handler
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-ERROR: [VRFC 10-91] nextfloor is not declared [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:617]
-ERROR: [VRFC 10-1504] unit lift1_controller_arc ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:375]
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-ERROR: [VRFC 10-1504] unit lift2_controller ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:795]
-INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd ignored due to errors
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-99] Step results log file:'/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/xvhdl.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/xvhdl.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
-relaunch_sim
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
-INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
-INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v"
-INFO: [SIM-utils-27] Writing SDF file...
-INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v
-INFO: [SIM-utils-37] SDF generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf
-INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-xvlog -m64 --relax -prj lift1_controller_vlog.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl
-xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-307] analyzing entity request_handler
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
-INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-Vivado Simulator 2016.4
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot lift1_controller_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.lift1_controller xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package xil_defaultlib.enum_package
-Compiling package ieee.numeric_std
-Compiling module xil_defaultlib.glbl
-Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
-Built simulation snapshot lift1_controller_time_synth
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-add_force {/lift1_controller/reset} -radix hex {1 0ns}
-add_force {/lift1_controller/received_request} -radix hex {0 0ns}
-add_force {/lift1_controller/lift1_floor} -radix hex {2 0ns}
-run 10 us
-add_force {/lift1_controller/reset} -radix hex {0 0ns}
-add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
-run 10 us
-add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
-INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
-INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v"
-INFO: [SIM-utils-27] Writing SDF file...
-INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v
-INFO: [SIM-utils-37] SDF generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf
-INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-xvlog -m64 --relax -prj lift1_controller_vlog.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl
-xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-307] analyzing entity request_handler
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-Vivado Simulator 2016.4
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot lift1_controller_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.lift1_controller xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package xil_defaultlib.enum_package
-Compiling package ieee.numeric_std
-Compiling module xil_defaultlib.glbl
-Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
-Built simulation snapshot lift1_controller_time_synth
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-run 10 us
-add_force {/lift1_controller/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lift1_controller/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lift1_controller/received_request} -radix hex {0 0ns}
-add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
-run 10 us
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/door_open} -radix hex {1 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
-run 10 us
-add_force {/lift1_controller/door_close} -radix hex {1 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/door_open} -radix hex {1 0ns}
-run 10 us
-run 10 us
-add_force {/lift1_controller/door_close} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
-run 10 us
-add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
-INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
-INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v"
-INFO: [SIM-utils-27] Writing SDF file...
-INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v
-INFO: [SIM-utils-37] SDF generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf
-INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-xvlog -m64 --relax -prj lift1_controller_vlog.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl
-xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-307] analyzing entity request_handler
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-Vivado Simulator 2016.4
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot lift1_controller_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.lift1_controller xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package xil_defaultlib.enum_package
-Compiling package ieee.numeric_std
-Compiling module xil_defaultlib.glbl
-Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
-Built simulation snapshot lift1_controller_time_synth
-INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-add_force {/lift1_controller/reset} -radix hex {1 0ns}
-run 10 us
-add_force {/lift1_controller/reset} -radix hex {0 0ns}
-add_force {/lift1_controller/received_request} -radix hex {0 0ns}
-add_force {/lift1_controller/lift1_floor} -radix hex {c 0ns}
-run 10 us
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
-run 10 us
-add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
-run 10 us
-add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
-INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
-INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v"
-INFO: [SIM-utils-27] Writing SDF file...
-INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v
-INFO: [SIM-utils-37] SDF generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.sdf
-INFO: [USF-XSim-37] Inspecting design source files for 'lift1_controller' in fileset 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-xvlog -m64 --relax -prj lift1_controller_vlog.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing/lift1_controller_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module lab8_elevator_control
-INFO: [VRFC 10-311] analyzing module lift1_controller
-INFO: [VRFC 10-311] analyzing module lift2_controller
-INFO: [VRFC 10-311] analyzing module request_handler
-INFO: [VRFC 10-311] analyzing module seven_segment_display
-INFO: [VRFC 10-311] analyzing module glbl
-xvhdl -m64 --relax -prj lift1_controller_vhdl.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-307] analyzing entity request_handler
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/synth/timing'
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-Vivado Simulator 2016.4
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot lift1_controller_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.lift1_controller xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package xil_defaultlib.enum_package
-Compiling package ieee.numeric_std
-Compiling module xil_defaultlib.glbl
-Compiling architecture lift1_controller_arc of entity xil_defaultlib.lift1_controller
-Built simulation snapshot lift1_controller_time_synth
-INFO: [USF-XSim-69] 'elaborate' step finished in '0' seconds
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-add_force {/lift1_controller/lift1_floor[3]} -radix hex {1 0ns}
-add_force {/lift1_controller/received_request} -radix hex {0 0ns}
-add_force {/lift1_controller/reset} -radix hex {1 0ns}
-add_force {/lift1_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/reset} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/lift1_floor} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-report_drivers {/lift1_controller/door_open}
-Drivers for /lift1_controller/door_open
-WARNING: [Simtcl 6-138] /lift1_controller/door_open : has no driver.
-add_force {/lift1_controller/door_open} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-add_force {/lift1_controller/lift1_floor[0]} -radix hex {1 0ns}
-run 10 us
-add_force {/lift1_controller/lift1_floor[0]} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_design
-set_property top lab8_elevator_control [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1]
-[Sun Oct 15 21:41:47 2017] Launched synth_1...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
-launch_runs impl_2 -jobs 4
-[Sun Oct 15 21:42:13 2017] Launched impl_2...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
-launch_runs impl_2 -to_step write_bitstream -jobs 4
-[Sun Oct 15 21:43:18 2017] Launched impl_2...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
-add_files -fileset constrs_1 -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_elevator_control.xdc
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
 reset_run synth_1
 launch_runs impl_2 -to_step write_bitstream -jobs 4
-[Sun Oct 15 21:48:08 2017] Launched synth_1...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
-[Sun Oct 15 21:48:08 2017] Launched impl_2...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+[Sat Oct 21 14:09:14 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 14:09:14 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
 reset_run synth_1
 launch_runs impl_2 -to_step write_bitstream -jobs 4
-[Sun Oct 15 21:52:38 2017] Launched synth_1...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
-[Sun Oct 15 21:52:38 2017] Launched impl_2...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+[Sat Oct 21 14:12:26 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 14:12:26 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
 reset_run synth_1
 launch_runs impl_2 -to_step write_bitstream -jobs 4
-[Sun Oct 15 21:57:46 2017] Launched synth_1...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
-[Sun Oct 15 21:57:46 2017] Launched impl_2...
-Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+[Sat Oct 21 14:13:57 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 14:13:57 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
 open_run impl_2
-INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2016.4
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-30394-ad-ubuntu/dcp/lab8_elevator_control.xdc]
-Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-30394-ad-ubuntu/dcp/lab8_elevator_control.xdc]
+Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-3191-ad-ubuntu/dcp/lift1_controller.xdc]
+Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-3191-ad-ubuntu/dcp/lift1_controller.xdc]
 Reading XDEF placement.
 Reading placer database...
 Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.14 . Memory (MB): peak = 6738.148 ; gain = 0.000 ; free physical = 1278 ; free virtual = 8869
-Restored from archive | CPU: 0.090000 secs | Memory: 3.866287 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.14 . Memory (MB): peak = 6738.148 ; gain = 0.000 ; free physical = 1278 ; free virtual = 8869
+Read XDEF File: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 6687.012 ; gain = 0.000 ; free physical = 1442 ; free virtual = 11268
+Restored from archive | CPU: 0.020000 secs | Memory: 0.305946 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 6687.012 ; gain = 0.000 ; free physical = 1442 ; free virtual = 11268
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  LDCP => LDCP (LDCE, LUT3, LUT3, VCC, GND): 2 instances
 
-open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 6748.523 ; gain = 10.375 ; free physical = 1190 ; free virtual = 8821
-close_design
-set_property top lift2_controller [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-launch_simulation -mode post-implementation -type functional
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2016.4
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-30394-ad-ubuntu/dcp/lab8_elevator_control.xdc]
-Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/.Xil/Vivado-30394-ad-ubuntu/dcp/lab8_elevator_control.xdc]
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6752.797 ; gain = 0.000 ; free physical = 1128 ; free virtual = 9003
-Restored from archive | CPU: 0.020000 secs | Memory: 0.085571 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6752.797 ; gain = 0.000 ; free physical = 1128 ; free virtual = 9003
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_2'...
-INFO: [SIM-utils-33] write_vhdl -mode funcsim -nolib -force -file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/lift2_controller_func_impl.vhd"
-INFO: [SIM-utils-36] Netlist generated:/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/lift2_controller_func_impl.vhd
-INFO: [USF-XSim-37] Inspecting design source files for 'lift2_controller' in fileset 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func'
-xvhdl -m64 --relax -prj lift2_controller_vhdl.prj
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/lift2_controller_func_impl.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab8_elevator_control
-WARNING: [VRFC 10-1193] overwriting existing primary unit lab8_elevator_control [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:23]
-INFO: [VRFC 10-307] analyzing entity request_handler
-INFO: [VRFC 10-307] analyzing entity lift1_controller
-WARNING: [VRFC 10-1193] overwriting existing primary unit lift1_controller [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:353]
-INFO: [VRFC 10-307] analyzing entity lift2_controller
-WARNING: [VRFC 10-1193] overwriting existing primary unit lift2_controller [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:807]
-INFO: [VRFC 10-307] analyzing entity seven_segment_display
-WARNING: [VRFC 10-1193] overwriting existing primary unit seven_segment_display [/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_elevator.vhd:1262]
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func'
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-Vivado Simulator 2016.4
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2016.4/bin/unwrapped/lnx64.o/xelab -wto dde87aad71274ad1b636dcaaf18c0016 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lift2_controller_func_impl xil_defaultlib.lift2_controller -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package xil_defaultlib.enum_package
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling architecture lift2_controller_arc of entity xil_defaultlib.lift2_controller
-Built simulation snapshot lift2_controller_func_impl
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-
-****** Webtalk v2016.4 (64-bit)
-  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
-  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-
-source /media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func/xsim.dir/lift2_controller_func_impl/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Sun Oct 15 22:16:02 2017...
-run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 6752.801 ; gain = 0.000 ; free physical = 1015 ; free virtual = 9002
-INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/media/ad/Area51/workspace/col215_prac_lab/lab8/test/lab8_vivado/lab8_vivado.sim/sim_1/impl/func'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "lift2_controller_func_impl -key {Post-Implementation:sim_1:Functional:lift2_controller} -tclbatch {lift2_controller.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-source lift2_controller.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'lift2_controller_func_impl' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 6756.488 ; gain = 3.691 ; free physical = 1009 ; free virtual = 9002
-add_force {/lift2_controller/clock} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-add_force {/lift2_controller/reset} -radix hex {1 0ns}
-add_force {/lift2_controller/received_request} -radix hex {0 0ns}
-add_force {/lift2_controller/lift2_floor} -radix hex {c 0ns}
-add_force {/lift2_controller/door_open} -radix hex {0 0ns}
-run 10 us
-add_force {/lift2_controller/reset} -radix hex {0 0ns}
-run 10 us
-add_force {/lift2_controller/lift2_floor} -radix hex {0 0ns}
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_design
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:09:09 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:09:09 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:16:34 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:16:34 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:23:10 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:23:10 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:27:55 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:27:55 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:35:04 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:35:04 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:39:59 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:39:59 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 15:51:52 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 15:51:52 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 16:06:03 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 16:06:03 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 16:17:46 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 16:17:46 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A285A0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 17:04:25 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 17:04:25 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn-Basys3-210183A285A0A" may be locked by another hw_server.
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A285A0A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 17:09:10 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 17:09:10 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Sat Oct 21 17:12:00 2017] Launched synth_1...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/runme.log
+[Sat Oct 21 17:12:00 2017] Launched impl_2...
+Run output will be captured here: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lift1_controller.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.

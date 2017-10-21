@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat Oct 21 17:12:00 2017
+# Process ID: 25881
+# Current directory: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1
+# Command line: vivado -log lift1_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lift1_controller.tcl
+# Log file: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/lift1_controller.vds
+# Journal file: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source lift1_controller.tcl -notrace

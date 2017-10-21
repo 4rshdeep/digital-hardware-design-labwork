@@ -1,0 +1,337 @@
+
+*** Running vivado
+    with args -log lift1_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lift1_controller.tcl
+
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source lift1_controller.tcl -notrace
+Command: synth_design -top lift1_controller -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 25885 
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1057.570 ; gain = 127.098 ; free physical = 1129 ; free virtual = 10025
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'lift1_controller' [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'lift1_controller' (1#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:45]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1098.039 ; gain = 167.566 ; free physical = 1086 ; free virtual = 9983
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1098.039 ; gain = 167.566 ; free physical = 1084 ; free virtual = 9983
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc]
+Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lift1_controller_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lift1_controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1396.688 ; gain = 0.000 ; free physical = 912 ; free virtual = 9815
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 910 ; free virtual = 9814
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 910 ; free virtual = 9814
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 910 ; free virtual = 9814
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'l1_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 895 ; free virtual = 9799
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 66    
+	   7 Input      4 Bit        Muxes := 2     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 35    
+	   5 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 3     
+	  13 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 86    
+	   7 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module lift1_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 66    
+	   7 Input      4 Bit        Muxes := 2     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 35    
+	   5 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 3     
+	  13 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 86    
+	   7 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\next_status_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (start0_1sec_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (test_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\status_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (status_reg[3]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (start0_1sec_reg) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[26]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[25]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[24]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[23]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[22]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[21]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[20]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[19]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[18]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[17]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[16]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[15]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[14]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[13]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[12]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[11]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[10]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[9]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[8]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[7]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[6]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[5]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[4]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[3]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[2]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[1]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[0]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (next_status_reg[3]) is unused and will be removed from module lift1_controller.
+WARNING: [Synth 8-3332] Sequential element (test_reg) is unused and will be removed from module lift1_controller.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 878 ; free virtual = 9783
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 848 ; free virtual = 9753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 834 ; free virtual = 9739
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    21|
+|3     |LUT1   |    83|
+|4     |LUT2   |    16|
+|5     |LUT3   |    20|
+|6     |LUT4   |    15|
+|7     |LUT5   |    25|
+|8     |LUT6   |    45|
+|9     |FDRE   |   105|
+|10    |LDCP   |     2|
+|11    |IBUF   |    12|
+|12    |OBUF   |    13|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   358|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.688 ; gain = 466.215 ; free physical = 826 ; free virtual = 9731
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1396.688 ; gain = 85.465 ; free physical = 826 ; free virtual = 9731
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1396.695 ; gain = 466.223 ; free physical = 826 ; free virtual = 9731
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1396.695 ; gain = 396.707 ; free physical = 830 ; free virtual = 9735
+INFO: [Common 17-1381] The checkpoint '/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/lift1_controller.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1420.699 ; gain = 0.000 ; free physical = 829 ; free virtual = 9734
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 21 17:12:31 2017...
