@@ -18,17 +18,17 @@ use ieee.std_logic_unsigned.all;        -- f
 library work;
 use work.enum_package.all;
 
-entity lift1_controller is
+entity lift2_controller is
 port(
 	clk : in std_logic;
 	reset : in std_logic;
 	received_request : in std_logic_vector(3 downto 0);
-	lift1_floor : in std_logic_vector(3 downto 0);
+	lift2_floor : in std_logic_vector(3 downto 0);
 	door_open : in std_logic;
 	door_close : in std_logic;
-	lift1_floor_indicator : out std_logic_vector(3 downto 0);
-	l1_status : out std_logic_vector(1 downto 0); -- mo
-	l1_currentfloor : out std_logic_vector(1 downto 0);
+	lift2_floor_indicator : out std_logic_vector(3 downto 0);
+	l2_status : out std_logic_vector(1 downto 0); -- mo
+	l2_currentfloor : out std_logic_vector(1 downto 0);
 	requests : out std_logic_vector(3 downto 0);
 	test : out std_logic;
 	r_status : out request_status
@@ -42,7 +42,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;        -- for addition & counting
 use ieee.numeric_std.all;               -- for type conversions
 
-architecture lift1_controller_arc of lift1_controller is
+architecture lift2_controller_arc of lift2_controller is
 
 	type state is (moving_up, moving_down, door_op, door_cl, door_opening, door_closing, forced_close, forced_open, do_not_update);
 	type direction_type is (none, up, down);
@@ -51,7 +51,6 @@ architecture lift1_controller_arc of lift1_controller is
 	signal lift_register : std_logic_vector(3 downto 0);
 	signal combined_requests : std_logic_vector(3 downto 0);
 	signal lift_status : request_status;
-	--signal upReqUp, upReqDown, downReqDown, downReqUp : std_logic_vector(3 downto 0);
 	signal start2sec : std_logic; 
 	signal counter2sec : integer range 0 to 200000000;
 	signal start1sec : std_logic; 
@@ -59,45 +58,41 @@ architecture lift1_controller_arc of lift1_controller is
 	signal start0_5sec, start0_1sec : std_logic;
 	signal counter0_5sec, counter0_1sec : integer range 0 to 200000000; 
 	signal direction : direction_type;
---	signal prev_combined_request, prev_lift_register, prev_received_register: std_logic_vector(3 downto 0);
 	signal next_target_floor : std_logic_vector(1 downto 0);
 	signal clear_counter : std_logic;
 	signal update_open_status, update_close_status : std_logic;
-	--signal update_status, wait_and_close : std_logic;
+	signal indicator : std_logic_vector(3 downto 0);
+
 begin
 
 
-	l1_currentfloor <= currentfloor;
-	--r_status 		<= lift_status;
+	l2_currentfloor <= currentfloor;
+	r_status 		<= lift_status;
 
 	status_assigner : process( clk, status )
 	begin
 		if (status = moving_up) then
-			l1_status <= "00";
+			l2_status <= "00";
 		elsif (status = moving_down) then
-			l1_status <= "01";
+			l2_status <= "01";
 		elsif (status = door_op) then
-			l1_status <= "11";
+			l2_status <= "11";
 		elsif (status = door_cl)or(status = door_closing) then
-			l1_status <= "10";
+			l2_status <= "10";
 		end if;
 	end process ; -- status
--- todo lift1_floor_indicator
-	lift1_floor_indicator <= lift_register;
+
+
+	lift2_floor_indicator <= indicator;
 	requests 			  <= received_request;
 
-	process(clk, reset, lift1_floor, received_request)
+	process(clk, reset, lift2_floor, received_request)
 	begin
 	if (clk = '1' and clk'event ) then
 
 		 --combined_requests <= (lift_register or received_request);
 		 --Let us first work without the received requests
-
-		 -- change everything in lift register
-
-		 
-
-
+		 -- change everything in lift register combined request did not work make common register lift_register
 		if (reset ='1') then
 			status     			  <= door_op;
 			next_status 		  <= door_op;
@@ -105,39 +100,44 @@ begin
 			lift_register 		  <= "0000";
 			direction   		  <= none;
 			combined_requests 	  <= "0000"; 
-			--wait_and_close 		  <= '0';
 		else
-			if (lift1_floor(0)    = '1' and currentfloor /= "00") then
+			if (lift2_floor(0)    = '1' and currentfloor /= "00") then
 				lift_register(0) <= '1';
+				indicator(0) 	 <= '1';
 			elsif (received_request(0) = '1' and currentfloor /= "00") then
 				lift_register(0) <= '1';
 			elsif (currentfloor = "00") then
 				lift_register(0) 	<= '0';
+				indicator(0) 	 <= '0';
 			end if;
-			if (lift1_floor(1)    = '1' and currentfloor /= "01") then
+			if (lift2_floor(1)    = '1' and currentfloor /= "01") then
 				lift_register(1) <= '1';
+				indicator(1) 	 <= '1';
 			elsif (received_request(1) = '1' and currentfloor /= "01") then --remove current floor part if request handler handles that
 				lift_register(1) <= '1';
 			elsif (currentfloor = "01") then
 				lift_register(1) 	<= '0';	
+				indicator(1) 	 <= '0';
 			end if;
-			if (lift1_floor(2)    = '1' and currentfloor /= "10") then
+			if (lift2_floor(2)    = '1' and currentfloor /= "10") then
 				lift_register(2) <= '1';
+				indicator(2) 	 <= '1';
 			elsif (received_request(2) = '1' and currentfloor /= "10") then
 				lift_register(2) <= '1';
 			elsif (currentfloor = "10") then
 				lift_register(2) 	<= '0';
+				indicator(2) 	 <= '0';
 			end if;
-			if (lift1_floor(3)    = '1' and currentfloor /= "11") then
+			if (lift2_floor(3)    = '1' and currentfloor /= "11") then
 				lift_register(3) <= '1';
+				indicator(3) 	 <= '1';
 			elsif (received_request(3) = '1' and currentfloor /= "11") then
 				lift_register(3) <= '1';
 			elsif (currentfloor = "11") then
 				lift_register(3) 	<= '0';
+				indicator(3) 	 <= '0';
 			end if;
 		end if;
-		
-				
 		
 		if (start2sec = '1') then
 			if (clear_counter/='1') then
@@ -220,9 +220,8 @@ begin
 			end if;
 		end if;
 
-
 		--after combined requests is changed
-		if((start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift1_floor(0)/='1' and lift1_floor(1)/='1' and lift1_floor(2)/='1' and lift1_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
+		if((start2sec = '0') and (start0_5sec ='0') and (start1sec = '0') and lift2_floor(0)/='1' and lift2_floor(1)/='1' and lift2_floor(2)/='1' and lift2_floor(3)/='1' and (reset/='1') and (door_open = '0'))then
 			
 			test <= '1';
 			if (status = door_op) then
@@ -413,12 +412,9 @@ begin
 			end if;
 		end if;	
 	end if;
-			
 	end process;
 
-	
 	process(clk)
-
 	begin
 		
 		if (currentfloor = "00") then
@@ -444,12 +440,10 @@ begin
 				lift_status <= reqDown;
 			end if;
 		end if;
-		
 		-- if reset is pressed this overrides
-
 		if((lift_register = "0000") or (reset = '1')) then
 			lift_status <= idle;
 		end if;		
 	end process;
 
-end lift1_controller_arc;
+end lift2_controller_arc;

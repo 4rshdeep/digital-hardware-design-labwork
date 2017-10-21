@@ -303,3 +303,86 @@ set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/seven_segment_display.bit} [lindex [get_hw_devices xc7a35t_0] 0]
 program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_design
+remove_files  /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+remove_files  -fileset constrs_1 /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.xdc
+add_files -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lab8_elevator.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -fileset constrs_1 -norecurse /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lab8_elevator_control_bb.xdc
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+open_hw
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+open_run impl_2
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+wait_on_run impl_2
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/impl_2/lab8_elevator_control.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]

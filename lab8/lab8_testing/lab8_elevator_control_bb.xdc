@@ -80,11 +80,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports door_open[1]]
 set_property PACKAGE_PIN U18 [get_ports reset]
 set_property IOSTANDARD LVCMOS33 [get_ports reset]
 
-set_property PACKAGE_PIN T17 [get_ports door_closed[0]]
-set_property IOSTANDARD LVCMOS33 [get_ports door_closed[0]]
+set_property PACKAGE_PIN T17 [get_ports door_close[0]]
+set_property IOSTANDARD LVCMOS33 [get_ports door_close[0]]
 
-set_property PACKAGE_PIN U17 [get_ports door_closed[1]]
-set_property IOSTANDARD LVCMOS33 [get_ports door_closed[1]]
+set_property PACKAGE_PIN U17 [get_ports door_close[1]]
+set_property IOSTANDARD LVCMOS33 [get_ports door_close[1]]
 
 
 # Cathodes

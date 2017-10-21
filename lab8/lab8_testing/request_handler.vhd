@@ -45,12 +45,8 @@ architecture request_handler_arc of request_handler is
 	signal status1, status2 : req;
 	signal prev_reset : std_logic;
 
-	--signal l1_request_status, l2_request_status : request_status;
-	
 begin 
 
-
-	
 	process( clk, reset, l1_status, l2_status, l1_currentfloor, l2_currentfloor )
 	begin
 		if (clk = '1' and clk'event) then
