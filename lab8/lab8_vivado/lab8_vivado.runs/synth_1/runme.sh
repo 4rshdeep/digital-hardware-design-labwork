@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log lift1_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lift1_controller.tcl
+EAStep vivado -log seven_segment_display.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source seven_segment_display.tcl

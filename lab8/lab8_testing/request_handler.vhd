@@ -28,7 +28,7 @@ port(
 	up_request_indicator, down_request_indicator : out std_logic_vector(3 downto 0);
 	send1, send2 : out std_logic_vector(3 downto 0);
 	reset : in std_logic
-	--l1_request_status, l2_request_status : in request_status
+	l1_request_status, l2_request_status : in request_status
 	);
 end entity;
 library ieee;
@@ -45,115 +45,122 @@ architecture request_handler_arc of request_handler is
 	signal status1, status2 : req;
 	signal prev_reset : std_logic;
 
-	signal l1_request_status, l2_request_status : request_status;
+	--signal l1_request_status, l2_request_status : request_status;
 	
 begin 
 
 
-	l1_request_status <= idle;
-	l2_request_status <= idle;
-
+	
 	process( clk, reset, l1_status, l2_status, l1_currentfloor, l2_currentfloor )
 	begin
-	   	
-		if (reset = '1') then
-              up_request_register <= "0000";
-              down_request_register <= "0000";
-              send1 <= "0000";
-              send2 <= "0000";
-        else
-			if (up_request(0) = '1') then
-				up_request_register(0) <= '1';
-			end if;
-			if (up_request(1) = '1') then
-				up_request_register(1) <= '1';
-			end if;
-			if (up_request(2) = '1') then
-				up_request_register(2) <= '1';
-			end if;
-			if (down_request(1) = '1') then
-				down_request_register(1) <= '1';
-			end if;
-			if (down_request(2) = '1') then
-				down_request_register(2) <= '1';
-			end if;
-			if (down_request(3) = '1') then
-				down_request_register(3) <= '1';
-			end if;
-		end if;
-        
-		if((down_request(1)/='1') and (down_request(2)/='1') and (down_request(3)/='1') and (up_request(0)/='1') and (up_request(1)/='1') and (up_request(2)/='1') and (reset /= '1')) then
-
-			if (l1_request_status = reqUp) then
-				send1 <= upReqUp1;
-			elsif (l1_request_status = reqDown) then
-				send1 <= downReqDown1;	
-			elsif (l1_request_status=idle and l2_request_status/=idle) then
-				if (upReqUp1/="0000") then
-					send1 <= upReqUp1;
-				elsif(upReqDown1/="0000") then
-					send1 <= upReqDown1;
-				elsif(downReqUp1/="0000") then
-					send1 <= downReqUp1;
-				else
-					send1 <= downReqDown1;
+		if (clk = '1' and clk'event) then
+			if (reset = '1') then
+	              up_request_register <= "0000";
+	              down_request_register <= "0000";
+	              send1 <= "0000";
+	              send2 <= "0000";
+	        else
+				if (up_request(0) = '1') then
+					up_request_register(0) <= '1';
+				elsif (l1_currentfloor="00" and l1_status="11") then
+					up_request_register(0) <= '0';
+				elsif (l2_currentfloor="00" and l2_status="11") then
+					up_request_register(0) <= '0';
 				end if;
-			elsif (l1_request_status= idle and l2_request_status=idle) then
-				if (upReqUp1/="0000") then
-					send1 <= upReqUp1;
-				elsif(upReqDown1/="0000") then
-					send1 <= upReqDown1;
-				elsif(downReqUp1/="0000") then
-					send1 <= downReqUp1;
-				else
-					send1 <= downReqDown1;
-				end if;			
+
+				if (up_request(1) = '1') then
+					up_request_register(1) <= '1';
+				elsif (l1_currentfloor="01" and l1_status="11") then
+					up_request_register(1) <= '0';
+				elsif (l2_currentfloor="01" and l2_status="11") then
+					up_request_register(1) <= '0';
+				end if;
+				
+				if (up_request(2) = '1') then
+					up_request_register(2) <= '1';
+				elsif (l1_currentfloor="10" and l1_status="11") then
+					up_request_register(2) <= '0';
+				elsif (l2_currentfloor="10" and l2_status="11") then
+					up_request_register(2) <= '0';
+				end if;
+				
+				if (down_request(1) = '1') then
+					down_request_register(1) <= '1';
+				elsif (l1_currentfloor="01" and l1_status="11") then
+					down_request_register(1) <= '0';
+				elsif (l2_currentfloor="01" and l2_status="11") then
+					down_request_register(1) <= '0';
+				end if;
+				
+				if (down_request(2) = '1') then
+					down_request_register(2) <= '1';
+				elsif (l1_currentfloor="10" and l1_status="11") then
+					down_request_register(2) <= '0';
+				elsif (l2_currentfloor="10" and l2_status="11") then
+					down_request_register(2) <= '0';
+				end if;
+				
+				if (down_request(3) = '1') then
+					down_request_register(3) <= '1';
+				elsif(l1_currentfloor="11" and l1_status="11") then
+					down_request_register(3) <= '0';
+				elsif(l2_currentfloor="11" and l2_status="11") then
+					down_request_register(3) <= '0';
+				end if;
+			
 			end if;
 
-			if (l2_request_status = reqUp) then
-				send2 <= upReqUp2;
-			elsif (l2_request_status = reqDown) then
-				send2 <= downReqDown2;
-			elsif (l2_request_status=idle and l1_request_status/=idle) then
-				if (upReqUp2/="0000") then
+	        
+			if((down_request(1)/='1') and (down_request(2)/='1') and (down_request(3)/='1') and (up_request(0)/='1') and (up_request(1)/='1') and (up_request(2)/='1') and (reset /= '1')) then
+
+				if (l1_request_status = reqUp) then
+					send1 <= upReqUp1;
+				elsif (l1_request_status = reqDown) then
+					send1 <= downReqDown1;	
+				elsif (l1_request_status=idle and l2_request_status/=idle) then
+					if (upReqUp1/="0000") then
+						send1 <= upReqUp1;
+					elsif(upReqDown1/="0000") then
+						send1 <= upReqDown1;
+					elsif(downReqUp1/="0000") then
+						send1 <= downReqUp1;
+					else
+						send1 <= downReqDown1;
+					end if;
+				elsif (l1_request_status= idle and l2_request_status=idle) then
+					if (upReqUp1/="0000") then
+						send1 <= upReqUp1;
+					elsif(upReqDown1/="0000") then
+						send1 <= upReqDown1;
+					elsif(downReqUp1/="0000") then
+						send1 <= downReqUp1;
+					else
+						send1 <= downReqDown1;
+					end if;
+				else
+						send1 <= "0000";		
+				end if;
+
+				if (l2_request_status = reqUp) then
 					send2 <= upReqUp2;
-				elsif(upReqDown2/="0000") then
-					send2 <= upReqDown2;
-				elsif(downReqUp2/="0000") then
-					send2 <= downReqUp2;
-				else
+				elsif (l2_request_status = reqDown) then
 					send2 <= downReqDown2;
+				elsif (l2_request_status=idle and l1_request_status/=idle) then
+					if (upReqUp2/="0000") then
+						send2 <= upReqUp2;
+					elsif(upReqDown2/="0000") then
+						send2 <= upReqDown2;
+					elsif(downReqUp2/="0000") then
+						send2 <= downReqUp2;
+					else
+						send2 <= downReqDown2;
+					end if;
+				else
+						send2 <= "0000";
 				end if;
-			end if;
 
-	-- when door opens remove the request from the registers
-			if (l1_currentfloor="00" and l1_status="11") then
-				up_request_register(0) <= '0';
-				down_request_register(0) <= '0';
-			elsif (l1_currentfloor="01" and l1_status="11") then
-				up_request_register(1) <= '0';
-				down_request_register(1) <= '0';
-			elsif (l1_currentfloor="10" and l1_status="11") then
-				up_request_register(2) <= '0';
-				down_request_register(2) <= '0';
-			elsif(l1_currentfloor="11" and l1_status="11") then
-				up_request_register(3) <= '0';
-				down_request_register(3) <= '0';
-			elsif (l2_currentfloor="00" and l2_status="11") then
-				up_request_register(0) <= '0';
-				down_request_register(0) <= '0';
-			elsif (l2_currentfloor="01" and l2_status="11") then
-				up_request_register(1) <= '0';
-				down_request_register(1) <= '0';
-			elsif (l2_currentfloor="10" and l2_status="11") then
-				up_request_register(2) <= '0';
-				down_request_register(2) <= '0';
-			elsif(l2_currentfloor="11" and l2_status="11") then
-				up_request_register(3) <= '0';
-				down_request_register(3) <= '0';
-			end if;
-    		end if;
-		
+	    	end if;
+		end if;	
 	end process ; -- reset_all
 
 	-- set indicators
@@ -166,7 +173,7 @@ begin
 
 	classify_requests : process(clk, up_request_register, down_request_register, l1_currentfloor, l2_currentfloor, l1_request_status, l2_request_status)
 	begin
-		
+	if (clk = '1' and clk'event) then
 		if (l1_currentfloor = "00") then
 			upReqUp1	 <= up_request_register(3 downto 1) & "0";   
 			upReqDown1 	 <= down_request_register(3 downto 1) & "0";
@@ -218,7 +225,7 @@ begin
 			downReqDown2 <= down_request_register;
 		
 		end if;
-
+	end if;
 	end process ; -- classify_requests
 
 	

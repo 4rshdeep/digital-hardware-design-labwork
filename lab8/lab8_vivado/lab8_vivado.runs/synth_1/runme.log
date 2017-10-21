@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log lift1_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lift1_controller.tcl
+    with args -log seven_segment_display.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source seven_segment_display.tcl
 
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 
@@ -9,24 +9,25 @@ awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
   **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source lift1_controller.tcl -notrace
-Command: synth_design -top lift1_controller -part xc7a35tcpg236-1
+source seven_segment_display.tcl -notrace
+Command: synth_design -top seven_segment_display -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28337 
+INFO: Helper process launched with PID 7767 
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1057.570 ; gain = 127.098 ; free physical = 141 ; free virtual = 9555
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1057.562 ; gain = 127.098 ; free physical = 993 ; free virtual = 9234
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'lift1_controller' [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:45]
-WARNING: [Synth 8-614] signal 'currentfloor' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:420]
-WARNING: [Synth 8-614] signal 'lift_register' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:420]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:420]
-INFO: [Synth 8-256] done synthesizing module 'lift1_controller' (1#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:45]
+INFO: [Synth 8-638] synthesizing module 'seven_segment_display' [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd:24]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd:35]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd:41]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd:47]
+INFO: [Synth 8-226] default block is never used [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'seven_segment_display' (1#1) [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.vhd:24]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1098.039 ; gain = 167.566 ; free physical = 132 ; free virtual = 9514
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1098.031 ; gain = 167.566 ; free physical = 948 ; free virtual = 9191
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -36,42 +37,41 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1098.039 ; gain = 167.566 ; free physical = 131 ; free virtual = 9514
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1098.031 ; gain = 167.566 ; free physical = 948 ; free virtual = 9191
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc]
-Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lift1_controller_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/lift1_controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.xdc]
+Finished Parsing XDC File [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/seven_segment.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/seven_segment_display_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/seven_segment_display_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1396.430 ; gain = 0.000 ; free physical = 131 ; free virtual = 9372
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1386.406 ; gain = 0.000 ; free physical = 781 ; free virtual = 9028
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 128 ; free virtual = 9371
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 780 ; free virtual = 9028
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 128 ; free virtual = 9371
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 780 ; free virtual = 9028
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 128 ; free virtual = 9371
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 780 ; free virtual = 9028
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'l1_status_reg' [/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_testing/lift1_controller.vhd:76]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 148 ; free virtual = 9360
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 764 ; free virtual = 9012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -84,24 +84,16 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     27 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               27 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 6     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	  16 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 66    
-	   7 Input      4 Bit        Muxes := 2     
-	  10 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 35    
-	   5 Input      2 Bit        Muxes := 3     
-	   3 Input      2 Bit        Muxes := 3     
-	  13 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 86    
-	   7 Input      1 Bit        Muxes := 8     
+	   4 Input      7 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -110,27 +102,19 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module lift1_controller 
+Module seven_segment_display 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     27 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               27 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 6     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	  16 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 66    
-	   7 Input      4 Bit        Muxes := 2     
-	  10 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 35    
-	   5 Input      2 Bit        Muxes := 3     
-	   3 Input      2 Bit        Muxes := 3     
-	  13 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 86    
-	   7 Input      1 Bit        Muxes := 8     
+	   4 Input      7 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -147,43 +131,8 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\next_status_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (start0_1sec_reg)
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (test_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\status_reg[3] )
-WARNING: [Synth 8-3332] Sequential element (status_reg[3]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (start0_1sec_reg) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[26]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[25]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[24]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[23]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[22]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[21]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[20]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[19]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[18]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[17]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[16]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[15]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[14]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[13]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[12]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[11]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[10]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[9]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[8]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[7]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[6]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[5]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[4]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[3]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[2]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[1]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (counter0_1sec_reg[0]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (next_status_reg[3]) is unused and will be removed from module lift1_controller.
-WARNING: [Synth 8-3332] Sequential element (test_reg) is unused and will be removed from module lift1_controller.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 131 ; free virtual = 9344
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 748 ; free virtual = 8996
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -198,10 +147,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 143 ; free virtual = 9319
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 720 ; free virtual = 8968
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 129 ; free virtual = 9305
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 711 ; free virtual = 8959
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -213,7 +162,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -233,11 +182,17 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop cath_reg[0] is being inverted and renamed to cath_reg[0]_inv.
+INFO: [Synth 8-5365] Flop cath_reg[1] is being inverted and renamed to cath_reg[1]_inv.
+INFO: [Synth 8-5365] Flop cath_reg[2] is being inverted and renamed to cath_reg[2]_inv.
+INFO: [Synth 8-5365] Flop cath_reg[3] is being inverted and renamed to cath_reg[3]_inv.
+INFO: [Synth 8-5365] Flop cath_reg[4] is being inverted and renamed to cath_reg[4]_inv.
+INFO: [Synth 8-5365] Flop cath_reg[6] is being inverted and renamed to cath_reg[6]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -250,7 +205,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -262,25 +217,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -297,44 +252,43 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    21|
-|3     |LUT1   |    83|
-|4     |LUT2   |    16|
-|5     |LUT3   |    20|
-|6     |LUT4   |    15|
-|7     |LUT5   |    25|
-|8     |LUT6   |    45|
-|9     |FDRE   |   105|
-|10    |LDCP   |     2|
-|11    |IBUF   |    12|
-|12    |OBUF   |    13|
+|2     |CARRY4 |     5|
+|3     |LUT1   |    22|
+|4     |LUT2   |     7|
+|5     |LUT3   |     5|
+|6     |LUT4   |     2|
+|7     |LUT5   |     7|
+|8     |LUT6   |     7|
+|9     |FDRE   |    31|
+|10    |FDSE   |     4|
+|11    |IBUF   |     9|
+|12    |OBUF   |    11|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |   358|
+|1     |top      |       |   111|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1396.430 ; gain = 465.957 ; free physical = 121 ; free virtual = 9297
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.406 ; gain = 455.941 ; free physical = 701 ; free virtual = 8949
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1396.430 ; gain = 85.465 ; free physical = 121 ; free virtual = 9297
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1396.438 ; gain = 465.965 ; free physical = 123 ; free virtual = 9297
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1386.406 ; gain = 85.465 ; free physical = 701 ; free virtual = 8949
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1386.414 ; gain = 455.949 ; free physical = 701 ; free virtual = 8949
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 2 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-19 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1396.438 ; gain = 396.449 ; free physical = 129 ; free virtual = 9277
-INFO: [Common 17-1381] The checkpoint '/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/lift1_controller.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:02 . Memory (MB): peak = 1420.441 ; gain = 0.000 ; free physical = 139 ; free virtual = 9281
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 21 17:38:46 2017...
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1386.414 ; gain = 386.434 ; free physical = 704 ; free virtual = 8952
+INFO: [Common 17-1381] The checkpoint '/media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/seven_segment_display.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1410.418 ; gain = 0.000 ; free physical = 703 ; free virtual = 8952
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 21 20:03:36 2017...

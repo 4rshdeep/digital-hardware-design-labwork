@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1508587686">
+<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1508596386">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="lift1_controller.drc"/>
-  <File Type="BG-BGN" Name="lift1_controller.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="lift1_controller.sysdef"/>
-  <File Type="BITSTR-MMI" Name="lift1_controller.mmi"/>
-  <File Type="BITSTR-BMM" Name="lift1_controller_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="lift1_controller.nky"/>
-  <File Type="BITSTR-RBT" Name="lift1_controller.rbt"/>
-  <File Type="BITSTR-MSK" Name="lift1_controller.msk"/>
-  <File Type="BG-BIN" Name="lift1_controller.bin"/>
-  <File Type="BG-BIT" Name="lift1_controller.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="lift1_controller_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="lift1_controller_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="lift1_controller_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="lift1_controller_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="lift1_controller_postroute_physopt.dcp"/>
-  <File Type="ROUTE-CLK" Name="lift1_controller_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="lift1_controller_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="lift1_controller_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="lift1_controller_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="lift1_controller_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="lift1_controller_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="lift1_controller_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="lift1_controller_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="lift1_controller_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="lift1_controller_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="lift1_controller_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="lift1_controller_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="lift1_controller_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="lift1_controller_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="lift1_controller_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="lift1_controller_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="lift1_controller_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="lift1_controller_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="lift1_controller_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="lift1_controller_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="lift1_controller_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="lift1_controller_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="lift1_controller_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="RDI-RDI" Name="lift1_controller.vdi"/>
-  <File Type="PLACE-TIMING" Name="lift1_controller_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="lift1_controller_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="lift1_controller_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="lift1_controller_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="lift1_controller_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="lift1_controller_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="lift1_controller_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="lift1_controller_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="lift1_controller_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="lift1_controller_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="lift1_controller_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="lift1_controller_pwropt.dcp"/>
-  <File Type="OPT-TIMING" Name="lift1_controller_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="lift1_controller.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="lift1_controller_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="lift1_controller_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="lift1_controller_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="lift1_controller_timing_summary_init.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="lift1_controller_postplace_pwropt.dcp"/>
-  <File Type="PA-TCL" Name="lift1_controller.tcl"/>
+  <File Type="BG-DRC" Name="seven_segment_display.drc"/>
+  <File Type="BG-BGN" Name="seven_segment_display.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="seven_segment_display.sysdef"/>
+  <File Type="BITSTR-MMI" Name="seven_segment_display.mmi"/>
+  <File Type="BITSTR-BMM" Name="seven_segment_display_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="seven_segment_display.nky"/>
+  <File Type="BITSTR-RBT" Name="seven_segment_display.rbt"/>
+  <File Type="BITSTR-MSK" Name="seven_segment_display.msk"/>
+  <File Type="BG-BIN" Name="seven_segment_display.bin"/>
+  <File Type="BG-BIT" Name="seven_segment_display.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="seven_segment_display_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="seven_segment_display_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="seven_segment_display_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="seven_segment_display_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="seven_segment_display_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="seven_segment_display_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="seven_segment_display_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="seven_segment_display_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="seven_segment_display_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="seven_segment_display_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="seven_segment_display_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="seven_segment_display_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="seven_segment_display_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="seven_segment_display_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="seven_segment_display_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="seven_segment_display_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="seven_segment_display_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="seven_segment_display_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="seven_segment_display_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="seven_segment_display_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="seven_segment_display_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="seven_segment_display_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="seven_segment_display_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="seven_segment_display_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="seven_segment_display_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="seven_segment_display_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="seven_segment_display_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="seven_segment_display_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="RDI-RDI" Name="seven_segment_display.vdi"/>
+  <File Type="PLACE-TIMING" Name="seven_segment_display_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="seven_segment_display_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="seven_segment_display_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="seven_segment_display_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="seven_segment_display_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="seven_segment_display_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="seven_segment_display_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="seven_segment_display_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="seven_segment_display_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="seven_segment_display_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="seven_segment_display_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="seven_segment_display_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="seven_segment_display_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="seven_segment_display.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="seven_segment_display_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="seven_segment_display_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="seven_segment_display_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="seven_segment_display_timing_summary_init.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="seven_segment_display_postplace_pwropt.dcp"/>
+  <File Type="PA-TCL" Name="seven_segment_display.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../lab8_testing/lift1_controller.vhd">
+    <File Path="$PPRDIR/../lab8_testing/seven_segment.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -70,13 +70,13 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="lift1_controller"/>
+      <Option Name="TopModule" Val="seven_segment_display"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../lab8_testing/lift1_controller.xdc">
+    <File Path="$PPRDIR/../lab8_testing/seven_segment.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

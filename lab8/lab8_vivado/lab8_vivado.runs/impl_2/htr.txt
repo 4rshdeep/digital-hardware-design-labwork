@@ -6,4 +6,4 @@
 # Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log lift1_controller.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lift1_controller.tcl -notrace
+vivado -log seven_segment_display.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source seven_segment_display.tcl -notrace

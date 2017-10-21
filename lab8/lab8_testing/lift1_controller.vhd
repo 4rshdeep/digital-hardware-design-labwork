@@ -116,7 +116,7 @@ begin
 			end if;
 			if (lift1_floor(1)    = '1' and currentfloor /= "01") then
 				lift_register(1) <= '1';
-			elsif (received_request(1) = '1' and currentfloor /= "01") then
+			elsif (received_request(1) = '1' and currentfloor /= "01") then --remove current floor part if request handler handles that
 				lift_register(1) <= '1';
 			elsif (currentfloor = "01") then
 				lift_register(1) 	<= '0';	

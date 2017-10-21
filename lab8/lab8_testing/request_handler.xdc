@@ -22,8 +22,8 @@
 	create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk]
 
 # Switches
-set_property PACKAGE_PIN R2 [get_ports l1_status[2]]
-set_property IOSTANDARD LVCMOS33 [get_ports l1_status[2]]
+set_property PACKAGE_PIN R2 [get_ports l1_status[1]]
+set_property IOSTANDARD LVCMOS33 [get_ports l1_status[1]]
 
 set_property PACKAGE_PIN T1 [get_ports l1_status[0]]
 set_property IOSTANDARD LVCMOS33 [get_ports l1_status[0]]
@@ -118,7 +118,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports up_request_indicator[3]]
 set_property PACKAGE_PIN U19 [get_ports up_request_indicator[2]]
 set_property IOSTANDARD LVCMOS33 [get_ports up_request_indicator[2]]
 
-set_property PACKAGE_PIN E18 [get_ports up_request_indicator[1]]
+set_property PACKAGE_PIN E19 [get_ports up_request_indicator[1]]
 set_property IOSTANDARD LVCMOS33 [get_ports up_request_indicator[1]]
 
 set_property PACKAGE_PIN U16 [get_ports up_request_indicator[0]]
