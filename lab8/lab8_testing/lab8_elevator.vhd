@@ -150,7 +150,6 @@ architecture request_handler_arc of request_handler is
 	signal pending_requests : std_logic_vector(3 downto 0);
 	signal prev1, prev2 : std_logic_vector(1 downto 0);
 	--signal up_unassigned, down_unassigned : std_logic_vector(3 downto 0);
-	signal keep_send2 : std_logic;
 
 begin 
 
@@ -162,7 +161,6 @@ begin
 	              down_request_register <= "0000";
 	              send1 <= "0000";
 	              send2 <= "0000";
-	              keep_send2 <= '0';
 	              --up_unassigned <= "1111";
 	              --down_unassigned <= "1111";
 	        else
@@ -224,12 +222,6 @@ begin
 			
 			end if;
 
-			if (l1_request_status = idle) then
-				if (keep_send2 = '1') then
-					keep_send2 <= '0';
-				end if;
-			end if;
-
 
 			--if (l1_currentfloor = "00" and l1_status="11")or(l2_currentfloor="00" and l2_status="11") then
 			--	if (down_request_register(0)='1') then
@@ -264,7 +256,7 @@ begin
 			prev1 <= l1_currentfloor;
 			prev2 <= l2_currentfloor;
 
-	        if((keep_send2/='1')and(prev1 = l1_currentfloor) and (prev2 = l2_currentfloor) and (down_request(1)/='1') and (down_request(2)/='1') and (down_request(3)/='1') and (up_request(0)/='1') and (up_request(1)/='1') and (up_request(2)/='1') and (reset /= '1')) then
+	        if((prev1 = l1_currentfloor) and (prev2 = l2_currentfloor) and (down_request(1)/='1') and (down_request(2)/='1') and (down_request(3)/='1') and (up_request(0)/='1') and (up_request(1)/='1') and (up_request(2)/='1') and (reset /= '1')) then
 				
 				if (l1_request_status = reqUp) then
 					if (l2_request_status = reqUp) then
@@ -773,62 +765,47 @@ begin
 						if (l1_currentfloor = "00") then
 							if (up_request_register(3 downto 1)/="000") then
 								send1 <= up_request_register(3 downto 1)&'0'; -- uprequp
-								keep_send2 <= '1';
 							elsif (down_request_register(3 downto 1)/="000") then
 								send1 <= down_request_register(3 downto 1)&'0'; -- upreqdown
-								keep_send2 <= '1';
 							elsif (up_request_register(0)/='0') then
 								send1 <= "0001";							-- downrequp
-								keep_send2 <= '1';
 							elsif (down_request_register(0)/='0') then		--downreqdown
 								send1 <= "0001";
-								keep_send2 <= '1';
 							end if;
 						elsif (l1_currentfloor = "01") then
 							if (up_request_register(3 downto 2)/="00") then
 								send1 <= up_request_register(3 downto 2)&"00";   -- uprequp
-								keep_send2 <= '1';
 							elsif (down_request_register(3 downto 2)/="00") then
 								send1 <= down_request_register(3 downto 2)&"00"; -- upreqdown
-								keep_send2 <= '1';
 							elsif (up_request_register(1 downto 0)/="00") then
 								send1 <= "00"&up_request_register(1 downto 0);								-- downrequp
-								keep_send2 <= '1';
 							elsif (down_request_register(1 downto 0)/="00") then			--downreqdown
 								send1 <= "00"&down_request_register(1 downto 0);
-								keep_send2 <= '1';
 							end if;
 						elsif (l1_currentfloor = "10") then
 							if (up_request_register(3)/='0') then
 								send1 <= up_request_register(3)&"000";   -- uprequp
-								keep_send2 <= '1';
 							elsif (down_request_register(3)/='0') then
 								send1 <= down_request_register(3)&"000"; -- upreqdown
-								keep_send2 <= '1';
 							elsif (up_request_register(2 downto 0)/="000") then
 								send1 <= '0'&up_request_register(2 downto 0);								-- downrequp
-								keep_send2 <= '1';
 							elsif (down_request_register(1 downto 0)/="00") then			--downreqdown
 								send1 <= "00"&down_request_register(1 downto 0);
-								keep_send2 <= '1';
 							end if;
 							
 						elsif (l1_currentfloor = "11") then
 							if (up_request_register(3 downto 2)/="00") then
 								send1 <= up_request_register(3 downto 2)&"00";   -- uprequp
-								keep_send2 <= '1';
 							elsif (down_request_register(3 downto 2)/="00") then
 								send1 <= down_request_register(3 downto 2)&"00"; -- upreqdown
-								keep_send2 <= '1';
 							elsif (up_request_register(1 downto 0)/="00") then
 								send1 <= "00"&up_request_register(1 downto 0);								-- downrequp
-								keep_send2 <= '1';
 							elsif (down_request_register(1 downto 0)/="00") then			--downreqdown
 								send1 <= "00"&down_request_register(1 downto 0);
-								keep_send2 <= '1';
 							end if;
 							
 						end if;
+						send2<="0000";
 					end if;
 
 
@@ -836,9 +813,7 @@ begin
 	    	end if; -- after register if loop
 
 	    	
-			if (keep_send2 = '1') then
-				send2 <= "0000";
-			end if;
+			
 
 		end if;	-- clk event if loop
 	end process ; -- reset_all
