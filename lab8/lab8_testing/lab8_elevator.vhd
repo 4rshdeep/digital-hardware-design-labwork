@@ -147,6 +147,7 @@ architecture request_handler_arc of request_handler is
 	type req is (reqUp, reqDown, idle);
 	signal status1, status2 : req;
 	signal prev_reset : std_logic;
+	signal pending_requests : std_logic_vector(3 downto 0);
 
 begin 
 
@@ -211,52 +212,52 @@ begin
 
 	        
 			if((down_request(1)/='1') and (down_request(2)/='1') and (down_request(3)/='1') and (up_request(0)/='1') and (up_request(1)/='1') and (up_request(2)/='1') and (reset /= '1')) then
+				
+			--	if (l1_request_status = reqUp) then
+			--		send1 <= upReqUp1;
+			--	elsif (l1_request_status = reqDown) then
+			--		send1 <= downReqDown1;	
+			--	elsif (l1_request_status=idle and l2_request_status/=idle) then
+			--		if (upReqUp1/="0000") then
+			--			send1 <= upReqUp1;
+			--		elsif(upReqDown1/="0000") then
+			--			send1 <= upReqDown1;
+			--		elsif(downReqUp1/="0000") then
+			--			send1 <= downReqUp1;
+			--		else
+			--			send1 <= downReqDown1;
+			--		end if;
+			--	elsif (l1_request_status= idle and l2_request_status=idle) then
+			--		if (upReqUp1/="0000") then
+			--			send1 <= upReqUp1;
+			--		elsif(upReqDown1/="0000") then
+			--			send1 <= upReqDown1;
+			--		elsif(downReqUp1/="0000") then
+			--			send1 <= downReqUp1;
+			--		else
+			--			send1 <= downReqDown1;
+			--		end if;
+			--	else
+			--			send1 <= "0000";		
+			--	end if;
 
-				if (l1_request_status = reqUp) then
-					send1 <= upReqUp1;
-				elsif (l1_request_status = reqDown) then
-					send1 <= downReqDown1;	
-				elsif (l1_request_status=idle and l2_request_status/=idle) then
-					if (upReqUp1/="0000") then
-						send1 <= upReqUp1;
-					elsif(upReqDown1/="0000") then
-						send1 <= upReqDown1;
-					elsif(downReqUp1/="0000") then
-						send1 <= downReqUp1;
-					else
-						send1 <= downReqDown1;
-					end if;
-				elsif (l1_request_status= idle and l2_request_status=idle) then
-					if (upReqUp1/="0000") then
-						send1 <= upReqUp1;
-					elsif(upReqDown1/="0000") then
-						send1 <= upReqDown1;
-					elsif(downReqUp1/="0000") then
-						send1 <= downReqUp1;
-					else
-						send1 <= downReqDown1;
-					end if;
-				else
-						send1 <= "0000";		
-				end if;
-
-				if (l2_request_status = reqUp) then
-					send2 <= upReqUp2;
-				elsif (l2_request_status = reqDown) then
-					send2 <= downReqDown2;
-				elsif (l2_request_status=idle and l1_request_status/=idle) then
-					if (upReqUp2/="0000") then
-						send2 <= upReqUp2;
-					elsif(upReqDown2/="0000") then
-						send2 <= upReqDown2;
-					elsif(downReqUp2/="0000") then
-						send2 <= downReqUp2;
-					else
-						send2 <= downReqDown2;
-					end if;
-				else
-						send2 <= "0000";
-				end if;
+			--	if (l2_request_status = reqUp) then
+			--		send2 <= upReqUp2;
+			--	elsif (l2_request_status = reqDown) then
+			--		send2 <= downReqDown2;
+			--	elsif (l2_request_status=idle and l1_request_status/=idle) then
+			--		if (upReqUp2/="0000") then
+			--			send2 <= upReqUp2;
+			--		elsif(upReqDown2/="0000") then
+			--			send2 <= upReqDown2;
+			--		elsif(downReqUp2/="0000") then
+			--			send2 <= downReqUp2;
+			--		else
+			--			send2 <= downReqDown2;
+			--		end if;
+			--	else
+			--			send2 <= "0000";
+			--	end if;
 
 	    	end if;
 		end if;	
@@ -274,11 +275,13 @@ begin
 	begin
 	if (clk = '1' and clk'event) then
 		if (l1_currentfloor = "00") then
-			upReqUp1	 <= up_request_register(3 downto 1) & "0";   
-			upReqDown1 	 <= down_request_register(3 downto 1) & "0";
-			downReqUp1 	 <= "000" & up_request_register(0);
-			downReqDown1 <= "0000";	
-		
+			if (l2_currentfloor = "00") then
+				upReqUp1	 <= up_request_register(3 downto 1) & "0";   
+				upReqDown1 	 <= down_request_register(3 downto 1) & "0";
+				downReqUp1 	 <= "000" & up_request_register(0);
+				downReqDown1 <= "0000";	
+			end if;
+			
 		elsif (l1_currentfloor = "01") then
 			upReqUp1 	 <= up_request_register(3 downto 2) & "00";
 			upReqDown1 	 <= down_request_register(3 downto 2) & "00";
@@ -332,7 +335,7 @@ end request_handler_arc;
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;        -- f
+use ieee.std_logic_unsigned.all;
 library work;
 use work.enum_package.all;
 
