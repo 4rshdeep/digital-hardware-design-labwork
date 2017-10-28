@@ -162,6 +162,7 @@ begin
 	              send1 <= "0000";
 	              send2 <= "0000";
 	              --up_unassigned <= "1111";
+
 	              --down_unassigned <= "1111";
 	        else
 				if (up_request(0) = '1' and (l1_currentfloor/="00" and l2_currentfloor/="00")) then
