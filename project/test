@@ -1,0 +1,44 @@
+add_wave {{/project_top_module/proj}} 
+add_force {/project_top_module/proj/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+run 10 us
+add_force {/project_top_module/proj/reset} -radix hex {1 0ns}
+run 10 us
+add_force {/project_top_module/proj/reset} -radix hex {0 0ns}
+run 10 us
+add_force {/project_top_module/proj/start1sec} -radix hex {0 0ns}
+run 10 us
+add_force {/project_top_module/proj/record_lat} -radix hex {1 0ns}
+add_force {/project_top_module/proj/data_in} -radix hex {3034 0ns}
+run 10 us
+add_force {/project_top_module/proj/record_lat} -radix hex {0 0ns}
+add_force {/project_top_module/proj/data_in} -radix hex {7633 0ns}
+add_force {/project_top_module/proj/record_long} -radix hex {1 0ns}
+run 10 us
+add_force {/project_top_module/proj/record_long} -radix hex {0 0ns}
+run 10 us
+add_force {/project_top_module/proj/push_query} -radix hex {1 0ns}
+run 10 us
+add_force {/project_top_module/proj/push_query} -radix hex {0 0ns}
+run 10 us
+
+
+
+
+
+add_force {/project_top_module/proj/state_change} -radix hex {1 0ns}
+run 10 us
+add_force {/project_top_module/proj/state_change} -radix hex {0 0ns}
+run 10 us
+add_force {/project_top_module/proj/record_lat} -radix hex {1 0ns}
+add_force {/project_top_module/proj/data_in} -radix hex {2305 0ns}
+run 10 us
+add_force {/project_top_module/proj/record_lat} -radix hex {0 0ns}
+add_force {/project_top_module/proj/data_in} -radix hex {7118 0ns}
+add_force {/project_top_module/proj/record_long} -radix hex {1 0ns}
+run 10 us
+add_force {/project_top_module/proj/record_long} -radix hex {0 0ns}
+run 10 us
+add_force {/project_top_module/proj/push_query} -radix hex {1 0ns}
+run 10 us
+add_force {/project_top_module/proj/push_query} -radix hex {0 0ns}
+run 10 us

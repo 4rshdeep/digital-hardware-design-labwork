@@ -1,0 +1,57 @@
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb
+ERROR: [VRFC 10-1412] syntax error near report [/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd:150]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd:11]
+INFO: [VRFC 10-240] VHDL file /media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd ignored due to errors
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb

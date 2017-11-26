@@ -1,0 +1,16 @@
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/vivado/project_1/project_1.sim/sim_1/synth/func/project_top_module_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity \seven_segment_display__1\
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity project_top_module
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/vivado/project_1/project_1.sim/sim_1/synth/func/project_top_module_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity \seven_segment_display__1\
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity project_top_module

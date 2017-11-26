@@ -1,0 +1,8 @@
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+Note: Final error count increased to 0
+Time: 0 ps  Iteration: 0  Process: /display_tb/stim_proc  File: /media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd
+Note: Total error count 0
+Time: 0 ps  Iteration: 0  Process: /display_tb/stim_proc  File: /media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd
+Note: Testbench of TopModule completed successfully!
+Time: 0 ps  Iteration: 0  Process: /display_tb/stim_proc  File: /media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd

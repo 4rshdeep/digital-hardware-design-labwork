@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Mon Oct 23 01:49:22 2017
-# Process ID: 26220
+# Start of session at: Wed Nov  8 17:02:26 2017
+# Process ID: 20128
 # Current directory: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1
-# Command line: vivado -log lab8_elevator_control.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab8_elevator_control.tcl
-# Log file: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/lab8_elevator_control.vds
+# Command line: vivado -log digit_display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source digit_display.tcl
+# Log file: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/digit_display.vds
 # Journal file: /media/ad/Area51/workspace/col215_prac_lab/lab8/lab8_vivado/lab8_vivado.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source lab8_elevator_control.tcl -notrace
+source digit_display.tcl -notrace

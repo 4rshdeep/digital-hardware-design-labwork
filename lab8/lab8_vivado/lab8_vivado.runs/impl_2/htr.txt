@@ -6,4 +6,4 @@
 # Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log lab8_elevator_control.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lab8_elevator_control.tcl -notrace
+vivado -log digit_display.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source digit_display.tcl -notrace

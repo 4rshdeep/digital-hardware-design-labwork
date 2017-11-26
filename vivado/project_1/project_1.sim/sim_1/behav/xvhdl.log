@@ -1,0 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/final_project_simulate.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity project_top_module
+INFO: [VRFC 10-307] analyzing entity project
+INFO: [VRFC 10-307] analyzing entity display
+INFO: [VRFC 10-307] analyzing entity seven_segment_display
+INFO: [VRFC 10-307] analyzing entity digit_display
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/ad/Area51/workspace/col215_prac_lab/project/display_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity display_tb

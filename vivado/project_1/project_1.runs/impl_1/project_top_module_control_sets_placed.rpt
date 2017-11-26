@@ -1,0 +1,245 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
+| Date         : Fri Nov 10 20:29:30 2017
+| Host         : ad-ubuntu running 64-bit Ubuntu 16.04.3 LTS
+| Command      : report_control_sets -verbose -file project_top_module_control_sets_placed.rpt
+| Design       : project_top_module
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |   178 |
+| Unused register locations in slices containing registers |   404 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              46 |           16 |
+| No           | No                    | Yes                    |               8 |            6 |
+| No           | Yes                   | No                     |              60 |           15 |
+| Yes          | No                    | No                     |             768 |          324 |
+| Yes          | No                    | Yes                    |            1455 |          441 |
+| Yes          | Yes                   | No                     |              43 |           11 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+--------------------------------------+-----------------------------+------------------+----------------+
+|       Clock Signal       |             Enable Signal            |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
++--------------------------+--------------------------------------+-----------------------------+------------------+----------------+
+|  clk_IBUF_BUFG           | proj/state_change_prev0              |                             |                1 |              1 |
+|  clk_IBUF_BUFG           | proj/update_state_indicator0         | reset_IBUF                  |                1 |              1 |
+|  clk_IBUF_BUFG           | proj/query_state_indicator0          | reset_IBUF                  |                1 |              1 |
+|  clk_IBUF_BUFG           | proj/record_long_prev0               |                             |                1 |              1 |
+|  clk_IBUF_BUFG           | proj/reset_state_indicator_i_1_n_0   | reset_IBUF                  |                1 |              1 |
+|  clk_IBUF_BUFG           | proj/inst0                           | proj/inst_i_2_n_0           |                1 |              1 |
+|  display_map/lat/clock   | display_map/lat/cath[6]_inv_i_1_n_0  |                             |                2 |              5 |
+|  display_map/long/clock  | display_map/long/cath[6]_inv_i_1_n_0 |                             |                2 |              5 |
+|  clk_IBUF_BUFG           | proj/index0                          | reset_IBUF                  |                2 |              6 |
+|  display_map/digit/clock |                                      |                             |                2 |              7 |
+|  clk_IBUF_BUFG           | proj/sig1[3]_i_2_n_0                 | proj/sig1[3]_i_1_n_0        |                1 |              7 |
+|  clk_IBUF_BUFG           | proj/data_out0                       |                             |                2 |              7 |
+|  display_map/digit/clock | display_map/digit/cath[6]_i_1_n_0    |                             |                7 |              7 |
+|  display_map/lat/clock   |                                      |                             |                1 |              7 |
+|  display_map/long/clock  |                                      |                             |                1 |              7 |
+|  clk_IBUF_BUFG           |                                      | reset_IBUF                  |                6 |              8 |
+|  clk_IBUF_BUFG           | proj/data_out0                       | proj/data_out[15]_i_1_n_0   |                3 |              9 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[8]0                | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[19]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[18]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[17]0              | reset_IBUF                  |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[16]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[15]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[14]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[13]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[12]0              | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[11]0              | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[10]0              | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[0]0               | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[9]0                | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[21]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[7]0                | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[6]0                | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[5]0                | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[50]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[4]0                | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[49]0               | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[28]0              | reset_IBUF                  |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[10]0             |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[35]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[34]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[33]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[32]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[31]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[30]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[2]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[29]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[1]0               | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[27]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[26]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[25]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[24]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[23]0              | reset_IBUF                  |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[22]0              | reset_IBUF                  |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[46]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[20]0              | reset_IBUF                  |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[21]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[2]0                | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[29]0               | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[28]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[27]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[26]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[25]0               | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[24]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[23]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[22]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[30]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[20]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[1]0                | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[19]0               | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[18]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[17]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[16]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/query_signal0                   |                             |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/user_lat0                       |                             |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[39]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[47]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[36]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[45]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[44]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[43]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[42]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[41]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[40]0               | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[3]0                | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[48]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[38]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[37]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[36]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[35]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[34]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[33]0               | reset_IBUF                  |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[32]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[31]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[37]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[45]0             |                             |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[44]0             |                             |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[43]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[42]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[41]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[40]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[3]0              |                             |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[39]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[38]0             |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[46]0             |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[36]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[35]0             |                             |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[34]0             |                             |                9 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[33]0             |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[32]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[31]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[37]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[2]0              |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[29]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[8]0              |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[15]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[14]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[13]0               | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[12]0               | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[11]0               | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[10]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/latitude_reg[0]0                | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[0]0              |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[9]0              |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[30]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[7]0              |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[6]0              |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[5]0              |                             |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[50]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[4]0              |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[49]0             |                             |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[48]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[47]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[46]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[8]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[7]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[28]0             |                             |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[5]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[50]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[4]0               | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[49]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[48]0              | reset_IBUF                  |                2 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[47]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[6]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[45]0              | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[44]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[43]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[42]0              | reset_IBUF                  |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[41]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[40]0              | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[3]0               | reset_IBUF                  |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[39]0              | reset_IBUF                  |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[38]0              | reset_IBUF                  |                3 |             14 |
+|  clk_IBUF_BUFG           | proj/longitude_reg[9]0               | reset_IBUF                  |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[27]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[26]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[25]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[24]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[23]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[22]0             |                             |                5 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[21]0             |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[20]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[1]0              |                             |                4 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[19]0             |                             |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[18]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[17]0             |                             |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[16]0             |                             |                7 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[15]0             |                             |                8 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[14]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[13]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[12]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/array_dist_reg[11]0             |                             |                6 |             14 |
+|  clk_IBUF_BUFG           | proj/q_index[5]_i_1_n_0              | reset_IBUF                  |                7 |             17 |
+|  clk_IBUF_BUFG           |                                      | display_map/long/clear      |                5 |             20 |
+|  clk_IBUF_BUFG           |                                      | display_map/lat/clear       |                5 |             20 |
+|  clk_IBUF_BUFG           |                                      | display_map/digit/clear     |                5 |             20 |
+|  clk_IBUF_BUFG           |                                      |                             |               12 |             25 |
+|  clk_IBUF_BUFG           | proj/counter1sec0                    | proj/counter1sec[0]_i_1_n_0 |                7 |             27 |
++--------------------------+--------------------------------------+-----------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     6 |
+| 5      |                     2 |
+| 6      |                     1 |
+| 7      |                     6 |
+| 8      |                     1 |
+| 9      |                     1 |
+| 14     |                   155 |
+| 16+    |                     6 |
++--------+-----------------------+
+
+

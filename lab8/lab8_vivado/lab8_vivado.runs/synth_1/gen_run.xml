@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1508703561">
-  <File Type="VDS-TIMING-PB" Name="lab8_elevator_control_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="lab8_elevator_control_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="lab8_elevator_control.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="lab8_elevator_control_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="lab8_elevator_control_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="lab8_elevator_control_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="lab8_elevator_control.vds"/>
-  <File Type="PA-TCL" Name="lab8_elevator_control.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1510140745">
+  <File Type="VDS-TIMING-PB" Name="digit_display_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="digit_display_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="digit_display.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="digit_display_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="digit_display_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="digit_display_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="digit_display.vds"/>
+  <File Type="PA-TCL" Name="digit_display.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../lab8_testing/lab8_elevator.vhd">
+    <File Path="$PPRDIR/../../project/project_modified.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -18,13 +18,13 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="lab8_elevator_control"/>
+      <Option Name="TopModule" Val="digit_display"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../lab8_testing/lab8_elevator_control_bb.xdc">
+    <File Path="$PPRDIR/../../project/lab4.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1508703561">
+<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1510140745">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="lab8_elevator_control.drc"/>
-  <File Type="BG-BGN" Name="lab8_elevator_control.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="lab8_elevator_control.sysdef"/>
-  <File Type="BITSTR-MMI" Name="lab8_elevator_control.mmi"/>
-  <File Type="BITSTR-BMM" Name="lab8_elevator_control_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="lab8_elevator_control.nky"/>
-  <File Type="BITSTR-RBT" Name="lab8_elevator_control.rbt"/>
-  <File Type="BITSTR-MSK" Name="lab8_elevator_control.msk"/>
-  <File Type="BG-BIN" Name="lab8_elevator_control.bin"/>
-  <File Type="BG-BIT" Name="lab8_elevator_control.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="lab8_elevator_control_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="lab8_elevator_control_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="lab8_elevator_control_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="lab8_elevator_control_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="lab8_elevator_control_postroute_physopt.dcp"/>
-  <File Type="ROUTE-CLK" Name="lab8_elevator_control_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="lab8_elevator_control_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="lab8_elevator_control_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="lab8_elevator_control_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="lab8_elevator_control_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="lab8_elevator_control_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="lab8_elevator_control_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="lab8_elevator_control_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="lab8_elevator_control_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="lab8_elevator_control_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="lab8_elevator_control_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="lab8_elevator_control_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="lab8_elevator_control_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="lab8_elevator_control_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="lab8_elevator_control_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="lab8_elevator_control_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="lab8_elevator_control_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="lab8_elevator_control_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="lab8_elevator_control_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="lab8_elevator_control_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="lab8_elevator_control_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="lab8_elevator_control_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="lab8_elevator_control_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="RDI-RDI" Name="lab8_elevator_control.vdi"/>
-  <File Type="PLACE-TIMING" Name="lab8_elevator_control_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="lab8_elevator_control_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="lab8_elevator_control_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="lab8_elevator_control_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="lab8_elevator_control_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="lab8_elevator_control_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="lab8_elevator_control_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="lab8_elevator_control_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="lab8_elevator_control_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="lab8_elevator_control_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="lab8_elevator_control_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="lab8_elevator_control_pwropt.dcp"/>
-  <File Type="OPT-TIMING" Name="lab8_elevator_control_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="lab8_elevator_control.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="lab8_elevator_control_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="lab8_elevator_control_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="lab8_elevator_control_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="lab8_elevator_control_timing_summary_init.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="lab8_elevator_control_postplace_pwropt.dcp"/>
-  <File Type="PA-TCL" Name="lab8_elevator_control.tcl"/>
+  <File Type="BG-DRC" Name="digit_display.drc"/>
+  <File Type="BG-BGN" Name="digit_display.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="digit_display.sysdef"/>
+  <File Type="BITSTR-MMI" Name="digit_display.mmi"/>
+  <File Type="BITSTR-BMM" Name="digit_display_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="digit_display.nky"/>
+  <File Type="BITSTR-RBT" Name="digit_display.rbt"/>
+  <File Type="BITSTR-MSK" Name="digit_display.msk"/>
+  <File Type="BG-BIN" Name="digit_display.bin"/>
+  <File Type="BG-BIT" Name="digit_display.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="digit_display_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="digit_display_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="digit_display_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="digit_display_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="digit_display_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="digit_display_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="digit_display_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="digit_display_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="digit_display_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="digit_display_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="digit_display_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="digit_display_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="digit_display_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="digit_display_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="digit_display_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="digit_display_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="digit_display_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="digit_display_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="digit_display_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="digit_display_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="digit_display_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="digit_display_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="digit_display_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="digit_display_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="digit_display_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="digit_display_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="digit_display_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="digit_display_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="RDI-RDI" Name="digit_display.vdi"/>
+  <File Type="PLACE-TIMING" Name="digit_display_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="digit_display_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="digit_display_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="digit_display_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="digit_display_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="digit_display_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="digit_display_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="digit_display_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="digit_display_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="digit_display_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="digit_display_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="digit_display_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="digit_display_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="digit_display.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="digit_display_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="digit_display_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="digit_display_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="digit_display_timing_summary_init.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="digit_display_postplace_pwropt.dcp"/>
+  <File Type="PA-TCL" Name="digit_display.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../lab8_testing/lab8_elevator.vhd">
+    <File Path="$PPRDIR/../../project/project_modified.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -70,13 +70,13 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="lab8_elevator_control"/>
+      <Option Name="TopModule" Val="digit_display"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../lab8_testing/lab8_elevator_control_bb.xdc">
+    <File Path="$PPRDIR/../../project/lab4.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
